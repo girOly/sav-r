@@ -1,6 +1,4 @@
 # sav-r
-<<<<<<< HEAD
-=======
 
 # Test
 ## Check
