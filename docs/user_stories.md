@@ -48,7 +48,7 @@ Back-end Implementation: Budget Database
 
 Feature: Monthly Expenses
 
-## Input budget targets (MVP)
+## Input budget targets  (MVP)
 
 Front-end Requirement: Budget target input
 
