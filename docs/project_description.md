@@ -16,6 +16,9 @@ Employers: Focus on what you’ve accomplished, highlight - your skills, the tec
 
 ## Team Members
 - Olivier-Benoit Girard
+
 [Github](https://github.com/girOly)
+
 - Robin Webber
+
 [Github](https://github.com/robinWebber)
