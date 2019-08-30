@@ -6,7 +6,7 @@
 
 ### Gender:
 
-Any
+Male/Female
 
 ### Location:
 
