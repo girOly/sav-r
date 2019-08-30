@@ -21,7 +21,7 @@ Users: 18-34 years old, lives in Canada, knows they need a way to track spending
 node.js Express
 React.js
 SASS
-placeholder front end desgin framework
+placeholder front end design framework
 PostgreSQL
 HTML 5
 
