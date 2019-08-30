@@ -3,8 +3,16 @@ exports.up = function(knex) {
     table.increments("id").primary();
     table.integer("total_cents");
     table.string("comments");
-    table.foreign("budget_id").references("budgets.id");
-    table.foreign("category_id").references("categories.id");
+    table.integer("budget_id");
+    table
+      .foreign("budget_id")
+      .references("budgets.id")
+      .onDelete("CASCADE");
+    table.integer("category_id");
+    table
+      .foreign("category_id")
+      .references("categories.id")
+      .onDelete("CASCADE");
   });
 };
 

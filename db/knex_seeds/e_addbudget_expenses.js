@@ -8,7 +8,7 @@ exports.seed = function(knex) {
       return knex("budget_expenses").insert([
         {
           total_cents: 500,
-          comment: "is that forty bucks or something",
+          comments: "is that forty bucks or something",
           budget_id: 1,
           category_id: 1
         }

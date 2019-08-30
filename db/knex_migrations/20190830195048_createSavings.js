@@ -4,7 +4,11 @@ exports.up = function(knex) {
     table.string("name");
     table.integer("target");
     table.integer("progress");
-    table.foreign("user_id").references("users.id");
+    table.integer("user_id");
+    table
+      .foreign("user_id")
+      .references("users.id")
+      .onDelete("CASCADE");
   });
 };
 
