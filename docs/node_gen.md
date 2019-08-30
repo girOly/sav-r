@@ -40,7 +40,7 @@
 
 -   create-react-app client
 -   clean up initial react page
--   Make basic HTML to test (<h1> <ul>)
+-   Make basic HTML to test
 -   Create hooks folder
 -   useApplicationData.js - Import UseEffect from React
 -   Npm Install Axios and import Axios from axios
