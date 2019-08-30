@@ -154,6 +154,9 @@ Back-end Implementation: Budget Database
 
 Feature: User Goals
 
+
+
+<!-- Stretch, Depending on Deadline -->
 ## Savings account with interest calculator (Stretch)
 
 Front-end Requirement: User Input
