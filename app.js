@@ -9,6 +9,7 @@ require("dotenv").config();
 
 let indexRouter = require("./routes/index");
 let usersRouter = require("./routes/users");
+let imageUploadRouter = require("./routes/image-upload");
 
 let app = express();
 
@@ -26,6 +27,7 @@ app.use(
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/image-upload", imageUploadRouter);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 

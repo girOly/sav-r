@@ -3,7 +3,7 @@ const multer = require("multer");
 const multerS3 = require("multer-s3");
 require("dotenv").config();
 
-aws.congif.update({
+aws.config.update({
   secretAccessKey: process.env.AWS_SECRET_ACCESS,
   accessKeyId: process.env.AWS_ACCESS_KEY,
   region: "us-east-2"
