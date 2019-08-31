@@ -8,6 +8,7 @@
     "dev": "nodemon --exec npm start  "
   },
   "dependencies": {
+    "@google-cloud/vision": "^1.2.0",
     "aws-sdk": "^2.521.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
