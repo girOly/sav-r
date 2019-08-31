@@ -5,7 +5,7 @@ const upload = require("../services/image-upload");
 
 const singleUpload = upload.single("image");
 
-router.post("/image-upload", function(req, res) {
+router.post("/", function(req, res) {
   singleUpload(req, res, function(err) {
     return res.json({ image_url: req.file.location });
   });
