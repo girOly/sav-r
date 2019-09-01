@@ -2,7 +2,10 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3005",
   "dependencies": {
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "0.9.5"
@@ -10,6 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
+    "dev": "nodemon --exec npm start  ",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

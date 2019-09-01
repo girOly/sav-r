@@ -2,7 +2,7 @@
   "name": "sav-r",
   "version": "0.0.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3005",
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon --exec npm start  "
