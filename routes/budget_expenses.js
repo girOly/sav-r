@@ -5,13 +5,13 @@ let router = express.Router();
 
 module.exports = function(knex) {
   router.get("/", function(req, res, next) {
-    res.render("index", { title: "Users" });
+    res.render("index", { title: "Budget Expenses" });
   });
 
   router.get("/jao", function(req, res) {
     knex
       .select("*")
-      .from("users")
+      .from("budget_expenses")
       .then(result => {
         res.json(result);
       })
