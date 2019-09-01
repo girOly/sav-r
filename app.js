@@ -24,7 +24,7 @@ const client = new vision.ImageAnnotatorClient({
 // Performs label detection on the image file
 client
   .textDetection(
-    "https://savr-uploads.s3.us-east-2.amazonaws.com/1567284561410"
+    "https://savr-uploads.s3.us-east-2.amazonaws.com/1567300987578"
   )
   .then(results => {
     // const labels = results[0].labelAnnotations;
@@ -34,7 +34,7 @@ client
   .catch(err => {
     console.error("ERROR:", err);
   });
-
+// _______________________________________________________
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
