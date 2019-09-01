@@ -23,13 +23,13 @@ const client = new vision.ImageAnnotatorClient({
 
 // Performs label detection on the image file
 client
-  .labelDetection(
+  .textDetection(
     "https://savr-uploads.s3.us-east-2.amazonaws.com/1567284561410"
   )
   .then(results => {
-    const labels = results[0].labelAnnotations;
-    console.log("Labels:", results);
-    labels.forEach(label => console.log(label.description));
+    // const labels = results[0].labelAnnotations;
+    console.log("results", results);
+    // labels.forEach(label => console.log(label.description));
   })
   .catch(err => {
     console.error("ERROR:", err);
