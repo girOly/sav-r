@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+  <p>Isn't it great when the props are properly sent to: <%= title %></p>
+  <p>It's lots of fun at: <%= title %></p>
+  <p> We got lots of Buttons!! Click one, see if the Route actually Works </p>
+  <ul>
+    <li>
+      <form>
+      <button input="submit" type="button" class="btn btn-success" action="/api/budget" method="get">Budget</button>
+    </form>
+    </li>
+    <li>
+      <form>
+      <button input="submit" type="button" class="btn btn-success" action="/api/budget_expenses" method="get">Budget_Expenses</button>
+    </form>
+    </li>
+    <li>
+      <form>
+      <button input="submit" type="button" class="btn btn-success" action="/api/categories" method="get">Categories</button>
+    </form>
+    </li>
+    <li>
+      <form>
+      <button input="submit" type="button" class="btn btn-success" action="/api/index" method="get">Index</button>
+    </form>
+    </li>
+    <li>
+      <form>
+      <button input="submit" type="button" class="btn btn-success" action="/api/savings" method="get">Savings</button>
+    </form>
+    </li>
+    <li>
+      <form>
+      <button input="submit" type="button" class="btn btn-success" action="/api/stores" method="get">Stores</button>
+    </form>
+    </li>
+    <li>
+      <form>
+      <button input="submit" type="button" class="btn btn-success" action="/api/users" method="get">Users</button>
+    </form>
+    </li>
+  </ul>
+</body>
+
 </html>
