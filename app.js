@@ -6,6 +6,7 @@ let logger = require("morgan");
 const knexConfig = require("./knexfile");
 const knex = require("knex")(knexConfig["development"]);
 require("dotenv").config();
+const textExtraction = require("./services/google-ocr");
 
 let indexRouter = require("./routes/index");
 let usersRouter = require("./routes/users");
@@ -21,6 +22,9 @@ const client = new vision.ImageAnnotatorClient({
   keyFilename: "APIkey.json"
 });
 
+textExtraction({
+  image_url: "https://savr-uploads.s3.us-east-2.amazonaws.com/1567300987578"
+});
 // Performs label detection on the image file
 // client
 //   .textDetection(
