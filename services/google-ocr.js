@@ -6,10 +6,10 @@ const client = new vision.ImageAnnotatorClient({
   keyFilename: "APIkey.json"
 });
 
-const textExtraction = imageUrl => {
+const textExtraction = imageUrlObj => {
   // Performs label detection on the image file
   client
-    .textDetection(imageUrl.image_url)
+    .textDetection(imageUrlObj.image_url)
     .then(results => {
       // const labels = results[0].labelAnnotations;
       console.log("results", results);
