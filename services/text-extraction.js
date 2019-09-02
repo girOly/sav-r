@@ -13,12 +13,14 @@ const textExtraction = imageUrlObj => {
   return client
     .textDetection(imageUrlObj.image_url)
     .then(results => {
-      console.log("==========================");
+      console.log(results);
       let textBlocksArray = [];
       const textBlocks = results[0].textAnnotations;
       textBlocks.forEach(block => textBlocksArray.push(block.description));
       textBlocksArray.shift();
-      textParser(textBlocksArray, persistedURL.image_url);
+      values = textParser(textBlocksArray, persistedURL.image_url);
+      console.log(values);
+      return values;
     })
     .catch(err => {
       console.error("ERROR:", err);
