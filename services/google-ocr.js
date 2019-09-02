@@ -14,8 +14,11 @@ const textExtraction = imageUrlObj => {
       // console.log("results", results[0].textAnnotations);
       // console.log("results", results[0].textAnnotations);
       console.log("==========================");
-      const blocks = results[0].textAnnotations;
-      blocks.forEach(block => console.log(block.description));
+      let textBlocksArray = [];
+      const textBlocks = results[0].textAnnotations;
+      textBlocks.forEach(block => textBlocksArray.push(block.description));
+      textBlocksArray.shift();
+      console.dir(textBlocksArray, { maxArrayLength: null });
       // const labels = results[0].labelAnnotations;
       // labels.forEach(label => console.log(label.description));
     })
