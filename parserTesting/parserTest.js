@@ -12,9 +12,9 @@ const { timHortons, timHortons2 } = require("./test_data/timHortons");
 
 textParser(hM);
 textParser(iga);
-textParser(ikea);
-textParser(loblaws);
-textParser(metro);
-textParser(walmart);
-textParser(timHortons);
-textParser(timHortons2);
+// textParser(ikea);
+// textParser(loblaws);
+// textParser(metro);
+// textParser(walmart);
+// textParser(timHortons);
+// textParser(timHortons2);
