@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+const textExtraction = require("../services/text-extraction");
 
 const upload = require("../services/image-upload");
 

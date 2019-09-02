@@ -11,7 +11,8 @@ let imageUploadRouter = require("./routes/image-upload");
 let budget_expensesRouter = require("./routes/budget_expenses");
 let budgetRouter = require("./routes/budget");
 let categoriesRouter = require("./routes/categories");
-const textExtraction = require("./services/google-ocr");
+const textExtraction = require("./services/text-extraction");
+const textParser = require("./services/text-parser");
 let indexRouter = require("./routes/index");
 let savingsRouter = require("./routes/savings");
 let storesRouter = require("./routes/stores");
@@ -25,6 +26,12 @@ const vision = require("@google-cloud/vision");
 // Creates a client
 const client = new vision.ImageAnnotatorClient({
   keyFilename: "APIkey.json"
+});
+
+textExtraction({
+  image_url: "https://savr-uploads.s3.us-east-2.amazonaws.com/1567440239456"
+}).catch(error => {
+  console.log("err", error);
 });
 
 // view engine setup

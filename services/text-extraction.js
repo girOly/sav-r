@@ -1,5 +1,6 @@
 // Imports the Google Cloud client library
 const vision = require("@google-cloud/vision");
+const textParser = require("./text-parser");
 
 // Creates a client
 const client = new vision.ImageAnnotatorClient({
@@ -8,19 +9,16 @@ const client = new vision.ImageAnnotatorClient({
 
 const textExtraction = imageUrlObj => {
   // Performs label detection on the image file
-  client
+  let persistedURL = imageUrlObj;
+  return client
     .textDetection(imageUrlObj.image_url)
     .then(results => {
-      // console.log("results", results[0].textAnnotations);
-      // console.log("results", results[0].textAnnotations);
       console.log("==========================");
       let textBlocksArray = [];
       const textBlocks = results[0].textAnnotations;
       textBlocks.forEach(block => textBlocksArray.push(block.description));
       textBlocksArray.shift();
-      console.dir(textBlocksArray, { maxArrayLength: null });
-      // const labels = results[0].labelAnnotations;
-      // labels.forEach(label => console.log(label.description));
+      textParser(textBlocksArray, persistedURL.image_url);
     })
     .catch(err => {
       console.error("ERROR:", err);
