@@ -28,7 +28,7 @@ const client = new vision.ImageAnnotatorClient({
 });
 
 textExtraction({
-  image_url: "https://savr-uploads.s3.us-east-2.amazonaws.com/1567389457972"
+  image_url: "https://savr-uploads.s3.us-east-2.amazonaws.com/1567389653785"
 });
 // view engine setup
 app.use("/image-upload", imageUploadRouter);
