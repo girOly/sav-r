@@ -13,7 +13,6 @@ const textExtraction = imageUrlObj => {
   return client
     .textDetection(imageUrlObj.image_url)
     .then(results => {
-      console.log(results);
       let textBlocksArray = [];
       const textBlocks = results[0].textAnnotations;
       textBlocks.forEach(block => textBlocksArray.push(block.description));
