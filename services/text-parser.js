@@ -10,13 +10,14 @@ const textParser = (textArray, image_url) => {
   }
   let validateIsNumber = [];
   for (string of cleanedNumbers) {
-    console.log(Number.isInteger(string.charAt[3]));
+    // console.log(Number.isInteger(string.charAt[3]));
   }
   // ---------------
-  console.log("---");
-  console.log(cleanedNumbers);
-  console.log("&&&");
-  console.log(validateIsNumber);
-  console.log("///");
+  // console.log("---");
+  // console.log(cleanedNumbers);
+  // console.log("&&&");
+  // console.log(validateIsNumber);
+  // console.log("///");
+  return results;
 };
 module.exports = textParser;
