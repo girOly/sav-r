@@ -20,5 +20,3 @@ module.exports = function(knex) {
 
   return router;
 };
-
-module.exports = router;

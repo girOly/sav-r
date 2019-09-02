@@ -49,13 +49,13 @@ app.use(
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 // App use Routes
-app.use("/api/budget_expenses", budget_expensesRouter);
-app.use("/api/budget", budgetRouter);
-app.use("/api/categories", categoriesRouter);
+app.use("/api/budget_expenses", budget_expensesRouter(knex));
+app.use("/api/budget", budgetRouter(knex));
+app.use("/api/categories", categoriesRouter(knex));
 app.use("/", indexRouter);
-app.use("/api/savings", savingsRouter);
-app.use("/api/stores", storesRouter);
-app.use("/api/users", usersRouter);
+app.use("/api/savings", savingsRouter(knex));
+app.use("/api/stores", storesRouter(knex));
+app.use("/api/users", usersRouter(knex));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
