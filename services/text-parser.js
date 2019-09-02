@@ -1,4 +1,4 @@
 const textParser = textArray => {
-  console.log textArray[0];
+  console.log(textArray[0]);
 };
- module.exports = textParser;
+module.exports = textParser;

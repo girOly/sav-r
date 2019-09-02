@@ -27,9 +27,6 @@ const client = new vision.ImageAnnotatorClient({
   keyFilename: "APIkey.json"
 });
 
-textExtraction({
-  image_url: "https://savr-uploads.s3.us-east-2.amazonaws.com/1567390670093"
-});
 // view engine setup
 app.use("/image-upload", imageUploadRouter);
 app.set("views", path.join(__dirname, "views"));
