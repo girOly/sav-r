@@ -11,8 +11,12 @@ const textExtraction = imageUrlObj => {
   client
     .textDetection(imageUrlObj.image_url)
     .then(results => {
+      // console.log("results", results[0].textAnnotations);
+      // console.log("results", results[0].textAnnotations);
+      console.log("==========================");
+      const blocks = results[0].textAnnotations;
+      blocks.forEach(block => console.log(block.description));
       // const labels = results[0].labelAnnotations;
-      console.log("results", results);
       // labels.forEach(label => console.log(label.description));
     })
     .catch(err => {
