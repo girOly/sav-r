@@ -6,16 +6,13 @@ let logger = require("morgan");
 const knexConfig = require("./knexfile");
 const knex = require("knex")(knexConfig["development"]);
 require("dotenv").config();
-<<<<<<< HEAD
-const textExtraction = require("./services/google-ocr");
-
-=======
 // Route Declaration
 let budget_expensesRouter = require("./routes/budget_expenses");
 let budgetRouter = require("./routes/budget");
 let categoriesRouter = require("./routes/categories");
 let imageUploadRouter = require("./routes/image-upload");
->>>>>>> frontend/post
+const textExtraction = require("./services/google-ocr");
+
 let indexRouter = require("./routes/index");
 let savingsRouter = require("./routes/savings");
 let storesRouter = require("./routes/stores");
