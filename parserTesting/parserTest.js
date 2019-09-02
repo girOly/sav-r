@@ -1,3 +1,5 @@
+// Run this file from node to test parsing function, data can be fed to the parser from imports. Imports are arrays and are generated from api call results.
+
 const textParser = require("../services/text-parser");
 
 const hM = require("./test_data/hM");
