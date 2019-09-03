@@ -1,138 +1,146 @@
-// converts all strings in array to lowercase
-const toLowerCase = textArray => {
-  let lowercaseArr = [];
-  for (string of textArray) {
-    lowercaseArr.push(string.toLowerCase());
-  }
-  return lowercaseArr;
-};
+const parserHelpers = require("../helpers/parser-helpers");
 
-// determines if a purchase was made with cash
-const paidCash = textArray => {
-  if (textArray.includes("cash")) {
-    return true;
-  } else if (textArray.includes("balance:cad")) {
-    return true;
-  } else {
-    return false;
-  }
-};
+// // converts all strings in array to lowercase
+// const toLowerCase = textArray => {
+//   let lowercaseArr = [];
+//   for (string of textArray) {
+//     lowercaseArr.push(string.toLowerCase());
+//   }
+//   return lowercaseArr;
+// };
 
-// converts dashes to decimals
-const dashesToDecimals = textArray => {
-  let decimalArr = [];
+// // determines if a purchase was made with cash
+// const paidCash = textArray => {
+//   if (textArray.includes("cash")) {
+//     return true;
+//   } else if (textArray.includes("balance:cad")) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-  for (string of textArray) {
-    decimalArr.push(string.replace("-", "."));
-  }
+// // converts dashes to decimals
+// const dashesToDecimals = textArray => {
+//   let decimalArr = [];
 
-  return decimalArr;
-};
+//   for (string of textArray) {
+//     decimalArr.push(string.replace("-", "."));
+//   }
 
-// converts comas to decimals
-const comasToDecimals = textArray => {
-  let comalessArr = [];
+//   return decimalArr;
+// };
 
-  for (string of textArray) {
-    comalessArr.push(string.replace(",", "."));
-  }
+// // converts comas to decimals
+// const comasToDecimals = textArray => {
+//   let comalessArr = [];
 
-  return comalessArr;
-};
+//   for (string of textArray) {
+//     comalessArr.push(string.replace(",", "."));
+//   }
 
-// Selects all strings which include '.'
-const decimalSelector = textArray => {
-  let decimalArr = [];
-  for (string of textArray) {
-    if (string.includes(".")) {
-      decimalArr.push(string);
-    }
-  }
+//   return comalessArr;
+// };
 
-  return decimalArr;
-};
-// Filters symbols from strings, currently '$'
-const filterSymbols = textArray => {
-  let symbolessArr = [];
-  for (string of textArray) {
-    symbolessArr.push(string.replace("$", ""));
-  }
+// // Selects all strings which include '.'
+// const decimalSelector = textArray => {
+//   let decimalArr = [];
+//   for (string of textArray) {
+//     if (string.includes(".")) {
+//       decimalArr.push(string);
+//     }
+//   }
 
-  return symbolessArr;
-};
+//   return decimalArr;
+// };
+// // Filters symbols from strings, currently '$'
+// const filterSymbols = textArray => {
+//   let symbolessArr = [];
+//   for (string of textArray) {
+//     symbolessArr.push(string.replace("$", ""));
+//   }
 
-// Checks that the position of a decimal will leave a 2 float integer
-const decimalPositionCheck = textArray => {
-  let verifiedArr = [];
-  for (string of textArray) {
-    if (string.charAt(string.length - 3) === ".") {
-      verifiedArr.push(string);
-    }
-  }
+//   return symbolessArr;
+// };
 
-  return verifiedArr;
-};
+// // Checks that the position of a decimal will leave a 2 float integer
+// const decimalPositionCheck = textArray => {
+//   let verifiedArr = [];
+//   for (string of textArray) {
+//     if (string.charAt(string.length - 3) === ".") {
+//       verifiedArr.push(string);
+//     }
+//   }
 
-// Parses floats from strings, returns array of NUMBERS
-const extractFloat = textArray => {
-  let numbersArray = [];
-  for (string of textArray) {
-    numbersArray.push(parseFloat(string));
-  }
+//   return verifiedArr;
+// };
 
-  return numbersArray;
-};
+// // Parses floats from strings, returns array of NUMBERS
+// const extractFloat = textArray => {
+//   let numbersArray = [];
+//   for (string of textArray) {
+//     numbersArray.push(parseFloat(string));
+//   }
 
-//  Removes NaN from arrays, returns array of NUMBERS
-const nanFilter = numbersArray => {
-  let nanLess = [];
-  for (number of numbersArray) {
-    if (!isNaN(number)) {
-      nanLess.push(number);
-    }
-  }
-  return nanLess;
-};
+//   return numbersArray;
+// };
 
-// Returns the largest number in an array of numbers
-const returnLargestNum = numbersArray => {
-  let sortedNumbersArray = [];
+// //  Removes NaN from arrays, returns array of NUMBERS
+// const nanFilter = numbersArray => {
+//   let nanLess = [];
+//   for (number of numbersArray) {
+//     if (!isNaN(number)) {
+//       nanLess.push(number);
+//     }
+//   }
+//   return nanLess;
+// };
 
-  sortedNumbersArray = numbersArray.sort((a, b) => a - b);
+// // Returns the largest number in an array of numbers
+// const returnLargestNum = numbersArray => {
+//   let sortedNumbersArray = [];
 
-  return sortedNumbersArray[sortedNumbersArray.length - 1];
-};
+//   sortedNumbersArray = numbersArray.sort((a, b) => a - b);
 
-// Returns second largest numbers in array of numbers
+//   return sortedNumbersArray[sortedNumbersArray.length - 1];
+// };
 
-const returnSecondLargestNum = numbersArray => {
-  let sortedNumbersArray = [];
+// // Returns second largest numbers in array of numbers
 
-  sortedNumbersArray = numbersArray.sort((a, b) => a - b);
+// const returnSecondLargestNum = numbersArray => {
+//   let sortedNumbersArray = [];
 
-  return sortedNumbersArray[sortedNumbersArray.length - 2];
-};
+//   sortedNumbersArray = numbersArray.sort((a, b) => a - b);
+
+//   return sortedNumbersArray[sortedNumbersArray.length - 2];
+// };
 
 // Finds the total cost of a purchase in a receipt
 const totalFinder = textArray => {
-  let lowercaseStrings = toLowerCase(textArray);
+  let lowercaseStrings = parserHelpers.toLowerCase(textArray);
 
-  let cash = paidCash(lowercaseStrings);
+  let cash = parserHelpers.paidCash(lowercaseStrings);
 
-  let noCommas = comasToDecimals(lowercaseStrings);
-  let noDashes = dashesToDecimals(noCommas);
-  let decimalSelected = decimalSelector(noDashes);
+  let noCommas = parserHelpers.comasToDecimals(lowercaseStrings);
 
-  let symbolsRemoved = filterSymbols(decimalSelected);
+  let noDashes = parserHelpers.dashesToDecimals(noCommas);
 
-  let twoFloatDecimal = decimalPositionCheck(symbolsRemoved);
+  let decimalSelected = parserHelpers.decimalSelector(noDashes);
 
-  let floatIntergers = extractFloat(twoFloatDecimal);
-  let nanRemoved = nanFilter(floatIntergers);
-  let sortedFloatIntergers = returnLargestNum(nanRemoved);
-  let paidCash = returnSecondLargestNum(nanRemoved);
+  let symbolsRemoved = parserHelpers.filterSymbols(decimalSelected);
+
+  let twoFloatDecimal = parserHelpers.decimalPositionCheck(symbolsRemoved);
+
+  let floatIntergers = parserHelpers.extractFloat(twoFloatDecimal);
+
+  let nanRemoved = parserHelpers.nanFilter(floatIntergers);
+
+  let sortedFloatIntergers = parserHelpers.returnLargestNum(nanRemoved);
+
+  let secondHighest = parserHelpers.returnSecondLargestNum(nanRemoved);
+
   if (cash === true) {
-    return paidCash;
+    return secondHighest;
   } else {
     return sortedFloatIntergers;
   }
@@ -147,6 +155,7 @@ const textParser = (textArray, image_url) => {
   };
 
   // provision nameFinder function
+
   results.store = textArray[0];
 
   // totalFinder
