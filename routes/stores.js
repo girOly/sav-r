@@ -10,7 +10,7 @@ module.exports = function(knex) {
 
   router.get("/jao", function(req, res) {
     knex
-      .select("*")
+      .select("name")
       .from("stores")
       .then(result => {
         res.json(result);
