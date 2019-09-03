@@ -1,12 +1,33 @@
 // First Step
-const comaConverter = textArray => {
-  let comalessArr = [];
-  // finds every coma in array of strings
-  // converts coma into period (.replace)
-  // returns modified array of text
-  return comalessArr;
+const toLowerCase = textArray => {
+  let lowercaseArr = [];
+  // let lowercaseArr = textArray.toLowerCase();
+  for (string of textArray) {
+    lowercaseArr.push(string.toLowerCase());
+  }
+  // convert it all to lowercase
+  // return textArray
+  return lowercaseArr;
 };
+
 // Second Step
+const cashFilter = tobeDetermined => {
+  // If the Word CASH shows up on Receipts
+  // Set Cash Bolean to TRUE
+};
+// Third Step
+const comaConverter = textArray => {
+  //   let comalessArr = [];
+  //   // finds every coma in array of strings
+  //   let comalessArr = textArray.forEach((string) {
+  //     string.replace(',', '.')
+  //   })
+  //   }
+  //   // converts coma into period (.replace)
+  //   // returns modified array of text
+  //   return comalessArr;
+};
+// Fourth Step
 const decimalSelector = textArray => {
   let decimalArr = [];
   // .includes(string with a dot)
@@ -15,7 +36,7 @@ const decimalSelector = textArray => {
   // returns modified array
   return decimalArr;
 };
-// Third Step
+// Fifth Step
 const filterSymbols = textArray => {
   let symbolessArr = [];
   // Could be a switch case?
@@ -23,7 +44,7 @@ const filterSymbols = textArray => {
   // Find and remove symbols from the Data, plug er into the output
   return symbolessArr;
 };
-// Fourth Step
+// Sixth Step
 const decimalPositionCheck = textArray => {
   let verifiedArr = [];
   // it checks that the decimal is in the right position
@@ -31,26 +52,37 @@ const decimalPositionCheck = textArray => {
   // outputs the "Number"/String array
   return verifiedArr;
 };
-// Fifth Step
+// Seventh Step
 const parseInt = textArray => {
   let numbersArray = [];
   // Push em all into an array of NUMBERS (not strings)
   // Return array of numbers
   return numbersArray;
 };
-// Sixth Step
+// Eighth Step
 const returnLargestNum = numbersArray => {
   // Takes numbersArray
   // Sorts by ascending, takes .length -1 and returns it to the front end
 };
-const cashFilter = tobeDetermined => {
-  // If the Word CASH shows up on Receipts
-  // Return the Second Largest Number
-  // --------------------------------
+
+const totalFinder = textArray => {
+  let cash = false;
+  let lowercaseStrings = toLowerCase(textArray);
+
+  let noCommas = comaConverter(textArray);
+
+  let withDecimals = decimalSelector(noCommas);
+
+  return lowercaseStrings;
 };
+
 const textParser = (textArray, image_url) => {
+  // add values that need to be returned in the same format as below
   let results = { image_url: image_url, store: "unknown", total: "unknown" };
+
+  // provision nameFinder function
   results.store = textArray[0];
+
   // ---------------
   // let cleanedNumbers = [];
   // for (string of textArray) {
@@ -84,4 +116,7 @@ const textParser = (textArray, image_url) => {
   // console.log("///");
   return results;
 };
+
+console.log(toLowerCase(["JAO", "joA"]));
+
 module.exports = textParser;
