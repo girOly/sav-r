@@ -23,19 +23,31 @@ const cashFilter = textArray => {
 };
 // Third Step
 const comaConverter = textArray => {
-  //   let comalessArr = [];
+  let comalessArr = [];
+
+  // let removeComa = string => string.forEach.replace(",", ".");
+
+  // comalessArr = removeComa(textArray);
   //   // finds every coma in array of strings
-  //   let comalessArr = textArray.forEach((string) {
-  //     string.replace(',', '.')
-  //   })
-  //   }
+  for (string of textArray) {
+    comalessArr.push(string.replace(",", "."));
+  }
+
   //   // converts coma into period (.replace)
   //   // returns modified array of text
-  //   return comalessArr;
+  return comalessArr;
 };
 // Fourth Step
 const decimalSelector = textArray => {
+  // let decimalArr = textArray.filter(string => {
+  //   string.includes(".");
+  // });
   let decimalArr = [];
+  for (string of textArray) {
+    if (string.includes(".")) {
+      decimalArr.push(string);
+    }
+  }
   // .includes(string with a dot)
   // if true?
   // push into the output
@@ -45,14 +57,23 @@ const decimalSelector = textArray => {
 // Fifth Step
 const filterSymbols = textArray => {
   let symbolessArr = [];
+  for (string of textArray) {
+    symbolessArr.push(string.replace("$", ""));
+  }
   // Could be a switch case?
   // if position at .this, remove
   // Find and remove symbols from the Data, plug er into the output
+
   return symbolessArr;
 };
 // Sixth Step
 const decimalPositionCheck = textArray => {
   let verifiedArr = [];
+  for (string of textArray) {
+    if (string.charAt(string.length - 3) === ".") {
+      verifiedArr.push(string);
+    }
+  }
   // it checks that the decimal is in the right position
   // pushes the true, ignores false
   // outputs the "Number"/String array
@@ -76,11 +97,16 @@ const totalFinder = textArray => {
 
   let cash = cashFilter(lowercaseStrings);
 
-  // let noCommas = comaConverter(textArray);
+  let noCommas = comaConverter(lowercaseStrings);
 
+  let decimalSelected = decimalSelector(noCommas);
   // let withDecimals = decimalSelector(noCommas);
 
-  return cash;
+  let symbolsRemoved = filterSymbols(decimalSelected);
+
+  let twoFloatDecimal = decimalPositionCheck(symbolsRemoved);
+
+  return twoFloatDecimal;
 };
 
 const textParser = (textArray, image_url) => {
