@@ -14,6 +14,8 @@ const toLowerCase = textArray => {
 const cashFilter = textArray => {
   if (textArray.includes("cash")) {
     return true;
+  } else if (textArray.includes("balance:cad")) {
+    return true;
   } else {
     return false;
   }
@@ -22,6 +24,23 @@ const cashFilter = textArray => {
   // Set Cash Bolean to TRUE
 };
 // Third Step
+
+const decimalConverter = textArray => {
+  let decimalArr = [];
+
+  // let removeComa = string => string.forEach.replace(",", ".");
+
+  // comalessArr = removeComa(textArray);
+  //   // finds every coma in array of strings
+  for (string of textArray) {
+    decimalArr.push(string.replace("-", "."));
+  }
+
+  //   // converts coma into period (.replace)
+  //   // returns modified array of text
+  return decimalArr;
+};
+
 const comaConverter = textArray => {
   let comalessArr = [];
 
@@ -106,7 +125,19 @@ const returnLargestNum = numbersArray => {
 
   sortedNumbersArray = numbersArray.sort((a, b) => a - b);
 
-  return sortedNumbersArray;
+  return sortedNumbersArray[sortedNumbersArray.length - 1];
+  // Takes numbersArray
+  // Sorts by ascending, takes .length -1 and returns it to the front end
+};
+
+// Tenth Step
+
+const returnSecondLargestNum = numbersArray => {
+  let sortedNumbersArray = [];
+
+  sortedNumbersArray = numbersArray.sort((a, b) => a - b);
+
+  return sortedNumbersArray[sortedNumbersArray.length - 2];
   // Takes numbersArray
   // Sorts by ascending, takes .length -1 and returns it to the front end
 };
@@ -117,8 +148,8 @@ const totalFinder = textArray => {
   let cash = cashFilter(lowercaseStrings);
 
   let noCommas = comaConverter(lowercaseStrings);
-
-  let decimalSelected = decimalSelector(noCommas);
+  let noDashes = decimalConverter(noCommas);
+  let decimalSelected = decimalSelector(noDashes);
   // let withDecimals = decimalSelector(noCommas);
 
   let symbolsRemoved = filterSymbols(decimalSelected);
@@ -128,8 +159,12 @@ const totalFinder = textArray => {
   let floatIntergers = extractFloat(twoFloatDecimal);
   let nanRemoved = nanFilter(floatIntergers);
   let sortedFloatIntergers = returnLargestNum(nanRemoved);
-
-  return sortedFloatIntergers;
+  let paidCash = returnSecondLargestNum(nanRemoved);
+  if (cash === true) {
+    return paidCash;
+  } else {
+    return sortedFloatIntergers;
+  }
 };
 
 const textParser = (textArray, image_url) => {

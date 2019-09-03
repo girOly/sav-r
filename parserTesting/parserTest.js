@@ -23,7 +23,7 @@ console.log(textParser(loblaws));
 console.log("expect: 7.77");
 console.log("=====================");
 console.log(textParser(timHortons));
-console.log("expect: 7.77");
+console.log("expect: 5.39");
 // ----------------------------------------------------------------------------
 // textParser(ikea);
 // textParser(loblaws);  // let cleanedNumbers = [];
