@@ -26,56 +26,42 @@ const dashesToDecimals = textArray => {
     decimalArr.push(string.replace("-", "."));
   }
 
-  //   // converts coma into period (.replace)
-  //   // returns modified array of text
   return decimalArr;
 };
 
+// converts comas to decimals
 const comasToDecimals = textArray => {
   let comalessArr = [];
 
-  // let removeComa = string => string.forEach.replace(",", ".");
-
-  // comalessArr = removeComa(textArray);
-  //   // finds every coma in array of strings
   for (string of textArray) {
     comalessArr.push(string.replace(",", "."));
   }
 
-  //   // converts coma into period (.replace)
-  //   // returns modified array of text
   return comalessArr;
 };
-// Fourth Step
+
+// Selects all strings which include '.'
 const decimalSelector = textArray => {
-  // let decimalArr = textArray.filter(string => {
-  //   string.includes(".");
-  // });
   let decimalArr = [];
   for (string of textArray) {
     if (string.includes(".")) {
       decimalArr.push(string);
     }
   }
-  // .includes(string with a dot)
-  // if true?
-  // push into the output
-  // returns modified array
+
   return decimalArr;
 };
-// Fifth Step
+// Filters symbols from strings, currently '$'
 const filterSymbols = textArray => {
   let symbolessArr = [];
   for (string of textArray) {
     symbolessArr.push(string.replace("$", ""));
   }
-  // Could be a switch case?
-  // if position at .this, remove
-  // Find and remove symbols from the Data, plug er into the output
 
   return symbolessArr;
 };
-// Sixth Step
+
+// Checks that the position of a decimal will leave a 2 float integer
 const decimalPositionCheck = textArray => {
   let verifiedArr = [];
   for (string of textArray) {
@@ -83,22 +69,21 @@ const decimalPositionCheck = textArray => {
       verifiedArr.push(string);
     }
   }
-  // it checks that the decimal is in the right position
-  // pushes the true, ignores false
-  // outputs the "Number"/String array
+
   return verifiedArr;
 };
-// Seventh Step
+
+// Parses floats from strings, returns array of NUMBERS
 const extractFloat = textArray => {
   let numbersArray = [];
   for (string of textArray) {
     numbersArray.push(parseFloat(string));
   }
-  // Push em all into an array of NUMBERS (not strings)
-  // Return array of numbers
+
   return numbersArray;
 };
-//  Eighth Step
+
+//  Removes NaN from arrays, returns array of NUMBERS
 const nanFilter = numbersArray => {
   let nanLess = [];
   for (number of numbersArray) {
@@ -109,18 +94,16 @@ const nanFilter = numbersArray => {
   return nanLess;
 };
 
-// Ninth Step
+// Returns the largest number in an array of numbers
 const returnLargestNum = numbersArray => {
   let sortedNumbersArray = [];
 
   sortedNumbersArray = numbersArray.sort((a, b) => a - b);
 
   return sortedNumbersArray[sortedNumbersArray.length - 1];
-  // Takes numbersArray
-  // Sorts by ascending, takes .length -1 and returns it to the front end
 };
 
-// Tenth Step
+// Returns second largest numbers in array of numbers
 
 const returnSecondLargestNum = numbersArray => {
   let sortedNumbersArray = [];
@@ -128,10 +111,9 @@ const returnSecondLargestNum = numbersArray => {
   sortedNumbersArray = numbersArray.sort((a, b) => a - b);
 
   return sortedNumbersArray[sortedNumbersArray.length - 2];
-  // Takes numbersArray
-  // Sorts by ascending, takes .length -1 and returns it to the front end
 };
 
+// Finds the total cost of a purchase in a receipt
 const totalFinder = textArray => {
   let lowercaseStrings = toLowerCase(textArray);
 
@@ -170,37 +152,7 @@ const textParser = (textArray, image_url) => {
   // totalFinder
 
   results.total = totalFinder(textArray);
-  // ---------------
-  // let cleanedNumbers = [];
-  // for (string of textArray) {
-  //   if (string.includes(".")) {
-  //     cleanedNumbers.push(string);
-  //   }
-  // }
-  // let validateIsNumber = [];
-  // for (string of cleanedNumbers) {
-  //   // console.log(Number.isInteger(string.charAt[3]));
-  //   let noCash = string.replace("$", "");
-  //   let noComa = noCash.replace(",", "");
-  //   // console.log(noComa);
-  //   // console.log(Number.isInteger(noComa));
-  //
-  //   function isInt(n) {
-  //     return n % 1 === 0;
-  //   }
-  //
-  //   function isFloat(n) {
-  //     return Number(n) === n && n % 1 !== 0;
-  //   }
-  //
-  //   console.log(isFloat(noComa));
-  // }
-  // ---------------
-  // console.log("---");
-  // console.log(cleanedNumbers);
-  // console.log("&&&");
-  // console.log(validateIsNumber);
-  // console.log("///");
+
   return results;
 };
 
