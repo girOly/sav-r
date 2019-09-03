@@ -80,8 +80,11 @@ const decimalPositionCheck = textArray => {
   return verifiedArr;
 };
 // Seventh Step
-const parseInt = textArray => {
+const extractFloat = textArray => {
   let numbersArray = [];
+  for (string of textArray) {
+    numbersArray.push(parseFloat(string));
+  }
   // Push em all into an array of NUMBERS (not strings)
   // Return array of numbers
   return numbersArray;
@@ -106,7 +109,9 @@ const totalFinder = textArray => {
 
   let twoFloatDecimal = decimalPositionCheck(symbolsRemoved);
 
-  return twoFloatDecimal;
+  let floatIntergers = extractFloat(twoFloatDecimal);
+
+  return floatIntergers;
 };
 
 const textParser = (textArray, image_url) => {
