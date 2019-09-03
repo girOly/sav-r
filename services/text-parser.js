@@ -89,8 +89,24 @@ const extractFloat = textArray => {
   // Return array of numbers
   return numbersArray;
 };
-// Eighth Step
+//  Eighth Step
+const nanFilter = numbersArray => {
+  let nanLess = [];
+  for (number of numbersArray) {
+    if (!isNaN(number)) {
+      nanLess.push(number);
+    }
+  }
+  return nanLess;
+};
+
+// Ninth Step
 const returnLargestNum = numbersArray => {
+  let sortedNumbersArray = [];
+
+  sortedNumbersArray = numbersArray.sort((a, b) => a - b);
+
+  return sortedNumbersArray;
   // Takes numbersArray
   // Sorts by ascending, takes .length -1 and returns it to the front end
 };
@@ -110,13 +126,19 @@ const totalFinder = textArray => {
   let twoFloatDecimal = decimalPositionCheck(symbolsRemoved);
 
   let floatIntergers = extractFloat(twoFloatDecimal);
+  let nanRemoved = nanFilter(floatIntergers);
+  let sortedFloatIntergers = returnLargestNum(nanRemoved);
 
-  return floatIntergers;
+  return sortedFloatIntergers;
 };
 
 const textParser = (textArray, image_url) => {
   // add values that need to be returned in the same format as below
-  let results = { image_url: image_url, store: "unknown", total: "unknown" };
+  let results = {
+    image_url: image_url,
+    store: "unknown",
+    total: "unknown"
+  };
 
   // provision nameFinder function
   results.store = textArray[0];
