@@ -11,7 +11,13 @@ const toLowerCase = textArray => {
 };
 
 // Second Step
-const cashFilter = tobeDetermined => {
+const cashFilter = textArray => {
+  if (textArray.includes("cash")) {
+    return true;
+  } else {
+    return false;
+  }
+
   // If the Word CASH shows up on Receipts
   // Set Cash Bolean to TRUE
 };
@@ -66,14 +72,15 @@ const returnLargestNum = numbersArray => {
 };
 
 const totalFinder = textArray => {
-  let cash = false;
   let lowercaseStrings = toLowerCase(textArray);
 
-  let noCommas = comaConverter(textArray);
+  let cash = cashFilter(lowercaseStrings);
 
-  let withDecimals = decimalSelector(noCommas);
+  // let noCommas = comaConverter(textArray);
 
-  return lowercaseStrings;
+  // let withDecimals = decimalSelector(noCommas);
+
+  return cash;
 };
 
 const textParser = (textArray, image_url) => {
@@ -83,6 +90,9 @@ const textParser = (textArray, image_url) => {
   // provision nameFinder function
   results.store = textArray[0];
 
+  // totalFinder
+
+  results.total = totalFinder(textArray);
   // ---------------
   // let cleanedNumbers = [];
   // for (string of textArray) {
@@ -116,7 +126,5 @@ const textParser = (textArray, image_url) => {
   // console.log("///");
   return results;
 };
-
-console.log(toLowerCase(["JAO", "joA"]));
 
 module.exports = textParser;

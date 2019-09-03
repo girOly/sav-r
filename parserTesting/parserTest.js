@@ -1,7 +1,6 @@
 // Run this file from node to test parsing function, data can be fed to the parser from imports. Imports are arrays and are generated from api call results.
 
 const textParser = require("../services/text-parser");
-
 const hM = require("./test_data/hM");
 const iga = require("./test_data/iga");
 const ikea = require("./test_data/ikea");
@@ -25,7 +24,7 @@ console.log("expect: 7.77");
 console.log("=====================");
 console.log(textParser(timHortons));
 console.log("expect: 7.77");
-
+// ----------------------------------------------------------------------------
 // textParser(ikea);
 // textParser(loblaws);  // let cleanedNumbers = [];
 // for (string of textArray) {
