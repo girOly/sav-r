@@ -10,6 +10,14 @@ Back-end Implementation: User Database, Hashed Passwords
 
 Feature: Register User
 
+DB:
+
+INSERT into USERS,
+
+- Name
+- Password
+- Email
+
 ## User should be able to Login and Log Out
 
 as a User i want to be able to securely Log In and Log out from the website.
@@ -22,17 +30,10 @@ Back-end Implementation: User Database, Authentication
 
 Feature: Login and Logout
 
-## User should be able to configure personal budget settings
-
-As a User i want to be able to personalize my budget in order to properly manage my priorities
-
-Front-end Requirement: Budget setting input
-
-User Experience Implementation: Setting Check-boxes, Cancel Button, Confirm Button
-
-Back-end Implementation: User Database, State
-
-Feature: Setup Personal Settings/Options
+DB:
+GET
+Findby(Users.Email)
+Bcrypt Password Authentication function
 
 ## User should be able to input their Monthly Income
 
@@ -46,6 +47,11 @@ Back-end Implementation: Budget Database
 
 Feature: Monthly Income
 
+DB:
+INSERT into Budget
+
+- Income
+
 ## User should be able to input their Monthly Expenses
 
 As a User i want to be able to accurately input my monthly expenses in order to propagate valid budget information
@@ -58,17 +64,16 @@ Back-end Implementation: Budget Database
 
 Feature: Monthly Expenses
 
-## User should be able to create a savings plan for a predetermined goal (Stretch)
+DB:
+Insert into Categories
 
-As a User i want to be able to personalize a savings plan to take advantage of my left over funds from my Budget
-
-Front-end Requirement: TBD
-
-User Experience Implementation: TBD
-
-Back-end Implementation: TBD
-
-Feature: Savings Plan
+- Name (Monthly Expenses)
+  JOIN
+  Categories on budget_expenses categories.categoryID = categoryID
+  INSERT
+- Total_cents
+- Comment
+  JOIN Budget Expenses on budget_expenses.budgetId = budgetId
 
 ## User should be able to upload an image of their Receipt
 
@@ -82,6 +87,21 @@ Back-end Implementation: Image Database
 
 Feature: Upload Receipt
 
+DB:
+Insert into Receipts
+
+- image_url
+- Total_cents
+- timestamp
+  JOIN
+  Stores on receipts stores.storeID = storeID
+  JOIN
+  budget_expenses on receipts budget_expenses.budgetexpenseID = budgetexpenseID
+  INSERT
+- Total_cents
+- Comment
+  JOIN Budget Expenses on budget_expenses.budgetId = budgetId
+
 ## User should be able to categorize their Receipt Uploads
 
 As a User i want to be able to categorize my receipt archive in order to easily manage my uploads
@@ -94,9 +114,13 @@ Back-end Implementation: Google Vision OCR Api, Categorization Function off of A
 
 Feature: Machine Learning Categorization
 
-## User should be able to Edit their Budget Settings
+DB:
 
-As a User i want to be able to dynamically modify my budget settings based off of my changing lifestyle
+reference Upload Receipt
+
+## User should be able to Edit their Budget Expenses
+
+As a User i want to be able to dynamically modify my budget expenses based off of missed inputted information
 
 Front-end Requirement: Edit transition
 
@@ -105,6 +129,14 @@ User Experience Implementation: Edit allocations input, Input Field, Cancel Butt
 Back-end Implementation: Update query to Budget Database
 
 Feature: Edit Budget allocations
+
+DB:
+
+UPDATE
+
+Category join budget_expenses
+
+- Total_cents
 
 ## User should be able to visualize and easily access their Budget information
 
@@ -118,6 +150,12 @@ Back-end Implementation: Google Charts API
 
 Feature: Overview Charts
 
+DB:
+Get
+SELECT "_" from "_"
+
+Pass to Google Charts
+
 ## User should be able to revisit and download their Receipt Archive
 
 As a User i want to be able to revisit and download my past receipts in order to properly track my past expenses
@@ -129,20 +167,11 @@ User Experience Implementation: View Archives button
 Back-end Implementation: DB Query Search
 
 Feature: Receipt Search
+DB:
+Get
+SELECT "\_" from Receipts
 
-## User should be able to search their Receipt Archive by Category (Stretch)
-
-As a User i want to be able to access and search my past receipts per category in order to reduce an unnecessary query
-
-Front-end Requirement: TBD
-
-User Experience Implementation: TBD
-
-Back-end Implementation: Db Query Search
-
-Feature: Search Receipts by Category
-
-## User should be able to manually create Saving Goals
+## User should be able to manually create Saving Goals (First Stretch)
 
 As a User i want to be able to create and manage a specified goal for my Savings in order to personalize my saving goals
 
@@ -154,9 +183,8 @@ Back-end Implementation: Budget Database
 
 Feature: User Goals
 
-
-
 <!-- Stretch, Depending on Deadline -->
+
 ## Savings account with interest calculator (Stretch)
 
 Front-end Requirement: User Input
@@ -186,3 +214,27 @@ User Experience Implementation: TBD
 Back-end Implementation: TBD
 
 Feature: Goal Tracker
+
+## User should be able to create a savings plan for a predetermined goal (Stretch)
+
+As a User i want to be able to personalize a savings plan to take advantage of my left over funds from my Budget
+
+Front-end Requirement: TBD
+
+User Experience Implementation: TBD
+
+Back-end Implementation: TBD
+
+Feature: Savings Plan
+
+## User should be able to search their Receipt Archive by Category (Stretch)
+
+As a User i want to be able to access and search my past receipts per category in order to reduce an unnecessary query
+
+Front-end Requirement: TBD
+
+User Experience Implementation: TBD
+
+Back-end Implementation: Db Query Search
+
+Feature: Search Receipts by Category
