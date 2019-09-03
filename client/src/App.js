@@ -1,11 +1,15 @@
 import React from "react";
 import "./App.css";
-import Menu from "../src/components/menu";
-import Inputo from "../src/components/Inputo";
+import Menu from "./components/Menu";
+import Uploader from "./components/Uploader";
 import useApplicationData from "./hooks/useApplicationData";
 function App() {
-  return <Menu />, <Inputo />;
-  // return <Inputo />;
+  return (
+    <div>
+      <Menu />
+      <Uploader />
+    </div>
+  );
 }
 
 export default App;

@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Inputo(props) {
+export default function Uploader(props) {
   return (
     <div className="input-group">
-      <h1>Maybe if we ask politely, the Uploader might just work</h1>
+      <h1>Uploader Component</h1>
       <div className="input-group-prepend">
         <span className="input-group-text" id="inputGroupFileAddon01">
           Upload
