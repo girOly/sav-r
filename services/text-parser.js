@@ -1,17 +1,14 @@
-// First Step
+// converts all strings in array to lowercase
 const toLowerCase = textArray => {
   let lowercaseArr = [];
-  // let lowercaseArr = textArray.toLowerCase();
   for (string of textArray) {
     lowercaseArr.push(string.toLowerCase());
   }
-  // convert it all to lowercase
-  // return textArray
   return lowercaseArr;
 };
 
-// Second Step
-const cashFilter = textArray => {
+// determines if a purchase was made with cash
+const paidCash = textArray => {
   if (textArray.includes("cash")) {
     return true;
   } else if (textArray.includes("balance:cad")) {
@@ -19,19 +16,12 @@ const cashFilter = textArray => {
   } else {
     return false;
   }
-
-  // If the Word CASH shows up on Receipts
-  // Set Cash Bolean to TRUE
 };
-// Third Step
 
-const decimalConverter = textArray => {
+// converts dashes to decimals
+const dashesToDecimals = textArray => {
   let decimalArr = [];
 
-  // let removeComa = string => string.forEach.replace(",", ".");
-
-  // comalessArr = removeComa(textArray);
-  //   // finds every coma in array of strings
   for (string of textArray) {
     decimalArr.push(string.replace("-", "."));
   }
@@ -41,7 +31,7 @@ const decimalConverter = textArray => {
   return decimalArr;
 };
 
-const comaConverter = textArray => {
+const comasToDecimals = textArray => {
   let comalessArr = [];
 
   // let removeComa = string => string.forEach.replace(",", ".");
@@ -145,12 +135,11 @@ const returnSecondLargestNum = numbersArray => {
 const totalFinder = textArray => {
   let lowercaseStrings = toLowerCase(textArray);
 
-  let cash = cashFilter(lowercaseStrings);
+  let cash = paidCash(lowercaseStrings);
 
-  let noCommas = comaConverter(lowercaseStrings);
-  let noDashes = decimalConverter(noCommas);
+  let noCommas = comasToDecimals(lowercaseStrings);
+  let noDashes = dashesToDecimals(noCommas);
   let decimalSelected = decimalSelector(noDashes);
-  // let withDecimals = decimalSelector(noCommas);
 
   let symbolsRemoved = filterSymbols(decimalSelected);
 
