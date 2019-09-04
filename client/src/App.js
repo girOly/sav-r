@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Menu from "./components/Menu";
+// import Menu from "./components/Menu";
 import Uploader from "./components/Uploader";
 import Application from "./components/Application";
 import CreateBudget from "./components/Create-budget";
