@@ -5,10 +5,14 @@
   "proxy": "http://localhost:3005",
   "dependencies": {
     "axios": "^0.19.0",
+    "install": "^0.13.0",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.1",
+    "npm": "^6.11.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "0.9.5"
   },
   "devDependencies": {},

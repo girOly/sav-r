@@ -1,4 +1,5 @@
 import React from "react";
+import { Router, Route, Switch } from "react-router";
 import { useVisualMode } from "../hooks/useVisualMode";
 import Uploader from "./Uploader";
 import Menu from "./Menu";
@@ -11,7 +12,7 @@ export default function Application(props) {
   return (
     <React.Fragment>
       {mode === MENU && <Menu onUpload={() => transition(UPLOAD)} />}
-      {mode === UPLOAD && <Uploader />}
+      {mode === UPLOAD && <Uploader onMenu={() => transition(MENU)} />}
     </React.Fragment>
   );
 }

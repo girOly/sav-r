@@ -1,8 +1,10 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Uploader(props) {
   return (
     <div className="input-group">
+      <Link to="/">MENU</Link>
       <h1>Uploader Component</h1>
       <div className="input-group-prepend">
         <span className="input-group-text" id="inputGroupFileAddon01">
