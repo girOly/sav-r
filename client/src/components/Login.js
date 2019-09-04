@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
   console.log(email);
+
+  const register = email => {
+    return;
+    axios
+      .post("/api/users/register", {
+        email: email
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -17,7 +32,9 @@ export default function Login(props) {
         />
         password
         <input type="text" name="password" />
-        <button type="submit">Log In</button>
+        <button type="submit" onClick={event => register(email)}>
+          Log In
+        </button>
       </form>
       <button onClick={props.toRegister}>Take me to register</button>
     </div>
