@@ -11,7 +11,9 @@ import Overview from "./components/Overview";
 import AddReceipt from "./components/Add-receipt";
 import LoginRegister from "./components/Login-register";
 import useApplicationData from "./hooks/useApplicationData";
+
 function App() {
+  // state
   return (
     <Router>
       <Route path="/" exact component={Application} />
