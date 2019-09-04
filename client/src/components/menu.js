@@ -20,7 +20,7 @@ export default function Menu(props) {
           <Link to="/receipt_history/">RECEIPT HISTORY</Link>
         </section>
         <section className="menu-button">
-          <h1>OVERVIEW</h1>
+          <Link to="/overview/">OVERVIEW</Link>
         </section>
       </main>
     </React.Fragment>

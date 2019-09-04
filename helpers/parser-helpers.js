@@ -13,6 +13,8 @@ const paidCash = textArray => {
     return true;
   } else if (textArray.includes("balance:cad")) {
     return true;
+  } else if (textArray.includes("argent")) {
+    return true;
   } else {
     return false;
   }

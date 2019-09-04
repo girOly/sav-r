@@ -7,6 +7,7 @@ import Application from "./components/Application";
 import CreateBudget from "./components/Create-budget";
 import CreateExpense from "./components/Create-expense";
 import ReceiptHistory from "./components/Receipt-history";
+import Overview from "./components/Overview";
 import useApplicationData from "./hooks/useApplicationData";
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/create_budget/" component={CreateBudget} />
       <Route path="/create_expense/" component={CreateExpense} />
       <Route path="/receipt_history/" component={ReceiptHistory} />
+      <Route path="/overview/" component={Overview} />
     </Router>
   );
 }
