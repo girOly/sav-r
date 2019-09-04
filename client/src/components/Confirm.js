@@ -8,6 +8,8 @@ export default function Confirm(props) {
       <form>
         user comments
         <input type="text" name="comments" />
+        category
+        <input type="text" name="category" />
         <button type="submit">Submit</button>
       </form>
       <button>TAKE ME TO EDIT</button>
