@@ -20,8 +20,8 @@ exports.seed = function(knex) {
         },
         {
           total_cents: 2000,
-          comments: "Got a new soccer ball for jao",
-          budget_id: 2,
+          comments: "Got a new soccer ball for jr. jao",
+          budget_id: 1,
           category_id: 7
         },
         {
