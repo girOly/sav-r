@@ -5,7 +5,9 @@ let router = express.Router();
 
 module.exports = function(knex) {
   router.get("/", function(req, res, next) {
-    res.render("index", { title: "Users" });
+    res.render("index", {
+      title: "Users"
+    });
   });
 
   router.get("/jao", function(req, res) {
@@ -16,6 +18,20 @@ module.exports = function(knex) {
         res.json(result);
       })
       .catch(error => console.log(error));
+  });
+
+  router.post("/", function(req, res) {
+    knex("users")
+      .insert(req.body, ["id"])
+      .then(result => {
+        res.json(result);
+      })
+      .catch(error => console.log(error));
+    // req.body from front end = {
+    // {
+    //     	"name":   "oaj",
+    //      "password": aoj,
+    //      "email": "o@j.com",
   });
 
   return router;
