@@ -14,7 +14,7 @@ export default function Menu(props) {
           <Link to="/create_expense/">CREATE EXPENSE</Link>
         </section>
         <section className="menu-button">
-          <Link to="/upload/">UPLOAD RECEIPT</Link>
+          <Link to="/add_receipt/">ADD RECEIPT</Link>
         </section>
         <section className="menu-button">
           <Link to="/receipt_history/">RECEIPT HISTORY</Link>
