@@ -10,6 +10,7 @@ export default function LoginRegister(props) {
         <Link to="/">MENU</Link>
       </h1>
       <h1>Login/Register</h1>
+      <Login />
     </div>
   );
 }
