@@ -1,4 +1,6 @@
 import React from "react";
+import { useVisualMode } from "../hooks/useVisualMode";
+import Uploader from "./Uploader";
 
 export default function Menu(props) {
   return (
@@ -10,8 +12,8 @@ export default function Menu(props) {
         <section className="menu-button">
           <h1>CREATE EXPENSE</h1>
         </section>
-        <section className="menu-button">
-          <h1>UPLOAD RECEIPT</h1>
+        <section className="menu-button" onClick={props.onUpload}>
+          <h1 onClick={props.onUpload}>UPLOAD RECEIPT</h1>
         </section>
         <section className="menu-button">
           <h1>RECEIPT HISTORY</h1>
