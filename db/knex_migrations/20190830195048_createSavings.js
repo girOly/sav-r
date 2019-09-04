@@ -1,13 +1,13 @@
 exports.up = function(knex) {
   return knex.schema.createTable("savings", table => {
-    table.increments("savingID").primary();
+    table.increments("id").primary();
     table.string("name");
     table.integer("target");
     table.integer("progress");
-    table.integer("userID");
+    table.integer("user_id");
     table
-      .foreign("userID")
-      .references("users.userID")
+      .foreign("user_id")
+      .references("users.id")
       .onDelete("CASCADE");
   });
 };

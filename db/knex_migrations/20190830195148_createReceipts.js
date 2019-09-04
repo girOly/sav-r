@@ -1,18 +1,18 @@
 exports.up = function(knex) {
   return knex.schema.createTable("receipts", table => {
-    table.increments("receiptID").primary();
+    table.increments("id").primary();
     table.integer("total_cents");
     table.timestamp("time_stamp").defaultTo(knex.fn.now());
     table.string("image_url");
-    table.integer("storeID");
+    table.integer("store_id");
     table
-      .foreign("storeID")
-      .references("stores.storeID")
+      .foreign("store_id")
+      .references("stores.id")
       .onDelete("CASCADE");
-    table.integer("categoryID");
+    table.integer("category_id");
     table
-      .foreign("categoryID")
-      .references("categories.categoryID")
+      .foreign("category_id")
+      .references("categories.id")
       .onDelete("CASCADE");
   });
 };

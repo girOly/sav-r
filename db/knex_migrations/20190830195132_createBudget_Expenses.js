@@ -1,17 +1,17 @@
 exports.up = function(knex) {
   return knex.schema.createTable("budget_expenses", table => {
-    table.increments("budget_expenseID").primary();
+    table.increments("id").primary();
     table.integer("total_cents");
     table.string("comments");
-    table.integer("budgetID");
+    table.integer("budget_id");
     table
-      .foreign("budgetID")
-      .references("budgets.budgetID")
+      .foreign("budget_id")
+      .references("budgets.id")
       .onDelete("CASCADE");
-    table.integer("categoryID");
+    table.integer("category_id");
     table
-      .foreign("categoryID")
-      .references("categories.categoryID")
+      .foreign("category_id")
+      .references("categories.id")
       .onDelete("CASCADE");
   });
 };
