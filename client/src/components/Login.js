@@ -12,6 +12,7 @@ export default function Login(props) {
         <input type="text" name="password" />
         <button type="submit">Log In</button>
       </form>
+      <button onClick={props.toRegister}>Take me to register</button>
     </div>
   );
 }

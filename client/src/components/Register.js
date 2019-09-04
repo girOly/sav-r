@@ -6,12 +6,15 @@ export default function Register(props) {
     <div>
       <h1>REGISTER</h1>
       <form>
+        name
+        <input type="text" name="name" />
         email
         <input type="text" name="email" />
         password
         <input type="text" name="password" />
-        <button type="submit">Log In</button>
+        <button type="submit">Register</button>
       </form>
+      <button onClick={props.toLogin}>Take me to login</button>
     </div>
   );
 }
