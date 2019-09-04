@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Login(props) {
-  // [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
+  console.log(email);
 
   return (
     <div>
       <h1>LOGIN</h1>
-      <form>
+      <form onSubmit={event => event.preventDefault()}>
         email
-        <input type="text" name="email" />
+        <input
+          onChange={event => setEmail(event.target.value)}
+          type="text"
+          name="email"
+        />
         password
         <input type="text" name="password" />
         <button type="submit">Log In</button>
