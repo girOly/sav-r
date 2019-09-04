@@ -8,7 +8,7 @@ export default function Menu(props) {
     <React.Fragment>
       <main className="menu">
         <section className="menu-button">
-          <Link to="/create_budget/">CREATE A BUDGET</Link>
+          <Link to="/create_budget/">CREATE A NEW BUDGET</Link>
         </section>
         <section className="menu-button">
           <Link to="/create_expense/">CREATE EXPENSE</Link>
