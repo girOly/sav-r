@@ -25,7 +25,7 @@ exports.seed = function(knex) {
           name: "Clothing"
         },
         {
-          name: "Gift"
+          name: "Gifts"
         },
         {
           name: "Entertainment"
