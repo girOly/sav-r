@@ -18,5 +18,17 @@ module.exports = function(knex) {
       .catch(error => console.log(error));
   });
 
+  router.post("/", function(req, res) {
+    knex("stores")
+      .insert(req.body, ["id"])
+      .then(result => {
+        res.json(result);
+      })
+      .catch(error => console.log(error));
+    // req.body from front end = {
+    // {
+    //     	"name":   "[HAM, H&M]",
+  });
+
   return router;
 };
