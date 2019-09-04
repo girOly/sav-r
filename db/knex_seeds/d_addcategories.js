@@ -7,7 +7,28 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex("categories").insert([
         {
-          name: "groceries"
+          name: "Grocery"
+        },
+        {
+          name: "Housing"
+        },
+        {
+          name: "Restaurants"
+        },
+        {
+          name: "Medical"
+        },
+        {
+          name: "Transportation"
+        },
+        {
+          name: "Clothing"
+        },
+        {
+          name: "Holiday & Gifts"
+        },
+        {
+          name: "Entertainment"
         }
       ]);
     })
