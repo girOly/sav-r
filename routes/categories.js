@@ -24,7 +24,7 @@ module.exports = function(knex) {
         "budget_expenses.category_id"
       )
       .then(result => {
-        res.json(totalByCategory(result));
+        res.json(result);
       })
       .catch(error => console.log(error));
   });
