@@ -1,5 +1,6 @@
 let express = require("express");
 let router = express.Router();
+import totalByCategory from "../helpers/route-helpers";
 
 /* GET users listing. */
 
@@ -23,7 +24,7 @@ module.exports = function(knex) {
         "budget_expenses.category_id"
       )
       .then(result => {
-        res.json(result);
+        res.json(totalByCategory(result));
       })
       .catch(error => console.log(error));
   });
