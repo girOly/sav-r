@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Login(props) {
+  [email, setEmail] = useState("");
+
   return (
     <div>
       <h1>LOGIN</h1>
