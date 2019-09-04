@@ -10,8 +10,18 @@ module.exports = function(knex) {
 
   router.get("/jao", function(req, res) {
     knex
-      .select("name")
+      .select(
+        "name",
+        "total_cents",
+        "categories.id as category_id",
+        "budget_expenses.id as budget_expenses_id"
+      )
       .from("categories")
+      .innerJoin(
+        "budget_expenses",
+        "categories.id",
+        "budget_expenses.category_id"
+      )
       .then(result => {
         res.json(result);
       })

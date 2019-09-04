@@ -8,9 +8,39 @@ exports.seed = function(knex) {
       return knex("budget_expenses").insert([
         {
           total_cents: 500,
-          comments: "is that forty bucks or something",
+          comments: "dinner with rob",
           budget_id: 1,
-          category_id: 1
+          category_id: 3
+        },
+        {
+          total_cents: 1000,
+          comments: "got advils",
+          budget_id: 1,
+          category_id: 4
+        },
+        {
+          total_cents: 2000,
+          comments: "Got a new soccer ball for jao",
+          budget_id: 2,
+          category_id: 7
+        },
+        {
+          total_cents: 1000,
+          comments: "lunch meeting with bob",
+          budget_id: 1,
+          category_id: 3
+        },
+        {
+          total_cents: 5000,
+          comments: "Got a new Shirt",
+          budget_id: 1,
+          category_id: 6
+        },
+        {
+          total_cents: 4000,
+          comments: "New Shoes",
+          budget_id: 1,
+          category_id: 6
         }
       ]);
     })

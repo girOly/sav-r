@@ -7,7 +7,7 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex("categories").insert([
         {
-          name: "Grocery"
+          name: "Groceries"
         },
         {
           name: "Housing"
@@ -25,7 +25,7 @@ exports.seed = function(knex) {
           name: "Clothing"
         },
         {
-          name: "Holiday & Gifts"
+          name: "Gift"
         },
         {
           name: "Entertainment"
