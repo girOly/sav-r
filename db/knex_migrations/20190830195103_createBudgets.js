@@ -1,18 +1,18 @@
 exports.up = function(knex) {
   return knex.schema.createTable("budgets", table => {
-    table.increments("id").primary();
+    table.increments("budgetID").primary();
     table.integer("income");
     table.timestamp("start_date").defaultTo(knex.fn.now());
     table.time("end_date");
-    table.integer("user_id");
+    table.integer("userID");
     table
-      .foreign("user_id")
-      .references("users.id")
+      .foreign("userID")
+      .references("users.userID")
       .onDelete("CASCADE");
-    table.integer("saving_id");
+    table.integer("savingID");
     table
-      .foreign("saving_id")
-      .references("savings.id")
+      .foreign("savingID")
+      .references("savings.savingID")
       .onDelete("CASCADE");
   });
 };
