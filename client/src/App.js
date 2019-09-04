@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-// import Menu from "./components/Menu";
+import axios from "axios";
 import Uploader from "./components/Uploader";
 import Application from "./components/Application";
 import CreateBudget from "./components/Create-budget";
@@ -13,15 +13,31 @@ import LoginRegister from "./components/Login-register";
 import useApplicationData from "./hooks/useApplicationData";
 
 function App() {
-  // state
+  const [expenses, setExpenses] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get("/api/categories/jao").then(result => {
+      setExpenses(result.data);
+      setLoading(false);
+    });
+  }, []);
+
   return (
     <Router>
-      <Route path="/" exact component={Application} />
+      <Route
+        path="/"
+        exact
+        component={() => <Application expenses={expenses} />}
+      />
       <Route path="/add_receipt/" component={AddReceipt} />
       <Route path="/create_budget/" component={CreateBudget} />
       <Route path="/create_expense/" component={CreateExpense} />
       <Route path="/receipt_history/" component={ReceiptHistory} />
-      <Route path="/overview/" component={Overview} />
+      <Route
+        path="/overview/"
+        component={() => <Overview expenses={expenses} />}
+      />
       <Route path="/login/" component={LoginRegister} />
     </Router>
   );
