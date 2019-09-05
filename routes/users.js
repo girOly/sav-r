@@ -2,16 +2,16 @@ let express = require("express");
 let router = express.Router();
 // const authenticateUser = require("../helpers/route-helpers");
 
-const authenticateUser = fromFrontEnd => {
-  return knex("users")
-    .select("*")
-    .from("users")
-    .where({ email: fromFrontEnd })
-    .then(result => {
-      res.json(result);
-    })
-    .catch(error => console.log(error));
-};
+// const authenticateUser = (req, res, fromFrontEnd) => {
+//   return knex("users")
+//     .select("*")
+//     .from("users")
+//     .where({ email: fromFrontEnd })
+//     .then(result => {
+//       res.json("resultsss", result);
+//     })
+//     .catch(error => console.log(error));
+// };
 
 /* GET users listing. */
 
@@ -61,7 +61,7 @@ module.exports = function(knex) {
   });
 
   router.post("/login", function(req, res) {
-    // authenticateUser(req.body.email);
+    // authenticateUser(req, res, req.body.email);
     knex("users")
       .select("*")
       .from("users")
