@@ -6,7 +6,7 @@ import Edit from "./Edit";
 
 export default function AddReceipt(props) {
   return (
-    <containter>
+    <container>
       <Link to="/">MENU</Link>
       <h1>ADD RECEIPT</h1>
       <div>
@@ -18,6 +18,6 @@ export default function AddReceipt(props) {
       <div>
         <Edit />
       </div>
-    </containter>
+    </container>
   );
 }

@@ -36,7 +36,7 @@ const client = new vision.ImageAnnotatorClient({
 // });
 
 // view engine setup
-app.use("/image-upload", imageUploadRouter);
+app.use("/api/image-upload", imageUploadRouter);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
