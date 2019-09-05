@@ -8,23 +8,16 @@ export default function Uploader(props) {
   console.log(file);
 
   const uploadFile = () => {
-    let formdata = new FormData();
-    console.log("file: ", file);
+    let formData = new FormData();
     // console.log("email: ", email);
     // console.log("password: ", password);
-    formdata.append("image", file);
+    formData.append("image", file);
     axios
-      .post(
-        "/api/image-upload",
-        { key: "string" }
-        // {
-        //   headers: {
-        //     accept: "application/json",
-        //     "Accept-Language": "en-US,en;q=0.8",
-        //     "Content-Type": "multipart/form-data;"
-        //   }
-        // }
-      )
+      .post("/api/image-upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data;"
+        }
+      })
       .then(response => {
         console.log(file);
         console.log("axios-response", response);
@@ -51,7 +44,7 @@ export default function Uploader(props) {
         >
           Image:{" "}
           <input
-            onChange={event => setFile(event.target.value)}
+            onChange={event => setFile(event.target.files[0])}
             type="file"
             name="image"
             multiple
