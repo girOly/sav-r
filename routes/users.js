@@ -1,5 +1,8 @@
 let express = require("express");
 let router = express.Router();
+
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 // const authenticateUser = require("../helpers/route-helpers");
 
 // const authenticateUser = (req, res, fromFrontEnd) => {
