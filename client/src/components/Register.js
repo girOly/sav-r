@@ -6,15 +6,8 @@ export default function Register(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  console.log(name);
-  console.log(email);
-  console.log(password);
 
   const makeUser = () => {
-    // console.log("name: ", name);
-    // console.log("email: ", email);
-    // console.log("password: ", password);
-
     return axios
       .post("/api/users/register", {
         name,
@@ -22,7 +15,9 @@ export default function Register(props) {
         email
       })
       .then(response => {
-        console.log("axios-response", response);
+        console.log("frontend", response.data[0].id);
+        localStorage.setItem("id", response[0]);
+        console.log("localStorage", localStorage);
       })
       .catch(err => {
         console.log("axios error", err);

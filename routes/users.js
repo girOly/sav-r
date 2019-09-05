@@ -53,6 +53,7 @@ module.exports = function(knex) {
       .insert({ name: name, password: hashPass, email: email }, ["id"])
       .then(result => {
         res.json(result);
+        console.log("backend register", result);
       })
       .catch(error => console.log(error));
 
@@ -77,7 +78,6 @@ module.exports = function(knex) {
           // req.session.userId = userToAuth.id;
 
           res.json({ userId: userToAuth.id });
-        } else {
         }
       })
       .catch(error => console.log(error));
