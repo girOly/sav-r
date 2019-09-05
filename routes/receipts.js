@@ -4,7 +4,6 @@ let {
   receiptParsing,
   expensesParsing
 } = require("../helpers/receipts-helpers");
-const axios = require("axios");
 /* GET users listing. */
 
 module.exports = function(knex) {
