@@ -17,6 +17,7 @@ let indexRouter = require("./routes/index");
 let savingsRouter = require("./routes/savings");
 let storesRouter = require("./routes/stores");
 let usersRouter = require("./routes/users");
+let receiptsRouter = require("./routes/receipts");
 
 let app = express();
 
@@ -55,7 +56,7 @@ app.use("/api/categories", categoriesRouter(knex));
 app.use("/", indexRouter);
 app.use("/api/savings", savingsRouter(knex));
 app.use("/api/stores", storesRouter(knex));
-app.use("/api/users", usersRouter(knex));
+app.use("/api/receipts", receiptsRouter(knex));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

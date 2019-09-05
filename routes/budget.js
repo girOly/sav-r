@@ -28,7 +28,6 @@ module.exports = function(knex) {
     // req.body from front end = {
     // {
     // 	"income":   35000,
-    //  "start_date": "2019-08-30 22:28:36.438072+00",
     //  "end_date": null,
     //  "user_id": 1,
     // 	"saving_id": 1

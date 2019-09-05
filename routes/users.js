@@ -35,7 +35,7 @@ module.exports = function(knex) {
       .catch(error => console.log(error));
   });
 
-  router.post("/", function(req, res) {
+  router.post("/register", function(req, res) {
     knex("users")
       .insert(req.body, ["id"])
       .then(result => {
