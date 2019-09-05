@@ -16,8 +16,8 @@ export default function Register(props) {
       })
       .then(response => {
         console.log("frontend", response.data[0].id);
-        localStorage.setItem("id", response[0]);
-        console.log("localStorage", localStorage);
+        localStorage.setItem("id", response.data[0].id);
+        console.log("localStorage", localStorage.id);
       })
       .catch(err => {
         console.log("axios error", err);
