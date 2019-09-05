@@ -56,6 +56,7 @@ app.use("/api/categories", categoriesRouter(knex));
 app.use("/", indexRouter);
 app.use("/api/savings", savingsRouter(knex));
 app.use("/api/stores", storesRouter(knex));
+app.use("/api/users", usersRouter(knex));
 app.use("/api/receipts", receiptsRouter(knex));
 
 // catch 404 and forward to error handler

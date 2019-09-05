@@ -35,19 +35,19 @@ module.exports = function(knex) {
       .catch(error => console.log(error));
   });
 
-  router.post("/register", function(req, res) {
-    knex("users")
-      .insert(req.body, ["id"])
-      .then(result => {
-        res.json(result);
-      })
-      .catch(error => console.log(error));
-    // req.body from front end = {
-    // {
-    //     	"name":   "oaj",
-    //      "password": aoj,
-    //      "email": "o@j.com",
-  });
+  // router.post("/register", function(req, res) {
+  //   knex("users")
+  //     .insert(req.body, ["id"])
+  //     .then(result => {
+  //       res.json(result);
+  //     })
+  //     .catch(error => console.log(error));
+  //   // req.body from front end = {
+  //   // {
+  //   //     	"name":   "oaj",
+  //   //      "password": aoj,
+  //   //      "email": "o@j.com",
+  // });
 
   router.post("/register", function(req, res) {
     const name = req.body.name;
@@ -58,16 +58,17 @@ module.exports = function(knex) {
     console.log("route password:", password);
     console.log("route email:", email);
 
-    bcrypt.hashSync(password, saltRounds, function(err, hash) {
-      // Store hash in your password DB.
+    hashPass = bcrypt.hashSync(password, saltRounds);
+    // Store hash in your password DB.
+    console.log("hashPass", hashPass);
 
-      knex("users")
-        .insert({ name: name, password: hash, email: email }, ["id"])
-        .then(result => {
-          res.json(result);
-        })
-        .catch(error => console.log(error));
-    });
+    knex("users")
+      .insert({ name: name, password: hashPass, email: email }, ["id"])
+      .then(result => {
+        res.json(result);
+      })
+      .catch(error => console.log(error));
+
     // req.body from front end = {
     // {
     //         "name":   "oaj",
