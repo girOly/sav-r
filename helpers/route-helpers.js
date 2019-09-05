@@ -17,4 +17,15 @@ const totalByCategory = arrayOfExpenseObjs => {
   return catTotals;
 };
 
+// const authenticateUser = fromFrontEnd => {
+//   knex("users")
+//     .select("*")
+//     .from("users")
+//     .where({ email: frontFrontEnd })
+//     .then(result => {
+//       res.json(result);
+//     })
+//     .catch(error => console.log(error));
+// };
+
 module.exports = totalByCategory;
