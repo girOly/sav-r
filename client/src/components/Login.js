@@ -1,9 +1,27 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
-  console.log(email);
+  // console.log(email);
+
+  const userLogin = () => {
+    // console.log("name: ", name);
+    console.log("email: ", email);
+    // console.log("password: ", password);
+
+    return axios
+      .post("/api/users/login", {
+        email
+      })
+      .then(response => {
+        console.log("axios-response", response);
+      })
+      .catch(err => {
+        console.log("axios error", err);
+      });
+  };
 
   return (
     <div>
@@ -17,7 +35,7 @@ export default function Login(props) {
         />
         password
         <input type="text" name="password" />
-        <button type="submit">Log In</button>
+        <button onClick={userLogin}>Log In</button>
       </form>
       <button onClick={props.toRegister}>Take me to register</button>
     </div>
