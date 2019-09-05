@@ -3,18 +3,6 @@ let router = express.Router();
 
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
-// const authenticateUser = require("../helpers/route-helpers");
-
-// const authenticateUser = (req, res, fromFrontEnd) => {
-//   return knex("users")
-//     .select("*")
-//     .from("users")
-//     .where({ email: fromFrontEnd })
-//     .then(result => {
-//       res.json("resultsss", result);
-//     })
-//     .catch(error => console.log(error));
-// };
 
 /* GET users listing. */
 
@@ -60,7 +48,6 @@ module.exports = function(knex) {
 
     hashPass = bcrypt.hashSync(password, saltRounds);
     // Store hash in your password DB.
-    console.log("hashPass", hashPass);
 
     knex("users")
       .insert({ name: name, password: hashPass, email: email }, ["id"])
@@ -86,10 +73,12 @@ module.exports = function(knex) {
       .where({ email: req.body.email })
       .then(result => {
         const userToAuth = result[0];
-        console.log("to auth password", userToAuth.password);
-        console.log(password);
-        console.log(bcrypt.compareSync(userToAuth.password, password));
-        res.json(userToAuth.password);
+        if (bcrypt.compareSync(password, userToAuth.password)) {
+          // req.session.userId = userToAuth.id;
+
+          res.json({ userId: userToAuth.id });
+        } else {
+        }
       })
       .catch(error => console.log(error));
   });

@@ -6,6 +6,8 @@ let logger = require("morgan");
 const knexConfig = require("./knexfile");
 const knex = require("knex")(knexConfig["development"]);
 require("dotenv").config();
+var cookieSession = require("cookie-session");
+
 // Route Declaration
 let imageUploadRouter = require("./routes/image-upload");
 let budget_expensesRouter = require("./routes/budget_expenses");
@@ -48,6 +50,12 @@ app.use(
   })
 );
 app.use(cookieParser());
+app.use(
+  cookieSession({
+    name: "session",
+    keys: [process.env.COOKIE_SESSION_KEY]
+  })
+);
 app.use(express.static(path.join(__dirname, "public")));
 // App use Routes
 app.use("/api/budget_expenses", budget_expensesRouter(knex));
