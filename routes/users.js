@@ -58,7 +58,7 @@ module.exports = function(knex) {
     console.log("route password:", password);
     console.log("route email:", email);
 
-    bcrypt.hash(password, saltRounds, function(err, hash) {
+    bcrypt.hashSync(password, saltRounds, function(err, hash) {
       // Store hash in your password DB.
 
       knex("users")
@@ -77,13 +77,18 @@ module.exports = function(knex) {
 
   router.post("/login", function(req, res) {
     // authenticateUser(req, res, req.body.email);
+    const password = req.body.password;
 
     knex("users")
       .select("*")
       .from("users")
       .where({ email: req.body.email })
       .then(result => {
-        res.json(result);
+        const userToAuth = result[0];
+        console.log("to auth password", userToAuth.password);
+        console.log(password);
+        console.log(bcrypt.compareSync(userToAuth.password, password));
+        res.json(userToAuth.password);
       })
       .catch(error => console.log(error));
   });

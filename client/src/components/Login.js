@@ -4,16 +4,19 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   // console.log(email);
 
   const userLogin = () => {
     // console.log("name: ", name);
     console.log("email: ", email);
+    console.log("password: ", password);
     // console.log("password: ", password);
 
     return axios
       .post("/api/users/login", {
-        email
+        email,
+        password
       })
       .then(response => {
         console.log("axios-response", response);
@@ -34,7 +37,11 @@ export default function Login(props) {
           name="email"
         />
         password
-        <input type="text" name="password" />
+        <input
+          onChange={event => setPassword(event.target.value)}
+          type="text"
+          name="password"
+        />
         <button onClick={userLogin}>Log In</button>
       </form>
       <button onClick={props.toRegister}>Take me to register</button>
