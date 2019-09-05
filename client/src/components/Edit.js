@@ -19,7 +19,11 @@ export default function Edit(props) {
           onChange={event => setTotal(event.target.value)}
         />
         user comments
-        <input type="text" name="comments" />
+        <input
+          type="text"
+          name="comments"
+          onChange={event => setComment(event.target.value)}
+        />
         <button type="submit">to the DB boys</button>
       </form>
     </div>
