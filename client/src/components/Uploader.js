@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import FormData from "form-data";
 
 export default function Uploader(props) {
+  const [file, setFile] = useState("");
+  console.log(file);
+
+  const uploadFile = () => {
+    let formData = new FormData();
+    // console.log("email: ", email);
+    // console.log("password: ", password);
+    formData.append("image", file);
+    axios
+      .post("/api/image-upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data;"
+        }
+      })
+      .then(response => {
+        console.log(file);
+        console.log("axios-response", response);
+      })
+      .catch(err => {
+        console.log("axios error", err);
+      });
+  };
+
   return (
     <div className="input-group">
       <h1>Uploader Component</h1>
@@ -12,13 +37,20 @@ export default function Uploader(props) {
       </div>
       <div className="custom-file">
         <form
-          action="http://localhost:3005/image-upload"
-          method="POST"
+          onSubmit={event => event.preventDefault()}
+          // action="http://localhost:3005/api/image-upload"
+          // method="POST"
           enctype="multipart/form-data"
         >
-          Image: <input type="file" name="image" multiple />
+          Image:{" "}
+          <input
+            onChange={event => setFile(event.target.files[0])}
+            type="file"
+            name="image"
+            multiple
+          />
           <br />
-          <input type="submit" value="Submit" />
+          <input onClick={uploadFile} type="submit" value="Submit" />
         </form>
       </div>
     </div>

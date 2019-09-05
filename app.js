@@ -38,7 +38,6 @@ const client = new vision.ImageAnnotatorClient({
 // });
 
 // view engine setup
-app.use("/image-upload", imageUploadRouter);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -58,6 +57,8 @@ app.use(
 );
 app.use(express.static(path.join(__dirname, "public")));
 // App use Routes
+app.use("/api/users", usersRouter(knex));
+app.use("/api/image-upload", imageUploadRouter);
 app.use("/api/budget_expenses", budget_expensesRouter(knex));
 app.use("/api/budget", budgetRouter(knex));
 app.use("/api/categories", categoriesRouter(knex));
