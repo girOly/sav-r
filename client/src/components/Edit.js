@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Edit(props) {
+  const [total, setTotal] = useState(0);
+  const [comment, setComment] = useState("");
+  // console.log(total);
+
   return (
     <div>
       <h1>Edit Component</h1>
-      <form>
+      <form onSubmit={event => event.preventDefault()}>
         category
         <input type="text" name="category" />
         total
-        <input type="text" name="total_cents" />
+        <input
+          type="number"
+          name="total_cents"
+          onChange={event => setTotal(event.target.value)}
+        />
         user comments
         <input type="text" name="comments" />
         <button type="submit">to the DB boys</button>
