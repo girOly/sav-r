@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Register(props) {
@@ -10,10 +11,22 @@ export default function Register(props) {
   console.log(password);
 
   const makeUser = () => {
-    console.log("name: ", name);
-    console.log("email: ", email);
-    console.log("password: ", password);
-    return axios.post("/api/users/register");
+    // console.log("name: ", name);
+    // console.log("email: ", email);
+    // console.log("password: ", password);
+
+    return axios
+      .post("/api/users/register", {
+        name,
+        password,
+        email
+      })
+      .then(response => {
+        console.log("axios-response", response);
+      })
+      .catch(err => {
+        console.log("axios error", err);
+      });
   };
 
   return (
