@@ -4,10 +4,10 @@ exports.up = function(knex) {
     table.integer("total_cents");
     table.timestamp("time_stamp").defaultTo(knex.fn.now());
     table.string("image_url");
-    table.integer("store_id");
+    table.integer("budget_expenses_id");
     table
-      .foreign("store_id")
-      .references("stores.id")
+      .foreign("budget_expenses_id")
+      .references("budget_expenses.id")
       .onDelete("CASCADE");
     table.integer("category_id");
     table
