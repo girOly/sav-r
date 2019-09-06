@@ -8,6 +8,10 @@ export default function Index(props) {
   console.log("index props", props);
   const budget = props.budget[0];
   console.log("index budget", budget);
+  const expenses = props.expenses;
+  console.log("index expenses", expenses);
+
+  /// props of expenses, budget
 
   const centsToDollars = cents => {
     const makeDollars = cents / 100;
@@ -17,7 +21,19 @@ export default function Index(props) {
     });
   };
 
-  const categorySpending = expenseObject => {};
+  const totalSpending = expenseArray => {
+    let total = 0;
+    for (let expense in expenseArray) {
+      total += expenseArray[expense];
+    }
+    return total;
+  };
+
+  const categorySpending = Object.keys(expenses).map(key => (
+    <li>
+      {key}: {centsToDollars(expenses[key])}
+    </li>
+  ));
   return (
     <div>
       <Link to="/">MENU</Link>
@@ -27,11 +43,11 @@ export default function Index(props) {
       <h3> Income </h3>
       <h4> {centsToDollars(budget.income)}</h4>
       <h3> Expenses </h3>
-      <h4> Budget - Expenses Sum </h4>
+      <h4> {centsToDollars(totalSpending(expenses))} </h4>
       <Link to="/overview">Overview</Link>
 
-      <h4> Category </h4>
-      <ul></ul>
+      <h4> Spending by Category </h4>
+      <ul>{categorySpending}</ul>
     </div>
   );
 }
