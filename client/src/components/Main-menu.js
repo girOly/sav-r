@@ -26,7 +26,7 @@ export default function Menu(props) {
           <Link to="/login/">LOGIN/REGISTER</Link>
         </section>
         <section className="menu-button">
-          <Link to="/index/">Index</Link>
+          <Link to="/index/">Index </Link>
         </section>
       </main>
     </React.Fragment>
