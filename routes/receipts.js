@@ -7,7 +7,7 @@ let {
 /* GET users listing. */
 
 module.exports = function(knex) {
-  router.get("/", function(req, res, next) {
+  router.get("/archives", function(req, res, next) {
     console.log(res.data);
   });
 

@@ -6,6 +6,7 @@ import Uploader from "./components/Uploader";
 import Application from "./components/Application";
 import CreateBudget from "./components/Create-budget";
 import CreateExpense from "./components/Create-expense";
+import SelectBudget from "./components/Budget";
 import ReceiptHistory from "./components/Receipt-history";
 import Overview from "./components/Overview";
 import AddReceipt from "./components/Add-receipt";
@@ -34,6 +35,7 @@ function App() {
       <Route path="/create_budget/" component={CreateBudget} />
       <Route path="/create_expense/" component={CreateExpense} />
       <Route path="/receipt_history/" component={ReceiptHistory} />
+      <Route path="/select_budget/" component={SelectBudget} />
       <Route
         path="/overview/"
         component={() => <Overview expenses={expenses} />}
