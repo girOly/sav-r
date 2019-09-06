@@ -13,6 +13,18 @@ exports.seed = function(knex) {
           saving_id: 1
         },
         {
+          income: 39000,
+          end_date: null,
+          user_id: 1,
+          saving_id: 1
+        },
+        {
+          income: 100,
+          end_date: null,
+          user_id: 1,
+          saving_id: 1
+        },
+        {
           income: 35000000,
           end_date: null,
           user_id: 2,

@@ -9,7 +9,9 @@ module.exports = function(knex) {
     res.render("index", { title: "Categories" });
   });
 
-  router.get("/jao", function(req, res) {
+  router.get("/:id", function(req, res) {
+    const { id } = req.params;
+    console.log(id, "======================");
     knex
       .select(
         "name",
@@ -23,6 +25,7 @@ module.exports = function(knex) {
         "categories.id",
         "budget_expenses.category_id"
       )
+      .where({ budget_id: Number(id) })
       .then(result => {
         res.json(totalByCategory(result));
       })
