@@ -1,5 +1,5 @@
 import React from "react";
-import { useVisualMode } from "../hooks/useVisualMode";
+// import { useVisualMode } from "../hooks/useVisualMode";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // import Uploader from "./Uploader";
 

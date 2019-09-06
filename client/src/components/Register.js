@@ -15,9 +15,9 @@ export default function Register(props) {
         email
       })
       .then(response => {
-        console.log("frontend", response.data[0].id);
+        // console.log("frontend", response.data[0].id);
         localStorage.setItem("id", response.data[0].id);
-        console.log("localStorage", localStorage.id);
+        // console.log("localStorage", localStorage.id);
       })
       .catch(err => {
         console.log("axios error", err);

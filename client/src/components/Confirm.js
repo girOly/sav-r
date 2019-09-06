@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 export default function Confirm(props) {
   const [comment, setComment] = useState("");
   const [category, setCategory] = useState("");
@@ -21,7 +21,6 @@ export default function Confirm(props) {
           name="comments"
         />
         category
-        <button type="submit">Submit</button>
         <label className="radio-inline">
           <input
             value="1"
@@ -51,6 +50,7 @@ export default function Confirm(props) {
         </label>
         <label className="radio-inline">
           <input
+            value="4"
             type="radio"
             name="optradio"
             onChange={event => setCategory(event.target.value)}
@@ -59,6 +59,7 @@ export default function Confirm(props) {
         </label>
         <label className="radio-inline">
           <input
+            value="5"
             type="radio"
             name="optradio"
             onChange={event => setCategory(event.target.value)}
@@ -67,6 +68,7 @@ export default function Confirm(props) {
         </label>
         <label className="radio-inline">
           <input
+            value="6"
             type="radio"
             name="optradio"
             onChange={event => setCategory(event.target.value)}
@@ -75,6 +77,7 @@ export default function Confirm(props) {
         </label>
         <label className="radio-inline">
           <input
+            value="7"
             type="radio"
             name="optradio"
             onChange={event => setCategory(event.target.value)}
@@ -83,6 +86,7 @@ export default function Confirm(props) {
         </label>
         <label className="radio-inline">
           <input
+            value="8"
             type="radio"
             name="optradio"
             onChange={event => setCategory(event.target.value)}

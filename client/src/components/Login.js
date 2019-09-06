@@ -8,22 +8,13 @@ export default function Login(props) {
   // console.log(email);
 
   const userLogin = () => {
-    // console.log("name: ", name);
-    console.log("email: ", email);
-    console.log("password: ", password);
-    // console.log("password: ", password);
-
     return axios
       .post("/api/users/login", {
         email,
-        password,
-        test: localStorage.id
+        password
       })
       .then(response => {
-        console.log("response", response);
         localStorage.setItem("id", response.data);
-        console.log("localStorage", localStorage.id);
-        // console.log("axios-response", response);
       })
       .catch(err => {
         console.log("axios error", err);
