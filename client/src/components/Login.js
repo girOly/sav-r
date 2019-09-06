@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
@@ -16,7 +16,8 @@ export default function Login(props) {
     return axios
       .post("/api/users/login", {
         email,
-        password
+        password,
+        test: localStorage.id
       })
       .then(response => {
         console.log("response", response);

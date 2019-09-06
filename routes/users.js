@@ -56,6 +56,8 @@ module.exports = function(knex) {
   router.post("/login", function(req, res) {
     // authenticateUser(req, res, req.body.email);
     const password = req.body.password;
+    const test = req.body.test;
+    console.log("does id get to back end", test);
 
     knex("users")
       .select("*")

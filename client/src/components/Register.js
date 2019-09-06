@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Register(props) {
   const [name, setName] = useState("");
@@ -51,12 +51,4 @@ export default function Register(props) {
       <button onClick={props.toLogin}>Take me to login</button>
     </div>
   );
-}
-
-{
-  /* <input
-  onChange={event => setEmail(event.target.value)}
-  type="text"
-  name="email"
-/>; */
 }

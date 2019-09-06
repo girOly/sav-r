@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 export default function Confirm(props) {
   const [comment, setComment] = useState("");
   const [category, setCategory] = useState("");
+  console.log(category);
 
   const loggingFunction = function(event) {
     console.log(event.target.value, "=============");
@@ -21,7 +22,7 @@ export default function Confirm(props) {
         />
         category
         <button type="submit">Submit</button>
-        <label class="radio-inline">
+        <label className="radio-inline">
           <input
             value="1"
             type="radio"
@@ -30,7 +31,7 @@ export default function Confirm(props) {
           />
           Groceries
         </label>
-        <label class="radio-inline">
+        <label className="radio-inline">
           <input
             value="2"
             type="radio"
@@ -39,7 +40,7 @@ export default function Confirm(props) {
           />
           Housing
         </label>
-        <label class="radio-inline">
+        <label className="radio-inline">
           <input
             value="3"
             type="radio"
@@ -48,7 +49,7 @@ export default function Confirm(props) {
           />
           Restaurants
         </label>
-        <label class="radio-inline">
+        <label className="radio-inline">
           <input
             type="radio"
             name="optradio"
@@ -56,7 +57,7 @@ export default function Confirm(props) {
           />
           Medical
         </label>
-        <label class="radio-inline">
+        <label className="radio-inline">
           <input
             type="radio"
             name="optradio"
@@ -64,7 +65,7 @@ export default function Confirm(props) {
           />
           Transportation
         </label>
-        <label class="radio-inline">
+        <label className="radio-inline">
           <input
             type="radio"
             name="optradio"
@@ -72,7 +73,7 @@ export default function Confirm(props) {
           />
           Clothing
         </label>
-        <label class="radio-inline">
+        <label className="radio-inline">
           <input
             type="radio"
             name="optradio"
@@ -80,7 +81,7 @@ export default function Confirm(props) {
           />
           Gifts
         </label>
-        <label class="radio-inline">
+        <label className="radio-inline">
           <input
             type="radio"
             name="optradio"
