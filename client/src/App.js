@@ -8,6 +8,7 @@ import CreateBudget from "./components/Create-budget";
 import CreateExpense from "./components/Create-expense";
 import ReceiptHistory from "./components/Receipt-history";
 import Overview from "./components/Overview";
+import Index from "./components/Index";
 import AddReceipt from "./components/Add-receipt";
 import LoginRegister from "./components/Login-register";
 import useApplicationData from "./hooks/useApplicationData";
@@ -39,6 +40,7 @@ function App() {
         component={() => <Overview expenses={expenses} />}
       />
       <Route path="/login/" component={LoginRegister} />
+      <Route path="/index/" component={Index} />
     </Router>
   );
 }
