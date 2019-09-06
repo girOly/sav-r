@@ -23,6 +23,8 @@ function App() {
   const userID = localStorage.id;
 
   console.log("available budgets", availableBudgets);
+  console.log("budget", budget);
+  console.log("expenses", expenses);
 
   // console.log("from app", userID);
   useEffect(() => {
@@ -32,8 +34,12 @@ function App() {
   }, []);
 
   const chooseBudget = budgetID => {
-    axios.get(``).then(result => {
-      setBudget(result);
+    // console.log(budgetID);
+    Promise.all([
+      axios.get(`/api/users/${userID}/budgets/${budgetID}`),
+      axios.get(`/api/budgets/${budgetID}/categories`)
+    ]).then(result => {
+      setBudget(result[0].data), setExpenses(result[1].data);
     });
   };
   /*
@@ -64,7 +70,12 @@ Promise.all([
       <Route path="/receipt_history/" component={ReceiptHistory} />
       <Route
         path="/budget/"
-        component={() => <SelectBudget availableBudgets={availableBudgets} />}
+        component={() => (
+          <SelectBudget
+            availableBudgets={availableBudgets}
+            chooseBudget={chooseBudget}
+          />
+        )}
       />
       <Route
         path="/overview/"
