@@ -102,6 +102,8 @@ module.exports = function(knex) {
           // req.session.userId = userToAuth.id;
 
           res.json(userToAuth.id);
+        } else {
+          res.json(userToAuth.id);
         }
       })
       .catch(error => console.log(error));
