@@ -13,9 +13,16 @@ module.exports = function(knex) {
     });
   });
 
-  router.get("/users/:id/budget/:budget_id", function(req, res, next) {
+  router.get("/:id/budgets/:budgetId", function(req, res) {
     const { id, budgetId } = req.params;
-    knex.select("income").from("budgets");
+    knex
+      .select("*")
+      .from("budgets")
+      .where({ id: budgetId })
+      .then(result => {
+        res.json(result);
+      })
+      .catch(error => console.log(error));
   });
 
   router.get("/:id/budget/:budgetId/categories", function(req, res) {
@@ -37,7 +44,7 @@ module.exports = function(knex) {
       .catch(error => console.log(error));
   });
 
-  router.get("/:id/budget", function(req, res) {
+  router.get("/:id/budgets", function(req, res) {
     const { id } = req.params;
     knex
       .select("*")
