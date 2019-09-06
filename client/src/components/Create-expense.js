@@ -5,17 +5,18 @@ import "./Create-expense.scss";
 export default function CreateExpense(props) {
   const [total, setTotal] = useState(0);
   const [comment, setComment] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(0);
   const budget = props.budget[0];
   const userID = localStorage.id;
   // console.log("budgetID in create expense", budget.id);
   // console.log("userID in create expense", userID);
+  console.log("create-expense category", category);
 
   const expenseCreate = () => {
     return axios
       .post(`/api/users/${userID}/budgets/${budget.id}/budget_expenses`, {
-        total,
-        comment,
+        total_cents: total,
+        comments: comment,
         category_id: category,
         budget_id: budget.id
       })
