@@ -18,7 +18,9 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "0.9.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "dev": "nodemon --exec npm start  ",
