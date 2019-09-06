@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BudgetListItem(props) {
   const thisBudget = props;
-  console.log(thisBudget);
+  // console.log(thisBudget);
   return (
     <li>
       <form onSubmit={event => event.preventDefault()}>

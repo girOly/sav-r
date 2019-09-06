@@ -22,9 +22,10 @@ function App() {
   const [availableBudgets, setAvailableBudgets] = useState([]);
   const userID = localStorage.id;
 
-  console.log("available budgets", availableBudgets);
-  console.log("budget", budget);
-  console.log("expenses", expenses);
+  // console.log("app userID", userID);
+  // console.log("app available budgets", availableBudgets);
+  // console.log("app budget", budget);
+  // console.log("app expenses", expenses);
 
   // console.log("from app", userID);
   useEffect(() => {
@@ -82,7 +83,10 @@ Promise.all([
         component={() => <Overview expenses={expenses} />}
       />
       <Route path="/login/" component={LoginRegister} />
-      <Route path="/index/" component={Index} />
+      <Route
+        path="/index/"
+        component={() => <Index budget={budget} expenses={expenses} />}
+      />
     </Router>
   );
 }
