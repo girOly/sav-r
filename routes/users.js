@@ -42,12 +42,7 @@ module.exports = function(knex) {
     const password = req.body.password;
     const email = req.body.email;
 
-    console.log("route name:", name);
-    console.log("route password:", password);
-    console.log("route email:", email);
-
     hashPass = bcrypt.hashSync(password, saltRounds);
-    // Store hash in your password DB.
 
     knex("users")
       .insert({ name: name, password: hashPass, email: email }, ["id"])
@@ -56,12 +51,6 @@ module.exports = function(knex) {
         console.log("backend register", result);
       })
       .catch(error => console.log(error));
-
-    // req.body from front end = {
-    // {
-    //         "name":   "oaj",
-    //      "password": aoj,
-    //      "email": "o@j.com",
   });
 
   router.post("/login", function(req, res) {
@@ -77,7 +66,7 @@ module.exports = function(knex) {
         if (bcrypt.compareSync(password, userToAuth.password)) {
           // req.session.userId = userToAuth.id;
 
-          res.json({ userId: userToAuth.id });
+          res.json(userToAuth.id);
         }
       })
       .catch(error => console.log(error));

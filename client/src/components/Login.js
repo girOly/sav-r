@@ -19,7 +19,10 @@ export default function Login(props) {
         password
       })
       .then(response => {
-        console.log("axios-response", response);
+        console.log("response", response);
+        localStorage.setItem("id", response.data);
+        console.log("localStorage", localStorage.id);
+        // console.log("axios-response", response);
       })
       .catch(err => {
         console.log("axios error", err);

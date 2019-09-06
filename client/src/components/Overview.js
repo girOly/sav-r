@@ -30,6 +30,7 @@ import { Bar } from "react-chartjs-2";
 // };
 
 export default function Overview(props) {
+  console.log("localStorage", localStorage.id);
   const dataArray = [props];
   console.log(dataArray[0].expenses.Gifts);
   const data = {
