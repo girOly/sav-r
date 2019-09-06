@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "./Create-expense.css";
+import "./Create-expense.scss";
 export default function CreateExpense(props) {
   const [total, setTotal] = useState(0);
   const [comment, setComment] = useState("");
