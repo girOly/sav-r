@@ -6,16 +6,18 @@ export default function CreateExpense(props) {
   const [total, setTotal] = useState(0);
   const [comment, setComment] = useState("");
   const [category, setCategory] = useState("");
-  const budget = props.budget;
-  console.log("budget in create", budget);
+  const budget = props.budget[0];
+  const userID = localStorage.id;
+  // console.log("budgetID in create expense", budget.id);
+  // console.log("userID in create expense", userID);
 
   const expenseCreate = () => {
     return axios
-      .post("/api/budget_expenses", {
+      .post(`api/users/${userID}/budgets/${budget.id}/budget_expenses`, {
         total,
         comment,
         category_id: category,
-        budget_id: localStorage.id
+        budget_id: budget.id
       })
       .then(response => {
         console.log("axios-response", response);
@@ -32,7 +34,7 @@ export default function CreateExpense(props) {
       <div class="form">
         <form onSubmit={event => event.preventDefault()}>
           Comment:
-          <div class="comment">
+          <div className="comment">
             <input
               onChange={event => setComment(event.target.value)}
               type="text"
@@ -40,7 +42,7 @@ export default function CreateExpense(props) {
             />
           </div>
           <label>Total:</label>
-          <div class="total">
+          <div className="total">
             <input
               type="number"
               name="total_cents"
