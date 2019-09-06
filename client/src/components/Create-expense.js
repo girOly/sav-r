@@ -124,6 +124,7 @@ export default function CreateExpense(props) {
               Entertainment
             </label>
           </div>
+          <button onClick={expenseCreate}>Create Expense</button>
         </form>
       </div>
     </div>
