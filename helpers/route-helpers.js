@@ -6,7 +6,7 @@ const totalByCategory = arrayOfExpenseObjs => {
     Medical: 0,
     Transportation: 0,
     Clothing: 0,
-    Gift: 0,
+    Gifts: 0,
     Entertainment: 0
   };
 

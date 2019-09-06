@@ -60,7 +60,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/users", usersRouter(knex));
 app.use("/api/image-upload", imageUploadRouter);
 app.use("/api/budget_expenses", budget_expensesRouter(knex));
-app.use("/api/budget", budgetRouter(knex));
+app.use("/api/budgets", budgetRouter(knex));
 app.use("/api/categories", categoriesRouter(knex));
 app.use("/", indexRouter);
 app.use("/api/savings", savingsRouter(knex));
