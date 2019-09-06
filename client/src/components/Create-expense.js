@@ -13,7 +13,7 @@ export default function CreateExpense(props) {
 
   const expenseCreate = () => {
     return axios
-      .post(`api/users/${userID}/budgets/${budget.id}/budget_expenses`, {
+      .post(`/api/users/${userID}/budgets/${budget.id}/budget_expenses`, {
         total,
         comment,
         category_id: category,
