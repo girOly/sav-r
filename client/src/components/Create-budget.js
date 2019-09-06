@@ -9,7 +9,7 @@ export default function CreateBudget(props) {
 
   const budgetCreate = () => {
     return axios
-      .post("/api/budget", {
+      .post("/api/budgets", {
         income,
         user_id: localStorage.id
       })
