@@ -4,11 +4,16 @@ import BudgetList from "./BudgetList";
 
 export default function SelectBudget(props) {
   const [budget, setBudget] = useState(0);
+
   return (
     <div>
       <Link to="/">MENU</Link>
-      <h1>SELECT BUDGET</h1>
-      <Link to="/budget">BUDGET 1 </Link>
+      <div>
+        <h1>SELECT BUDGET</h1>
+      </div>
+      <div>
+        <BudgetList budgets={[]} />
+      </div>
     </div>
   );
 }
