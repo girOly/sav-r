@@ -19,8 +19,10 @@ function App() {
   const [expenses, setExpenses] = useState({});
   const [loading, setLoading] = useState(true);
   const [budget, setBudget] = useState();
-  const [availableBudgets, setAvailableBudgets] = useState("");
+  const [availableBudgets, setAvailableBudgets] = useState([]);
   const userID = localStorage.id;
+
+  console.log("available budgets", availableBudgets);
 
   // console.log("from app", userID);
   useEffect(() => {

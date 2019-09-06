@@ -7,5 +7,5 @@ export default function BudgetList(props) {
 
   const budgetsMap = budgets.map(budget => <BudgetListItem />);
 
-  return <ul>{budgets}</ul>;
+  return <ul>{budgetsMap}</ul>;
 }

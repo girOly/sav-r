@@ -12,7 +12,7 @@ export default function SelectBudget(props) {
         <h1>SELECT BUDGET</h1>
       </div>
       <div>
-        <BudgetList budgets={[]} />
+        <BudgetList budgets={props.availableBudgets} />
       </div>
     </div>
   );

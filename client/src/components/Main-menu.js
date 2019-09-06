@@ -29,7 +29,7 @@ export default function Menu(props) {
           <Link to="/index/">Index </Link>
         </section>
         <section className="menu-button">
-          <Link to="/select_budget/">SELECT BUDGET</Link>
+          <Link to="/budget/">SELECT BUDGET</Link>
         </section>
       </main>
     </React.Fragment>
