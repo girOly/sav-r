@@ -9,28 +9,5 @@ module.exports = function(knex) {
     res.render("index", { title: "Categories" });
   });
 
-  router.get("/:id", function(req, res) {
-    const { id } = req.params;
-    console.log(id, "======================");
-    knex
-      .select(
-        "name",
-        "total_cents",
-        "categories.id as category_id",
-        "budget_expenses.id as budget_expenses_id"
-      )
-      .from("categories")
-      .innerJoin(
-        "budget_expenses",
-        "categories.id",
-        "budget_expenses.category_id"
-      )
-      .where({ budget_id: Number(id) })
-      .then(result => {
-        res.json(totalByCategory(result));
-      })
-      .catch(error => console.log(error));
-  });
-
   return router;
 };
