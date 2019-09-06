@@ -6,6 +6,8 @@ export default function CreateExpense(props) {
   const [total, setTotal] = useState(0);
   const [comment, setComment] = useState("");
   const [category, setCategory] = useState("");
+  const budget = props.budget;
+  console.log("budget in create", budget);
 
   const expenseCreate = () => {
     return axios

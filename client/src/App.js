@@ -67,7 +67,10 @@ Promise.all([
       />
       <Route path="/add_receipt/" component={AddReceipt} />
       <Route path="/create_budget/" component={CreateBudget} />
-      <Route path="/create_expense/" component={CreateExpense} />
+      <Route
+        path="/create_expense/"
+        component={() => <CreateExpense budget={budget} />}
+      />
       <Route path="/receipt_history/" component={ReceiptHistory} />
       <Route
         path="/budget/"
