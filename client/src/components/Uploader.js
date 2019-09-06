@@ -9,8 +9,6 @@ export default function Uploader(props) {
 
   const uploadFile = () => {
     let formData = new FormData();
-    // console.log("email: ", email);
-    // console.log("password: ", password);
     formData.append("image", file);
     axios
       .post("/api/image-upload", formData, {
@@ -38,8 +36,6 @@ export default function Uploader(props) {
       <div className="custom-file">
         <form
           onSubmit={event => event.preventDefault()}
-          // action="http://localhost:3005/api/image-upload"
-          // method="POST"
           enctype="multipart/form-data"
         >
           Image:{" "}
