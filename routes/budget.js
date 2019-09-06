@@ -8,10 +8,11 @@ module.exports = function(knex) {
     res.render("index", { title: "Budget" });
   });
 
-  router.get("/jao", function(req, res) {
+  router.get("/", function(req, res) {
     knex
       .select("*")
       .from("budgets")
+      .where({ user_id })
       .then(result => {
         res.json(result);
       })

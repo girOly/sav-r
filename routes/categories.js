@@ -9,7 +9,7 @@ module.exports = function(knex) {
     res.render("index", { title: "Categories" });
   });
 
-  router.get("/jao", function(req, res) {
+  router.get("/:id", function(req, res) {
     knex
       .select(
         "name",

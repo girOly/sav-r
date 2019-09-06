@@ -1,6 +1,6 @@
 let express = require("express");
 let router = express.Router();
-
+const totalByCategory = require("../helpers/route-helpers");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
@@ -13,10 +13,36 @@ module.exports = function(knex) {
     });
   });
 
-  router.get("/jao", function(req, res) {
+  router.get("/users/:id/budget/:budget_id", function(req, res, next) {
+    const { id, budgetId } = req.params;
+    knex.select("income").from("budgets");
+  });
+
+  router.get("/:id/budget/:budgetId/categories", function(req, res) {
+    const { id, budgetId } = req.params;
+    knex
+      .select(
+        "name",
+        "total_cents",
+        "categories.id as category_id",
+        "budget_expenses.id as budget_expenses_id"
+      )
+      .from("budgets")
+      .innerJoin("budget_expenses", "budgets.id", "budget_expenses.budget_id")
+      .innerJoin("categories", "categories.id", "budget_expenses.category_id")
+      .where({ budget_id: budgetId })
+      .then(result => {
+        res.json(totalByCategory(result));
+      })
+      .catch(error => console.log(error));
+  });
+
+  router.get("/:id/budget", function(req, res) {
+    const { id } = req.params;
     knex
       .select("*")
-      .from("users")
+      .from("budgets")
+      .where({ user_id: id })
       .then(result => {
         res.json(result);
       })
