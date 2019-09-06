@@ -1,5 +1,6 @@
 let express = require("express");
 let router = express.Router();
+const totalByCategory = require("../helpers/route-helpers");
 
 /* GET users listing. */
 
@@ -8,13 +9,25 @@ module.exports = function(knex) {
     res.render("index", { title: "Budget" });
   });
 
-  router.get("/", function(req, res) {
+  router.get("/:id/categories", function(req, res) {
+    const { id } = req.params;
+    console.log(id, "======================");
     knex
-      .select("*")
-      .from("budgets")
-      .where({ user_id })
+      .select(
+        "name",
+        "total_cents",
+        "categories.id as category_id",
+        "budget_expenses.id as budget_expenses_id"
+      )
+      .from("categories")
+      .innerJoin(
+        "budget_expenses",
+        "categories.id",
+        "budget_expenses.category_id"
+      )
+      .where({ budget_id: Number(id) })
       .then(result => {
-        res.json(result);
+        res.json(totalByCategory(result));
       })
       .catch(error => console.log(error));
   });
