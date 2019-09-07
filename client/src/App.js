@@ -16,7 +16,16 @@ import LoginRegister from "./components/Login-register";
 import useApplicationData from "./hooks/useApplicationData";
 
 function App() {
-  const [expenses, setExpenses] = useState({});
+  const [expenses, setExpenses] = useState({
+    Groceries: 30000,
+    Housing: 70000,
+    Restaurants: 4000,
+    Medical: 0,
+    Transportation: 7500,
+    Clothing: 3500,
+    Gifts: 2000,
+    Entertainment: 4000
+  });
   const [loading, setLoading] = useState(true);
   const [budget, setBudget] = useState([
     {

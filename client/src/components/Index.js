@@ -35,20 +35,39 @@ export default function Index(props) {
     </li>
   ));
   return (
-    <div className="indexMain">
-      <Link to="/">MENU</Link>
-      <h1 className="savrLogo">Sav-r</h1>
-      <div className="spending">
-        <h2> {budget.id} Budget</h2>
-        <h3> Income </h3>
-        <h4> {centsToDollars(budget.income)}</h4>
-        <h3> Expenses </h3>
-        <h4> {centsToDollars(totalSpending(expenses))} </h4>
+    <div className="indexBigBox">
+      <div className="indexMain">
+        <div className="indexLogoMenu">
+          <div className="indexMenuBox">
+            <Link to="/">MENU</Link>
+          </div>
+          <h3 className="savrLogo">Sav-r</h3>
+        </div>
+        <div className="indexBudgetName">
+          <h2> {budget.id} Budget</h2>
+        </div>
+        <div>
+          <div className="indexIncomeExpenses">
+            <div className="indexIncome">
+              <h3> Income </h3>
+              <h4> {centsToDollars(budget.income)}</h4>
+            </div>
+            <div className="indexExpensesOverview">
+              <div className="indexExpenses">
+                <h3> Expenses </h3>
+                <h4> {centsToDollars(totalSpending(expenses))} </h4>
+              </div>
+              <Link to="/overview">Overview</Link>
+            </div>
+          </div>
+        </div>
+        <div className="indexCategoryHolder">
+          <div className="indexCategory">
+            <h4> Spending by Category </h4>
+            <ul>{categorySpending}</ul>
+          </div>
+        </div>
       </div>
-      <Link to="/overview">Overview</Link>
-
-      <h4> Spending by Category </h4>
-      <ul>{categorySpending}</ul>
     </div>
   );
 }

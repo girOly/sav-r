@@ -2,7 +2,16 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,900i|Teko&display=swap");
 
+.indexBigBox {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-content: space-around; */
+}
 .indexMain {
+  border: 2px solid pink;
+  width: 98%;
   display: flex;
   flex-direction: column;
 }
@@ -10,6 +19,59 @@
   font-family: "Montserrat", sans-serif;
   color: black;
   font-style: italic;
+  font-size: 3rem;
+  border: 2px solid pink;
+}
 
-  font-size: 100px;
+.indexLogoMenu {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-height: 20%;
+}
+.indexMenuBox {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.indexBudgetName {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.indexIncomeExpenses {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.indexIncome {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+}
+.indexExpenses {
+}
+
+.indexExpensesOverview {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+}
+
+.indexCategoryHolder {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.indexCategory {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
