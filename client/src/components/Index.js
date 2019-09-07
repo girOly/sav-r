@@ -35,12 +35,7 @@ export default function Index(props) {
     </li>
   ));
   return (
-    <div>
-      <style>
-        @import
-        url('https://fonts.googleapis.com/css?family=Montserrat:400,900i|Teko&display=swap');
-      </style>
-
+    <div className="indexMain">
       <Link to="/">MENU</Link>
       <h1 className="savrLogo">Sav-r</h1>
       <div className="spending">

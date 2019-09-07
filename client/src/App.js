@@ -18,13 +18,21 @@ import useApplicationData from "./hooks/useApplicationData";
 function App() {
   const [expenses, setExpenses] = useState({});
   const [loading, setLoading] = useState(true);
-  const [budget, setBudget] = useState();
+  const [budget, setBudget] = useState([
+    {
+      id: 1,
+      income: 35000000,
+      start_date: "2019-09-06T18:17:49.865Z",
+      end_date: null,
+      user_id: 1
+    }
+  ]);
   const [availableBudgets, setAvailableBudgets] = useState([]);
   const userID = localStorage.id;
 
   // console.log("app userID", userID);
   // console.log("app available budgets", availableBudgets);
-  // console.log("app budget", budget);
+  console.log("app budget", budget);
   // console.log("app expenses", expenses);
 
   // console.log("from app", userID);
