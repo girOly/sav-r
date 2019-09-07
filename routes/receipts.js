@@ -15,15 +15,17 @@ module.exports = function(knex) {
     parsedReceiptData = receiptParsing(req.body);
     parsedExpensesData = expensesParsing(req.body);
     try {
-      knex("receipts")
-        .insert(parsedReceiptData, ["id"])
-        .then(result => {
-          console.log(result);
-        });
       knex("budget_expenses")
-        .insert(parsedExpensesData, ["id"])
+        .insert(parsedExpensesData)
+        .returning(["id"])
         .then(result => {
-          console.log(result);
+          parsedReceiptData["budget_expenses_id"] = result[0].id;
+          knex("receipts")
+            .insert(parsedReceiptData)
+            .returning(["id"])
+            .then(result => {
+              console.log(result);
+            });
         });
     } catch (error) {
       console.log();
