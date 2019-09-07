@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "./App.scss";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import Uploader from "./components/Uploader";
