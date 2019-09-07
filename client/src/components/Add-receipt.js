@@ -3,14 +3,20 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Uploader from "./Uploader";
 import Confirm from "./Confirm";
 import Edit from "./Edit";
+import { useVisualMode } from "../hooks/useVisualMode";
+
+const CONFIRM = "CONFIRM";
+const UPLOAD = "UPLOAD";
 
 export default function AddReceipt(props) {
   const [total, setTotal] = useState(0);
   const [imageURL, setImageURL] = useState("");
+  const { mode, transition, back } = useVisualMode(UPLOAD);
 
   const userConfirm = (imageURLFromAmazon, totalFromUser) => {
     setTotal(totalFromUser);
     setImageURL(imageURLFromAmazon);
+    transition(CONFIRM);
   };
   console.log("total from addReceipt", total);
   console.log("imageURL from addReceipt", imageURL);
@@ -23,11 +29,11 @@ export default function AddReceipt(props) {
         <Uploader userConfirm={userConfirm} />
       </div>
       <div>
-        <Confirm />
+        {mode === CONFIRM && <Confirm total={total} imageURL={imageURL} />}
       </div>
-      <div>
+      {/* <div>
         <Edit />
-      </div>
+      </div> */}
     </container>
   );
 }

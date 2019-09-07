@@ -3,17 +3,30 @@ import React, { useState } from "react";
 export default function Confirm(props) {
   const [comment, setComment] = useState("");
   const [category, setCategory] = useState("");
-  console.log(category);
+  const [total, setTotal] = useState(props.total);
+  const [image_url, setImage_url] = useState(props.imageURL || "");
+  // console.log(category);
+  console.log("imageurl from confirm", image_url);
 
   const loggingFunction = function(event) {
     console.log(event.target.value, "=============");
     console.log(category);
   };
 
+  const submitReceipt = () => {};
+
+  console.log("total from confirm", total);
   return (
     <div>
       <h1>Confirm Component</h1>
       <form onSubmit={event => event.preventDefault()}>
+        total
+        <input
+          onChange={event => setTotal(event.target.value)}
+          type="number"
+          name="total"
+          value={total}
+        />
         user comments
         <input
           onChange={event => setComment(event.target.value)}
@@ -93,8 +106,8 @@ export default function Confirm(props) {
           />
           Entertainment
         </label>
+        <button>SUBMIT</button>
       </form>
-      <button>TAKE ME TO EDIT</button>
     </div>
   );
 }
