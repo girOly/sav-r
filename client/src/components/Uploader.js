@@ -17,8 +17,10 @@ export default function Uploader(props) {
         }
       })
       .then(response => {
-        console.log(file);
-        console.log("axios-response", response);
+        console.log("axios response", response.data);
+        console.log("hoping for image_url", response.data.image_url);
+        console.log("hoping for total", response.data.total);
+        props.userConfirm(response.data.image_url, response.data.total);
       })
       .catch(err => {
         console.log("axios error", err);
