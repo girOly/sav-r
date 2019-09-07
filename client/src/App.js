@@ -24,7 +24,7 @@ function App() {
 
   // console.log("app userID", userID);
   // console.log("app available budgets", availableBudgets);
-  console.log("app budget", budget);
+  // console.log("app budget", budget);
   // console.log("app expenses", expenses);
 
   // console.log("from app", userID);
@@ -43,14 +43,15 @@ function App() {
       setBudget(result[0].data), setExpenses(result[1].data);
     });
   };
-
+  console.log("expenses before db", expenses);
   const updateExpenses = budgetID => {
+    console.log("budgetID in updateExpenses", budgetID);
     axios.get(`/api/budgets/${budgetID}/categories`).then(result => {
-      // setExpenses(result[0].data);
-      console.log("result from updateExpenses", result[0]);
+      setExpenses(result.data);
+      // console.log("result from updateExpenses", result.data);
     });
   };
-
+  console.log("app expenses after db", expenses);
   return (
     <Router>
       <Route
