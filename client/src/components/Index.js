@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "./Index.scss";
+import "./Index.css";
 
 export default function Index(props) {
   const userID = localStorage.id;
@@ -36,14 +36,20 @@ export default function Index(props) {
   ));
   return (
     <div>
-      <Link to="/">MENU</Link>
-      <h1 className="savrLogo">Savr</h1>
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css?family=Montserrat:400,900i|Teko&display=swap');
+      </style>
 
-      <h2> {budget.id} Budget</h2>
-      <h3> Income </h3>
-      <h4> {centsToDollars(budget.income)}</h4>
-      <h3> Expenses </h3>
-      <h4> {centsToDollars(totalSpending(expenses))} </h4>
+      <Link to="/">MENU</Link>
+      <h1 className="savrLogo">Sav-r</h1>
+      <div className="spending">
+        <h2> {budget.id} Budget</h2>
+        <h3> Income </h3>
+        <h4> {centsToDollars(budget.income)}</h4>
+        <h3> Expenses </h3>
+        <h4> {centsToDollars(totalSpending(expenses))} </h4>
+      </div>
       <Link to="/overview">Overview</Link>
 
       <h4> Spending by Category </h4>
