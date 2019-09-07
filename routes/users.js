@@ -44,6 +44,20 @@ module.exports = function(knex) {
       .catch(error => console.log(error));
   });
 
+  router.post("/", function(req, res) {
+    singleUpload(req, res, function(err) {
+      let superObject = { image_url: req.file.location };
+      textExtraction(superObject).then(result => {
+        return res.json(result);
+      });
+      // extractedObject.then(result => {
+      //   console.log("result", result);
+      // });
+      // console.log(extractedObject); // <---- this causes promise pending
+      // return res.json(extractedObject);
+    });
+  });
+
   router.post("/:id/budgets/:budgetId/budget_expenses", function(req, res) {
     const { id, budgetId } = req.params;
     knex("budget_expenses")

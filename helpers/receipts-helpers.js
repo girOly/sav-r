@@ -9,8 +9,8 @@
 const receiptParsing = function(receiptObj) {
   image_url = receiptObj.image_url;
   total_cents = transformTotal(receiptObj.total);
-
-  return { image_url, total_cents };
+  budget_expenses_id = receiptObj.budget_expenses_id;
+  return { image_url, total_cents, budget_expenses_id };
 };
 
 const expensesParsing = function(receiptObj) {
