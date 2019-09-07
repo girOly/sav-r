@@ -46,24 +46,10 @@ function App() {
 
   const updateExpenses = budgetID => {
     axios.get(`/api/budgets/${budgetID}/categories`).then(result => {
-      setExpenses(result[0].data);
+      // setExpenses(result[0].data);
+      console.log("result from updateExpenses", result[0]);
     });
   };
-
-  /*
-Promise.all([
-      axios.get("http://localhost:3001/api/days"),
-      axios.get("http://localhost:3001/api/appointments"),
-      axios.get("http://localhost:3001/api/interviewers")
-    ]).then(result => {
-      dispatch({
-        type: SET_APPLICATION_DATA,
-        days: result[0].data,
-        appointments: result[1].data,
-        interviewers: result[2].data
-      });
-    });
-  */
 
   return (
     <Router>
@@ -72,11 +58,18 @@ Promise.all([
         exact
         component={() => <Application expenses={expenses} />}
       />
-      <Route path="/add_receipt/" component={AddReceipt} />
+      <Route
+        path="/add_receipt/"
+        component={() => (
+          <AddReceipt budget={budget} updateExpenses={updateExpenses} />
+        )}
+      />
       <Route path="/create_budget/" component={CreateBudget} />
       <Route
         path="/create_expense/"
-        component={() => <CreateExpense budget={budget} />}
+        component={() => (
+          <CreateExpense budget={budget} updateExpenses={updateExpenses} />
+        )}
       />
       <Route path="/receipt_history/" component={ReceiptHistory} />
       <Route

@@ -23,6 +23,7 @@ export default function CreateExpense(props) {
       .then(response => {
         console.log("axios-response", response);
       })
+      .then(props.updateExpenses(budget.id))
       .catch(err => {
         console.log("axios error", err);
       });

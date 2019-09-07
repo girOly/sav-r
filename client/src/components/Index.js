@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Index.scss";
 
@@ -8,7 +8,7 @@ export default function Index(props) {
   console.log("index props", props);
   const budget = props.budget[0];
   console.log("index budget", budget);
-  const expenses = props.expenses;
+  const [expenses, setExpenses] = useState(props.expenses);
   console.log("index expenses", expenses);
 
   /// props of expenses, budget

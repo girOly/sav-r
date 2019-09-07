@@ -11,6 +11,7 @@ const UPLOAD = "UPLOAD";
 export default function AddReceipt(props) {
   const [total, setTotal] = useState(0);
   const [imageURL, setImageURL] = useState("");
+  // const [budget, setBudget] = useState(props.budget || null);
   const { mode, transition, back } = useVisualMode(UPLOAD);
 
   const userConfirm = (imageURLFromAmazon, totalFromUser) => {
@@ -29,7 +30,9 @@ export default function AddReceipt(props) {
         <Uploader userConfirm={userConfirm} />
       </div>
       <div>
-        {mode === CONFIRM && <Confirm total={total} imageURL={imageURL} />}
+        {mode === CONFIRM && (
+          <Confirm total={total} imageURL={imageURL} budget={props.budget} />
+        )}
       </div>
       {/* <div>
         <Edit />

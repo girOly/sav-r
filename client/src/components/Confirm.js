@@ -8,6 +8,7 @@ export default function Confirm(props) {
   const [image_url, setImage_url] = useState(props.imageURL || "");
   // console.log(category);
   console.log("imageurl from confirm", image_url);
+  console.log("confirm props.budget.id", props.budget[0].id);
 
   const loggingFunction = function(event) {
     console.log(event.target.value, "=============");
@@ -16,8 +17,9 @@ export default function Confirm(props) {
 
   const submitReceipt = () => {
     return axios
-      .post("/api/users/login", {})
+      .post("", {})
       .then(response => {})
+      .then(props.updateExpenses(props.budget[0].id))
       .catch(err => {
         console.log("axios error", err);
       });
