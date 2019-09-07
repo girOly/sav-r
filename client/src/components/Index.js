@@ -37,7 +37,7 @@ export default function Index(props) {
   return (
     <div>
       <Link to="/">MENU</Link>
-      <h1>Savr</h1>
+      <h1 className="savrLogo">Savr</h1>
 
       <h2> {budget.id} Budget</h2>
       <h3> Income </h3>
