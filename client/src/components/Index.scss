@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Teko&display=swap");
+.main {
+  backgroud-color: pink;
+}
+
+$titleFont: "Montserrat";
+$expenseFont: "Teko";
+
+menu {
+  font-family: $titleFont;
+}
