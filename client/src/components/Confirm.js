@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from "axios";
+
 export default function Confirm(props) {
   const [comment, setComment] = useState("");
   const [category, setCategory] = useState("");
@@ -13,7 +14,14 @@ export default function Confirm(props) {
     console.log(category);
   };
 
-  const submitReceipt = () => {};
+  const submitReceipt = () => {
+    return axios
+      .post("/api/users/login", {})
+      .then(response => {})
+      .catch(err => {
+        console.log("axios error", err);
+      });
+  };
 
   console.log("total from confirm", total);
   return (
@@ -106,7 +114,7 @@ export default function Confirm(props) {
           />
           Entertainment
         </label>
-        <button>SUBMIT</button>
+        <button onClick={submitReceipt}>SUBMIT</button>
       </form>
     </div>
   );

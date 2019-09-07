@@ -24,7 +24,7 @@ function App() {
 
   // console.log("app userID", userID);
   // console.log("app available budgets", availableBudgets);
-  // console.log("app budget", budget);
+  console.log("app budget", budget);
   // console.log("app expenses", expenses);
 
   // console.log("from app", userID);
@@ -43,6 +43,13 @@ function App() {
       setBudget(result[0].data), setExpenses(result[1].data);
     });
   };
+
+  const updateExpenses = budgetID => {
+    axios.get(`/api/budgets/${budgetID}/categories`).then(result => {
+      setExpenses(result[0].data);
+    });
+  };
+
   /*
 Promise.all([
       axios.get("http://localhost:3001/api/days"),
