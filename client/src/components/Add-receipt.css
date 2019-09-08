@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,900i|Teko&display=swap");
-
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
 .receiptBigBox {
   height: 100%;
   display: flex;
@@ -7,7 +6,7 @@
   justify-content: center;
 }
 .receiptMain {
-  border: 2px solid pink;
+  border: 2px solid black;
   width: 98%;
   height: 100%;
   display: flex;

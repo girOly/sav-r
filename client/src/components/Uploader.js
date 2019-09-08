@@ -36,20 +36,23 @@ export default function Uploader(props) {
           onSubmit={event => event.preventDefault()}
           enctype="multipart/form-data"
         >
-          Image:{" "}
-          <input
-            onChange={event => setFile(event.target.files[0])}
-            type="file"
-            name="image"
-            multiple
-          />
-          <br />
-          <input
-            className="uploadSubmit"
-            onClick={uploadFile}
-            type="submit"
-            value="Submit"
-          />
+          <div className="uploadFileButton">
+            <input
+              onChange={event => setFile(event.target.files[0])}
+              type="file"
+              name="image"
+              multiple
+            />
+            <br />
+          </div>
+          <div className="uploadSubmitButton">
+            <input
+              className="uploadSubmit"
+              onClick={uploadFile}
+              type="submit"
+              value="Submit"
+            />
+          </div>
         </form>
       </div>
     </div>
