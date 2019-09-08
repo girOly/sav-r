@@ -50,3 +50,22 @@ module.exports = function(knex) {
 
   return router;
 };
+
+router.get("/:id", function(req, res) {
+  const { id, budgetId } = req.params;
+  knex
+    .select(
+      "image_url",
+      "total_cents",
+      "categories.id as category_id",
+      "budget_expenses.id as budget_expenses_id"
+    )
+    .from("receipts")
+    .innerJoin("budget_expenses", "budgets.id", "budget_expenses.budget_id")
+    .innerJoin("budget", "budget.id", "budget_expenses_id.budget.id")
+    .where({ budget_id: budgetId })
+    .then(result => {
+      res.json(totalByCategory(result));
+    })
+    .catch(error => console.log(error));
+});

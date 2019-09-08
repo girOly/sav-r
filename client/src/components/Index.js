@@ -30,9 +30,10 @@ export default function Index(props) {
   };
 
   const categorySpending = Object.keys(expenses).map(key => (
-    <li>
-      {key}: {centsToDollars(expenses[key])}
-    </li>
+    <div>
+      <h4>{key}</h4>
+      <li>{centsToDollars(expenses[key])}</li>
+    </div>
   ));
   return (
     <div className="indexBigBox">
@@ -52,7 +53,7 @@ export default function Index(props) {
               <h3> Income </h3>
               <h4> {centsToDollars(budget.income)}</h4>
             </div>
-            <div className="invisiDiv"></div>
+            <div className="invisiDiv" />
             <div className="indexExpensesOverview">
               <div className="indexExpenses">
                 <h3> Expenses </h3>
@@ -65,7 +66,7 @@ export default function Index(props) {
         <div className="indexCategoryHolder">
           <div className="indexCategory">
             <h4> Spending by Category </h4>
-            <ul>{categorySpending}</ul>
+            <div>{categorySpending}</div>
           </div>
         </div>
       </div>
