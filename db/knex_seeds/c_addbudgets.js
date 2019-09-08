@@ -7,7 +7,7 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex("budgets").insert([
         {
-          income: 35000000,
+          income: 140000,
           end_date: null,
           user_id: 1,
           saving_id: 1
