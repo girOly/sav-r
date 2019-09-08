@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
+
+.newBudgetBigBox {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-content: space-around; */
+}
+.newBudgetMain {
+  border: 1px solid black;
+  width: 98%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("background.png");
+  font-family: "Roboto", sans-serif;
+  background-repeat: repeat;
+}
+.newBudgetSavrLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.newBudgetLogoMenu {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-height: 20%;
+  background: url("logo.png");
+}
+.newBudgetMenuBox {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.3em;
+  justify-content: center;
+}
+.newBudgetName {
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.newBudgetForm {
+  border: 2px solid fuchsia;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.newBudgetFormCenter {
+  border: 2px solid fuchsia;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+}
+.newBudgetFormName {
+  border: 2px solid fuchsia;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  align-items: center;
+}
+.newBudgetIncomeForm {
+  border: 2px solid fuchsia;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  align-items: center;
+  text-align: center;
+}
+.newBudgetActualForm {
+  width: 85%;
+}
