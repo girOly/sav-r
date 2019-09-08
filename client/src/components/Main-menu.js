@@ -9,46 +9,62 @@ export default function Menu(props) {
     <React.Fragment>
       <main className="menuBigBox">
         <div className="menuColumnBox">
-          <section className="menu-button">
-            <Link className="menuLinkButton" to="/create_budget/">
-              CREATE A NEW BUDGET
-            </Link>
-          </section>
-          <section className="menu-button">
-            <Link className="menuLinkButton" to="/create_expense/">
-              CREATE EXPENSE
-            </Link>
-          </section>
-          <section className="menu-button">
-            <Link className="menuLinkButton" to="/add_receipt/">
-              ADD RECEIPT
-            </Link>
-          </section>
-          <section className="menu-button">
-            <Link className="menuLinkButton" to="/receipt_history/">
-              RECEIPT HISTORY
-            </Link>
-          </section>
-          <section className="menu-button">
-            <Link className="menuLinkButton" to="/overview/">
-              OVERVIEW
-            </Link>
-          </section>
-          <section className="menu-button">
-            <Link className="menuLinkButton" to="/login/">
-              LOGIN/REGISTER
-            </Link>
-          </section>
-          <section className="menu-button">
-            <Link className="menuLinkButton" to="/index/">
-              Index{" "}
-            </Link>
-          </section>
-          <section className="menu-button">
-            <Link className="menuLinkButton" to="/budget/">
-              SELECT BUDGET
-            </Link>
-          </section>
+          <div className="menuThree">
+            <section className="menu-button">
+              <Link className="menuLinkButton" to="/create_budget/">
+                CREATE A NEW BUDGET
+              </Link>
+            </section>
+          </div>
+          <div className="menuOne">
+            <section className="menu-button">
+              <Link className="menuLinkButton" to="/create_expense/">
+                CREATE EXPENSE
+              </Link>
+            </section>
+          </div>
+          <div className="menuTwo">
+            <section className="menu-button">
+              <Link className="menuLinkButton" to="/add_receipt/">
+                ADD RECEIPT
+              </Link>
+            </section>
+          </div>
+          <div className="menuThree">
+            <section className="menu-button">
+              <Link className="menuLinkButton" to="/receipt_history/">
+                RECEIPT HISTORY
+              </Link>
+            </section>
+          </div>
+          <div className="menuOne">
+            <section className="menu-button">
+              <Link className="menuLinkButton" to="/overview/">
+                OVERVIEW
+              </Link>
+            </section>
+          </div>
+          <div className="menuTwo">
+            <section className="menu-button">
+              <Link className="menuLinkButton" to="/login/">
+                LOGIN/REGISTER
+              </Link>
+            </section>
+          </div>
+          <div className="menuThree">
+            <section className="menu-button">
+              <Link className="menuLinkButton" to="/index/">
+                INDEX
+              </Link>
+            </section>
+          </div>
+          <div className="menuOne">
+            <section className="menu-button">
+              <Link className="menuLinkButton" to="/budget/">
+                SELECT BUDGET
+              </Link>
+            </section>{" "}
+          </div>
         </div>
       </main>
     </React.Fragment>
