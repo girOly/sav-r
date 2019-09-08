@@ -1,17 +1,18 @@
 .uploadInput-group {
-  border: 2px solid pink;
+  /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
+  background: rgba(245, 247, 249, 1);
 }
 .uploadTitle {
-  border: 2px solid pink;
+  /* border: 2px solid black; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
 }
 .custom-file {
-  border: 2px solid blue;
+  border: 0.1em solid black;
   display: flex;
   flex-direction: row;
   justify-content: center;
