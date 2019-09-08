@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./Add-receipt.css";
 import Uploader from "./Uploader";
 import Confirm from "./Confirm";
 import Edit from "./Edit";
@@ -23,20 +24,23 @@ export default function AddReceipt(props) {
   console.log("imageURL from addReceipt", imageURL);
 
   return (
-    <container>
-      <Link to="/">MENU</Link>
-      <h1>ADD RECEIPT</h1>
-      <div>
-        <Uploader userConfirm={userConfirm} />
+    <container className="receiptBigBox">
+      <div className="receiptMain">
+        <div className="receiptLogoMenu">
+          <div className="receiptMenuBox">
+            <Link to="/">MENU</Link>
+          </div>
+          <h3 className="receiptSavrLogo">Sav-r</h3>
+        </div>
+        <div>
+          <Uploader userConfirm={userConfirm} />
+        </div>
+        <div>
+          {mode === CONFIRM && (
+            <Confirm total={total} imageURL={imageURL} budget={props.budget} />
+          )}
+        </div>
       </div>
-      <div>
-        {mode === CONFIRM && (
-          <Confirm total={total} imageURL={imageURL} budget={props.budget} />
-        )}
-      </div>
-      {/* <div>
-        <Edit />
-      </div> */}
     </container>
   );
 }
