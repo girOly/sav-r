@@ -13,7 +13,7 @@ export default function AddReceipt(props) {
   const [total, setTotal] = useState(0);
   const [imageURL, setImageURL] = useState("");
   // const [budget, setBudget] = useState(props.budget || null);
-  const { mode, transition, back } = useVisualMode(UPLOAD);
+  const { mode, transition, back } = useVisualMode(CONFIRM);
 
   const userConfirm = (imageURLFromAmazon, totalFromUser) => {
     setTotal(totalFromUser);
@@ -32,10 +32,12 @@ export default function AddReceipt(props) {
           </div>
           <h3 className="receiptSavrLogo">Sav-r</h3>
         </div>
-        <div>
-          <Uploader userConfirm={userConfirm} />
+        <div className="receiptUploaderBox">
+          <div>
+            <Uploader userConfirm={userConfirm} />
+          </div>
         </div>
-        <div>
+        <div className="receiptConfirm">
           {mode === CONFIRM && (
             <Confirm total={total} imageURL={imageURL} budget={props.budget} />
           )}
