@@ -4,10 +4,24 @@ import { Bar } from "react-chartjs-2";
 
 export default function Overview(props) {
   console.log("localStorage", localStorage.id);
-  const dataArray = [props];
-  console.log(dataArray[0].expenses.Gifts);
+  const expenses = props.expenses;
+  console.log("overview expenses", expenses);
+
+  const expenseObjSeprator = expenseObj => {
+    let expenseCategories = [];
+    let expenseTotals = [];
+
+    for (let category in expenseObj) {
+      expenseCategories.push(category);
+      expenseTotals.push(expenseObj[category]);
+    }
+    return { expenseCategories, expenseTotals };
+  };
+
+  const dataForGraph = expenseObjSeprator(expenses);
+
   const data = {
-    labels: ["Gifts", "February", "March", "April", "May", "June", "July"],
+    labels: dataForGraph.expenseCategories,
     datasets: [
       {
         label: "My First dataset",
@@ -28,7 +42,7 @@ export default function Overview(props) {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [dataArray[0].expenses.Gifts, 59, 80, 81, 56, 55, 40]
+        data: dataForGraph.expenseTotals
       }
     ]
   };
