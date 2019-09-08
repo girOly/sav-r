@@ -16,6 +16,9 @@
   flex-direction: column;
 }
 .savrLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: "Montserrat", sans-serif;
   color: black;
   font-style: italic;
