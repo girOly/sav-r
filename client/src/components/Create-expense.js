@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "./Create-expense.scss";
+import "./Create-expense.css";
 export default function CreateExpense(props) {
   const [total, setTotal] = useState(0);
   const [comment, setComment] = useState("");
@@ -30,103 +30,112 @@ export default function CreateExpense(props) {
   };
 
   return (
-    <div class="main">
-      <Link to="/">MENU</Link>
-      <h1>CREATE EXPENSE</h1>
-      <div class="form">
+    <div className="createBigBox">
+      <div className="createCenter">
+        <div className="createTitle">
+          <h1>Create an expense</h1>
+        </div>
+        <div className="createTotal"></div>
         <form onSubmit={event => event.preventDefault()}>
-          Comment:
-          <div className="comment">
-            <input
-              onChange={event => setComment(event.target.value)}
-              type="text"
-              name="comments"
-            />
+          <div className="createTotalInput">
+            <div className="createTotal">
+              total
+              <input
+                onChange={event => setTotal(event.target.value)}
+                type="number"
+                name="total"
+                value={total}
+              />
+            </div>
           </div>
-          <label>Total:</label>
-          <div className="total">
-            <input
-              type="number"
-              name="total_cents"
-              onChange={event => setTotal(event.target.value)}
-            />
+          <div className="createCommentsInput">
+            <div className="createComments">
+              Comments
+              <input
+                onChange={event => setComment(event.target.value)}
+                type="text"
+                name="comments"
+              />
+            </div>
           </div>
-          Categories:
-          <div class="categories">
-            <label className="radio-inline">
-              <input
-                value="1"
-                type="radio"
-                name="optradio"
-                onChange={event => setCategory(event.target.value)}
-              />
-              Groceries
-            </label>
-            <label className="radio-inline">
-              <input
-                value="2"
-                type="radio"
-                name="optradio"
-                onChange={event => setCategory(event.target.value)}
-              />
-              Housing
-            </label>
-            <label className="radio-inline">
-              <input
-                value="3"
-                type="radio"
-                name="optradio"
-                onChange={event => setCategory(event.target.value)}
-              />
-              Restaurants
-            </label>
-            <label className="radio-inline">
-              <input
-                value="4"
-                type="radio"
-                name="optradio"
-                onChange={event => setCategory(event.target.value)}
-              />
-              Medical
-            </label>
-            <label className="radio-inline">
-              <input
-                value="5"
-                type="radio"
-                name="optradio"
-                onChange={event => setCategory(event.target.value)}
-              />
-              Transportation
-            </label>
-            <label className="radio-inline">
-              <input
-                value="6"
-                type="radio"
-                name="optradio"
-                onChange={event => setCategory(event.target.value)}
-              />
-              Clothing
-            </label>
-            <label className="radio-inline">
-              <input
-                value="7"
-                type="radio"
-                name="optradio"
-                onChange={event => setCategory(event.target.value)}
-              />
-              Gifts
-            </label>
-            <label className="radio-inline">
-              <input
-                value="8"
-                type="radio"
-                name="optradio"
-                onChange={event => setCategory(event.target.value)}
-              />
-              Entertainment
-            </label>
+          <div className="createCategoriesInput">
+            <div className="createCategories">
+              <div className="createCategoryTitle">Category</div>
+              <label className="radio-inline">
+                <input
+                  value="1"
+                  type="radio"
+                  name="optradio"
+                  onChange={event => setCategory(event.target.value)}
+                />
+                Groceries
+              </label>
+              <label className="radio-inline">
+                <input
+                  value="2"
+                  type="radio"
+                  name="optradio"
+                  onChange={event => setCategory(event.target.value)}
+                />
+                Housing
+              </label>
+              <label className="radio-inline">
+                <input
+                  value="3"
+                  type="radio"
+                  name="optradio"
+                  onChange={event => setCategory(event.target.value)}
+                />
+                Restaurants
+              </label>
+              <label className="radio-inline">
+                <input
+                  value="4"
+                  type="radio"
+                  name="optradio"
+                  onChange={event => setCategory(event.target.value)}
+                />
+                Medical
+              </label>
+              <label className="radio-inline">
+                <input
+                  value="5"
+                  type="radio"
+                  name="optradio"
+                  onChange={event => setCategory(event.target.value)}
+                />
+                Transportation
+              </label>
+              <label className="radio-inline">
+                <input
+                  value="6"
+                  type="radio"
+                  name="optradio"
+                  onChange={event => setCategory(event.target.value)}
+                />
+                Clothing
+              </label>
+              <label className="radio-inline">
+                <input
+                  value="7"
+                  type="radio"
+                  name="optradio"
+                  onChange={event => setCategory(event.target.value)}
+                />
+                Gifts
+              </label>
+              <label className="radio-inline">
+                <input
+                  value="8"
+                  type="radio"
+                  name="optradio"
+                  onChange={event => setCategory(event.target.value)}
+                />
+                Entertainment
+              </label>
+              <button onClick={expenseCreate}>SUBMIT</button>
+            </div>
           </div>
-          <button onClick={expenseCreate}>Create Expense</button>
         </form>
       </div>
     </div>

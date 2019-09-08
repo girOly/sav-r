@@ -1,0 +1,65 @@
+.createBigBox {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90%;
+}
+.createCenter {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95%;
+}
+.createTitle {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.createTotalInput {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.createTotal {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  text-align: center;
+}
+.createCommentsInput {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.createComments {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  text-align: center;
+}
+.createCategoriesInput {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.createCategories {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  text-align: center;
+}
+.createCategoryTitle {
+  padding-bottom: 1rem;
+}
