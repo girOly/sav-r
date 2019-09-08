@@ -4,6 +4,7 @@ import Uploader from "./Uploader";
 import Confirm from "./Confirm";
 import Edit from "./Edit";
 import { useVisualMode } from "../hooks/useVisualMode";
+import "./Uploader.css";
 
 const CONFIRM = "CONFIRM";
 const UPLOAD = "UPLOAD";
@@ -24,7 +25,10 @@ export default function AddReceipt(props) {
 
   return (
     <container>
-      <Link to="/">MENU</Link>
+      <div className="uploaderTopFlex">
+        <Link to="/">MENU</Link>
+        <h1 className="uploaderSavrLogo"> Sav-r </h1>
+      </div>
       <h1>ADD RECEIPT</h1>
       <div>
         <Uploader userConfirm={userConfirm} />

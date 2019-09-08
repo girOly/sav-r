@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,900i|Teko&display=swap");
+
+.uploaderTopFlex {
+  display: flex;
+  flex-direction: row;
+}
+.uploaderSavrLogo {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  font-style: italic;
+  float: right;
+  font-size: 2em;
+}
