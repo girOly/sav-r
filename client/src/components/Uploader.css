@@ -1,19 +1,36 @@
 .uploadInput-group {
-  border: 2px solid pink;
+  padding: 1%;
+  margin: 2%;
+  border: 2px solid black;
+  border-radius: 1em;
   display: flex;
   flex-direction: column;
+  background: rgba(245, 247, 249, 1);
 }
 .uploadTitle {
-  border: 2px solid pink;
+  /* border: 2px solid black; */
   display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  font-style: italic;
   flex-direction: row;
   justify-content: center;
   text-align: center;
 }
 .custom-file {
-  border: 2px solid blue;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
+}
+
+.uploadSubmitButton {
+  display: flex;
+  justify-content: center;
+}
+
+.uploadFileButton {
+  display: flex;
+  flex-direction: row;
+  float: left;
 }
