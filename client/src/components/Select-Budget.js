@@ -8,6 +8,7 @@ export default function SelectBudget(props) {
   return (
     <div>
       <Link to="/">MENU</Link>
+      <Link to="/create_budget/">Make a new budget</Link>
       <div>
         <h1>SELECT BUDGET</h1>
       </div>
