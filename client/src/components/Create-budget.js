@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function CreateBudget(props) {
   const [income, setIncome] = useState(0);
+  const [budgetName, setBudgetName] = useState("");
+
+  console.log(budgetName);
 
   console.log(income);
 
@@ -26,6 +29,12 @@ export default function CreateBudget(props) {
       <Link to="/">MENU</Link>
       <h1>CREATE BUDGET</h1>
       <form onSubmit={event => event.preventDefault()}>
+        Budget name
+        <input
+          onChange={event => setBudgetName(event.target.value)}
+          type="text"
+          name="budget_name"
+        />
         Income
         <input
           onChange={event => setIncome(event.target.value)}
