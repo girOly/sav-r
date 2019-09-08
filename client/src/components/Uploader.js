@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./Uploader.css";
 import FormData from "form-data";
 
 export default function Uploader(props) {
@@ -26,13 +26,11 @@ export default function Uploader(props) {
   };
 
   return (
-    <div className="input-group">
-      <h1>Uploader Component</h1>
-      <div className="input-group-prepend">
-        <span className="input-group-text" id="inputGroupFileAddon01">
-          Upload
-        </span>
+    <div className="uploadInput-group">
+      <div className="uploadTitle">
+        <h1>Upload your receipt!</h1>
       </div>
+
       <div className="custom-file">
         <form
           onSubmit={event => event.preventDefault()}
@@ -46,7 +44,12 @@ export default function Uploader(props) {
             multiple
           />
           <br />
-          <input onClick={uploadFile} type="submit" value="Submit" />
+          <input
+            className="uploadSubmit"
+            onClick={uploadFile}
+            type="submit"
+            value="Submit"
+          />
         </form>
       </div>
     </div>

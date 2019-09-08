@@ -1,0 +1,65 @@
+.confirmBigBox {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90%;
+}
+.confirmCenter {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95%;
+}
+.confirmTitle {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.confirmTotalInput {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.confirmTotal {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  text-align: center;
+}
+.confirmCommentsInput {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.confirmComments {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  text-align: center;
+}
+.confirmCategoriesInput {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.confirmCategories {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  text-align: center;
+}
+.confirmCategoryTitle {
+  padding-bottom: 1rem;
+}
