@@ -1,31 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
+
 .confirmBigBox {
-  border: 2px solid pink;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 90%;
 }
 .confirmCenter {
-  border: 2px solid pink;
+  font-family: "Roboto", sans-serif;
+  border: 2px solid black;
+  border-radius: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 95%;
+  background: rgba(245, 247, 249, 1);
+  width: 100%;
 }
 .confirmTitle {
-  border: 2px solid pink;
+  /* border: 2px solid black; */
   display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  font-style: italic;
   flex-direction: row;
   justify-content: center;
+  text-align: center;
 }
 .confirmTotalInput {
-  border: 2px solid pink;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 .confirmTotal {
-  border: 2px solid pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,13 +39,12 @@
   text-align: center;
 }
 .confirmCommentsInput {
-  border: 2px solid pink;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 2%;
 }
 .confirmComments {
-  border: 2px solid pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,17 +52,23 @@
   text-align: center;
 }
 .confirmCategoriesInput {
-  border: 2px solid pink;
+  margin: 5%;
+  border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 .confirmCategories {
-  border: 2px solid pink;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  width: 25%;
+  width: 100%;
+  height: 100%;
+  margin: 10%;
+  text-align: center;
+}
+.confirmCategories li {
+  justify-content: center;
+  padding: 3%;
+  margin: auto;
   text-align: center;
 }
 .confirmCategoryTitle {

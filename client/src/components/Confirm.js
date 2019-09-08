@@ -31,13 +31,13 @@ export default function Confirm(props) {
     <div className="confirmBigBox">
       <div className="confirmCenter">
         <div className="confirmTitle">
-          <h1>Please confirm your spending!</h1>
+          <h1>Confirmation</h1>
         </div>
-        <div className="confirmTotal"></div>
+        <div className="confirmTotal" />
         <form onSubmit={event => event.preventDefault()}>
           <div className="confirmTotalInput">
             <div className="confirmTotal">
-              total
+              Total
               <input
                 onChange={event => setTotal(event.target.value)}
                 type="number"
@@ -58,81 +58,99 @@ export default function Confirm(props) {
           </div>
           <div className="confirmCategoriesInput">
             <div className="confirmCategories">
-              <div className="confirmCategoryTitle">Category</div>
-              <label className="radio-inline">
-                <input
-                  value="1"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Groceries
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="2"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Housing
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="3"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Restaurants
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="4"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Medical
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="5"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Transportation
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="6"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Clothing
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="7"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Gifts
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="8"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Entertainment
-              </label>
-              <button onClick={submitReceipt}>SUBMIT</button>
+              <div className="confirmCategoryTitle">Categories:</div>
+              <ul>
+                <li>
+                  Groceries
+                  <label className="radio-inline">
+                    <input
+                      value="1"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                  </label>
+                </li>
+                <li>
+                  Housing
+                  <label className="radio-inline">
+                    <input
+                      value="2"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                  </label>
+                </li>
+                <li>
+                  Restaurants
+                  <label className="radio-inline">
+                    <input
+                      value="3"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    Medical
+                    <input
+                      value="4"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    Transportation
+                    <input
+                      value="5"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    Clothing
+                    <input
+                      value="6"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    Gifts
+                    <input
+                      value="7"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    Entertainment
+                    <input
+                      value="8"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                  </label>
+                </li>
+              </ul>
             </div>
+            <button onClick={submitReceipt}>SUBMIT</button>
           </div>
         </form>
       </div>
