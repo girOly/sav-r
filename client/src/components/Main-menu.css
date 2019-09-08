@@ -1,26 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
 .menuBigBox {
-  border: 2px solid pink;
+  border: 2px solid black;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-image: url("background.png");
 }
 .menuColumnBox {
-  border: 2px solid pink;
+  height: 100%;
   width: 98%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+
+  font-family: "Roboto", sans-serif;
 }
 .menu-button {
-  border: 2px solid pink;
+  border: 2px solid black;
+  font-size: 0.8em;
+  margin: 5%;
   height: 3rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  background-color: rgba(245, 247, 249, 1);
+  opacity: 0.8;
   /* width: 55%; */
 }
 
 /* You can adjust how the text looks here */
 .menuLinkButton {
   font-size: 2em;
+}
+
+.menuOne {
+  background-image: url("menu1.png");
+  border: 1px black solid;
+  border-radius: 2em;
+  margin: 5%;
+}
+
+.menuTwo {
+  background-image: url("menu2.png");
+  border: 1px black solid;
+  border-radius: 2em;
+  margin: 5%;
+}
+
+.menuThree {
+  background-image: url("menu3.png");
+  border: 1px black solid;
+  border-radius: 2em;
+  margin: 5%;
 }
