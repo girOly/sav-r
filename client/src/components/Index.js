@@ -45,7 +45,7 @@ export default function Index(props) {
           <h3 className="savrLogo">Sav-r</h3>
         </div>
         <div className="indexBudgetName">
-          <h2> {budget.id} Budget</h2>
+          <h2> {budget.name}</h2>
         </div>
         <div>
           <div className="indexIncomeExpenses">

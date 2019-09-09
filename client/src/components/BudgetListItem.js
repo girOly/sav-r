@@ -6,7 +6,7 @@ export default function BudgetListItem(props) {
   return (
     <li>
       <form onSubmit={event => event.preventDefault()}>
-        {thisBudget.budget.id}
+        {thisBudget.budget.name}
         <button onClick={() => props.chooseBudget(thisBudget.budget.id)}>
           Choose this budget
         </button>

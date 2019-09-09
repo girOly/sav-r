@@ -31,6 +31,7 @@ function App() {
     {
       id: 1,
       income: 140000,
+      name: "Jao",
       start_date: "2019-09-06T18:17:49.865Z",
       end_date: null,
       user_id: 1

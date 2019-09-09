@@ -11,7 +11,8 @@ export default function CreateBudget(props) {
     return axios
       .post("/api/budgets", {
         income,
-        user_id: localStorage.id
+        user_id: localStorage.id,
+        name: budgetName
       })
       .then(response => {
         console.log("axios-response", response);
