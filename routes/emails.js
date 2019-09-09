@@ -18,9 +18,9 @@ const buildHTMLMessage = data => {
 
   output += "<h1> Your Expense Summary </h1>";
   output += "<ul>";
-
-  for (const entry in data) {
-    output += `<li> ${entry}: ${data[entry]} </li>`;
+  output += `<h2> ${data.budgetName} </h2>`;
+  for (const entry in data.budgetEntries) {
+    output += `<li> ${entry}: ${data.budgetEntries[entry]} </li>`;
   }
   output += "</ul>";
   output += "</section>";
