@@ -18,7 +18,13 @@ export default function Confirm(props) {
 
   const submitReceipt = () => {
     return axios
-      .post("", {})
+      .post("/api/receipts", {
+        image_url: image_url,
+        total: total,
+        comments: comment,
+        category_id: category,
+        budget_id: props.budget[0].id
+      })
       .then(response => {})
       .then(props.updateExpenses(props.budget[0].id))
       .catch(err => {
