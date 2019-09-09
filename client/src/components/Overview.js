@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Bar } from "react-chartjs-2";
+import { Bar, Pie } from "react-chartjs-2";
 import "./Overview.css";
 export default function Overview(props) {
   console.log("localStorage", localStorage.id);
@@ -24,7 +24,7 @@ export default function Overview(props) {
     labels: dataForGraph.expenseCategories,
     datasets: [
       {
-        label: "My First dataset",
+        label: "My Expenses",
         fill: false,
         lineTension: 0.1,
         backgroundColor: "rgba(75,192,192,0.4)",
@@ -46,11 +46,65 @@ export default function Overview(props) {
       }
     ]
   };
+
+  const dataPie = {
+    labels: [
+      "Groceries",
+      "Housing",
+      "Restaurants",
+      "Medical",
+      "Transportation",
+      "Clothing",
+      "Gifts",
+      "Entertainment"
+    ],
+    datasets: [
+      {
+        data: dataForGraph.expenseTotals,
+        backgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#ff0000",
+          "#00ff4c",
+          "#aa00ff",
+          "#ffa200",
+          "#00fbff"
+        ],
+        hoverBackgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#ff0000",
+          "#00ff4c",
+          "#aa00ff",
+          "#ffa200",
+          "#00fbff"
+        ]
+      }
+    ]
+  };
+
+  const options = {
+    maintainAspectRatio: false,
+    responsive: false,
+    legend: {
+      position: "left",
+      labels: {
+        boxWidth: 10
+      }
+    }
+  };
+
   return (
     <div className="overviewMainBox">
       <Link to="/">MENU</Link>
       <h1>Overview</h1>
-      <Bar data={data} />
+      <div className="overviewChart">
+        <Bar data={data} />
+        <Pie data={dataPie} height={150} width={200} />
+      </div>
+      <div />
     </div>
   );
 }
