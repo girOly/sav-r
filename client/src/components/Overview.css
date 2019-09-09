@@ -8,3 +8,9 @@
   font-family: "Roboto", sans-serif;
   background-repeat: repeat;
 }
+
+.overviewChart {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}

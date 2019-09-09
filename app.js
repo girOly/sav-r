@@ -20,6 +20,7 @@ let savingsRouter = require("./routes/savings");
 let storesRouter = require("./routes/stores");
 let usersRouter = require("./routes/users");
 let receiptsRouter = require("./routes/receipts");
+let emailsRouter = require("./routes/emails");
 
 let app = express();
 
@@ -67,6 +68,7 @@ app.use("/api/savings", savingsRouter(knex));
 app.use("/api/stores", storesRouter(knex));
 app.use("/api/users", usersRouter(knex));
 app.use("/api/receipts", receiptsRouter(knex));
+app.use("/api/emails", emailsRouter());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
