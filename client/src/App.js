@@ -80,9 +80,9 @@ function App() {
   return (
     <Router>
       {budget[0].name ? (
-        <div>Currently on budget {budget[0].name}</div>
+        <div>Currently tracking: {budget[0].name}</div>
       ) : (
-        <div>Please select a budget</div>
+        <div>Please select your expenses to track!</div>
       )}
       <Route
         path="/"

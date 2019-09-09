@@ -50,13 +50,13 @@ export default function Index(props) {
         <div>
           <div className="indexIncomeExpenses">
             <div className="indexIncome">
-              <h3> Income </h3>
+              <h3> Spending Limit </h3>
               <h4> {centsToDollars(budget.income)}</h4>
             </div>
             <div className="invisiDiv" />
             <div className="indexExpensesOverview">
               <div className="indexExpenses">
-                <h3> Expenses </h3>
+                <h3> Spent so far </h3>
                 <h4> {centsToDollars(totalSpending(expenses))} </h4>
               </div>
               <Link to="/overview">Overview</Link>
