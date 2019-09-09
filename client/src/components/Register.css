@@ -1,0 +1,43 @@
+.loginBigBox {
+  border: 2px solid fuchsia;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-content: space-around; */
+}
+.registerMain {
+  border: 2px solid fuchsia;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.registerTitle {
+  border: 2px solid fuchsia;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.registerForm {
+  border: 2px solid fuchsia;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.registerCentered {
+  border: 2px solid fuchsia;
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.registerFormContent {
+  border: 2px solid fuchsia;
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
