@@ -7,9 +7,11 @@ export default function Confirm(props) {
   const [category, setCategory] = useState("");
   const [total, setTotal] = useState(props.total);
   const [image_url, setImage_url] = useState(props.imageURL || "");
+  const budget = props.budget[0];
   // console.log(category);
-  console.log("imageurl from confirm", image_url);
-  console.log("confirm props.budget.id", props.budget[0].id);
+  // console.log("imageurl from confirm", image_url);
+  console.log("confirm props.budget.id", budget.id);
+  console.log("props in confirm", props);
 
   const loggingFunction = function(event) {
     console.log(event.target.value, "=============");
@@ -23,10 +25,12 @@ export default function Confirm(props) {
         total: total,
         comments: comment,
         category_id: category,
-        budget_id: props.budget[0].id
+        budget_id: budget.id
       })
-      .then(response => {})
-      .then(props.updateExpenses(props.budget[0].id))
+      .then(response => {
+        console.log("axios response", response);
+      })
+      .then(props.updateExpenses(budget.id))
       .catch(err => {
         console.log("axios error", err);
       });
