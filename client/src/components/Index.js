@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Index.css";
+import axios from "axios";
 
 export default function Index(props) {
   const userID = localStorage.id;
-  console.log("index userID", userID);
-  console.log("index props", props);
   const budget = props.budget[0];
   console.log("index budget", budget);
   const [expenses, setExpenses] = useState(props.expenses);
@@ -28,7 +27,45 @@ export default function Index(props) {
     }
     return total;
   };
+  const prepareForEmail = expenseObj => {
+    let result = {};
+    for (let key in expenseObj) {
+      result[key] = expenseObj[key] / 100;
+    }
+    return result;
+  };
 
+  const emailMe = () => {
+    const toBeEmailed = prepareForEmail(expenses);
+
+    return axios
+      .post("/api/emails", {
+        budgetName: budget.name,
+        budgetEntries: toBeEmailed
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log("axios error", err);
+      });
+  };
+  /*
+  {
+    budgetName: "Joe",
+    budgetEntries:
+        {    
+        "Groceries": 918,
+        "Housing": 0,
+        "Restaurants": 1500,
+        "Medical": 1000,
+        "Transportation": 0,
+        "Clothing": 9000,
+        "Gifts": 2000,
+        "Entertainment": 0
+        }    
+}
+*/
   const categorySpending = Object.keys(expenses).map(key => (
     <div>
       <h4>{key}</h4>
@@ -53,7 +90,9 @@ export default function Index(props) {
               <h3> Spending Limit </h3>
               <h4> {centsToDollars(budget.income)}</h4>
             </div>
-            <div className="invisiDiv" />
+            <div className="invisiDiv">
+              <button onClick={emailMe}> Email my expenses! </button>
+            </div>
             <div className="indexExpensesOverview">
               <div className="indexExpenses">
                 <h3> Spent so far </h3>
