@@ -31,12 +31,6 @@ export default function CreateExpense(props) {
 
   return (
     <div className="createBigBox">
-      <div className="createExpenseLogoMenu">
-        <div className="createExpenseMenuBox">
-          <Link to="/">MENU</Link>
-        </div>
-        <h3 className="savrLogo">Sav-r</h3>
-      </div>
       <div className="createCenter">
         <div className="createTitle">
           <h1>Create an Expense</h1>

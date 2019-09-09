@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Bar } from "react-chartjs-2";
-
+import "./Overview.css";
 export default function Overview(props) {
   console.log("localStorage", localStorage.id);
   const expenses = props.expenses;
@@ -47,7 +47,7 @@ export default function Overview(props) {
     ]
   };
   return (
-    <div>
+    <div className="overviewMainBox">
       <Link to="/">MENU</Link>
       <h1>Overview</h1>
       <Bar data={data} />

@@ -42,6 +42,7 @@ module.exports = function(knex) {
     // req.body from front end = {
     // {
     // 	"income":   35000,
+    // "name": "Jao's futbol fund"
     //  "end_date": null,
     //  "user_id": 1,
     // 	"saving_id": 1
