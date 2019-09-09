@@ -1,38 +1,26 @@
-# Routes Made
+## Things to Fix
 
-All Expenses for a Given Budget
-http://localhost:3005/api/budget_expenses/1
-All Expenses, Summed in Categories
-http://localhost:3005/api/budgets/1/categories
-All Budgets, for a User
-http://localhost:3005/api/users/1/budgets
+#### Expense Tracker
 
-Individual Budget, for a User
-http://localhost:3005/api/users/1/budgets/2
+- Add Color formatting
 
-## Routes needid
+#### Menu
 
-<!-- Restful Route for Add EXPENSE (POST)
+- rearrange menu buttons
+- remove create expenses and receipt history
+- change name of add receipt
 
-- /users/:id/budgets/:id/budget_expenses -->
+#### Select Budget
 
-Restful Route for Add Receipt (POST)
+- Add Margin between Budgets
+- Change Font
+- Select Expense Tracker
 
-- /users/:id/budgets/:id/receipts
+#### Create a New BUDGET
 
-- Get ALL receipts route
+- Create a New Expense Tracker
+- Looks Awful
 
-## Receipt Route
+#### Overview
 
-First push parsed receipt - total_cents, comments, category_id and budget_id to Budget_Expenses on upload
-
-return budget_expenses_id
-
-.then
-
-insert into receipts
-total_cents,image_url and budget_expenses_id
-
-## Add EXPENSE
-
-Wont be reflected in index until reload, we need to update state on the resolution of create_expense
+- Looks Awful -ish
