@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Goblin+One&display=swap");
 .menuBigBox {
   border: 2px solid black;
   display: flex;
@@ -15,18 +16,16 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-
-  font-family: "Roboto", sans-serif;
+  font-family: "Goblin One", sans-serif;
 }
 .menu-button {
   border: 2px solid black;
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin: 5%;
   height: 3rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: rgba(245, 247, 249, 1);
-  opacity: 0.8;
   /* width: 55%; */
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Register.css";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Register(props) {
   const [name, setName] = useState("");
@@ -27,6 +27,12 @@ export default function Register(props) {
 
   return (
     <div className="registerBigBox">
+      <div className="indexLogoMenu">
+        <div className="indexMenuBox">
+          <Link to="/">MENU</Link>
+        </div>
+        <h3 className="savrLogo">Sav-r</h3>
+      </div>
       <div className="registerMain">
         <div className="registerTitle">
           <h1>REGISTER</h1>

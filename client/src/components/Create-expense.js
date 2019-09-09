@@ -34,13 +34,13 @@ export default function CreateExpense(props) {
     <div className="createBigBox">
       <div className="createCenter">
         <div className="createTitle">
-          <h1>Create an expense</h1>
+          <h1>Create an Expense</h1>
         </div>
-        <div className="createTotal"></div>
+        <div className="createTotal" />
         <form onSubmit={event => event.preventDefault()}>
           <div className="createTotalInput">
             <div className="createTotal">
-              total
+              Total
               <input
                 onChange={event => setTotal(event.target.value)}
                 type="number"
@@ -51,7 +51,7 @@ export default function CreateExpense(props) {
           </div>
           <div className="createCommentsInput">
             <div className="createComments">
-              Comments
+              Comment
               <input
                 onChange={event => setComment(event.target.value)}
                 type="text"

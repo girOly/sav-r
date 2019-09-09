@@ -2,6 +2,7 @@ exports.up = function(knex) {
   return knex.schema.createTable("budgets", table => {
     table.increments("id").primary();
     table.integer("income");
+    table.text("name");
     table.timestamp("start_date").defaultTo(knex.fn.now());
     table.time("end_date");
     table.integer("user_id");

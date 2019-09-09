@@ -1,31 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
+
 .createBigBox {
-  border: 2px solid pink;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 90%;
+  width: 100%;
+  height: 100%;
 }
 .createCenter {
-  border: 2px solid pink;
+  font-family: "Roboto", sans-serif;
+  border: 2px solid black;
+  border-radius: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 95%;
+  background: rgba(245, 247, 249, 1);
+  width: 100%;
+  height: 100%;
 }
 .createTitle {
-  border: 2px solid pink;
   display: flex;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  font-style: italic;
   flex-direction: row;
   justify-content: center;
+  text-align: center;
 }
 .createTotalInput {
-  border: 2px solid pink;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 .createTotal {
-  border: 2px solid pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,13 +40,12 @@
   text-align: center;
 }
 .createCommentsInput {
-  border: 2px solid pink;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding: 2%;
 }
 .createComments {
-  border: 2px solid pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,13 +53,14 @@
   text-align: center;
 }
 .createCategoriesInput {
-  border: 2px solid pink;
+  margin: 5%;
+  border: 2px solid black;
+  border-radius: 15px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 .createCategories {
-  border: 2px solid pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,4 +69,30 @@
 }
 .createCategoryTitle {
   padding-bottom: 1rem;
+}
+.savrLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.createExpenseLogoMenu {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-height: 20%;
+  background: url("logo.png");
+}
+.createExpenseMenuBox {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.3em;
+  justify-content: center;
 }
