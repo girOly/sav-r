@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Add-receipt.css";
 import Uploader from "./Uploader";
 import Confirm from "./Confirm";
+import CreateExpense from "./Create-expense";
 import Edit from "./Edit";
 import { useVisualMode } from "../hooks/useVisualMode";
 
 const CONFIRM = "CONFIRM";
 const UPLOAD = "UPLOAD";
+const CREATE = "CREATE";
 
 export default function AddReceipt(props) {
   const [total, setTotal] = useState(0);
@@ -19,6 +21,9 @@ export default function AddReceipt(props) {
     setTotal(totalFromUser);
     setImageURL(imageURLFromAmazon);
     transition(CONFIRM);
+  };
+  const noReceipt = () => {
+    transition(CREATE);
   };
   console.log("total from addReceipt", total);
   console.log("imageURL from addReceipt", imageURL);
@@ -36,10 +41,24 @@ export default function AddReceipt(props) {
           <div>
             <Uploader userConfirm={userConfirm} />
           </div>
+          <button className="receiptNoReceiptButton" onClick={noReceipt}>
+            I don't have a receipt
+          </button>
         </div>
         <div className="receiptConfirm">
           {mode === CONFIRM && (
-            <Confirm total={total} imageURL={imageURL} budget={props.budget} />
+            <Confirm
+              total={total}
+              imageURL={imageURL}
+              budget={props.budget}
+              updateExpenses={props.updateExpenses}
+            />
+          )}
+          {mode === CREATE && (
+            <CreateExpense
+              budget={props.budget}
+              updateExpenses={props.updateExpenses}
+            />
           )}
         </div>
       </div>

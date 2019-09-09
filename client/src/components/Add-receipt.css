@@ -43,8 +43,9 @@
 .receiptUploaderBox {
   /* border: 2px solid green; */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
 }
 .receiptConfirm {
   /* border: 2px solid pink; */
