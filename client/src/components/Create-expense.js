@@ -10,7 +10,8 @@ export default function CreateExpense(props) {
   const userID = localStorage.id;
   // console.log("budgetID in create expense", budget.id);
   // console.log("userID in create expense", userID);
-  console.log("create-expense category", category);
+  // console.log("create-expense category", category);
+  console.log("create expense budget", budget);
 
   const expenseCreate = () => {
     return axios

@@ -15,19 +15,20 @@ import LoginRegister from "./components/Login-register";
 
 import useApplicationData from "./hooks/useApplicationData";
 
-function App() {
-  const [expenses, setExpenses] = useState({
-    Groceries: 30000,
-    Housing: 70000,
-    Restaurants: 4000,
-    Medical: 0,
-    Transportation: 7500,
-    Clothing: 3500,
-    Gifts: 2000,
-    Entertainment: 4000
-  });
-  const [loading, setLoading] = useState(true);
-  const [budget, setBudget] = useState([
+/*
+{
+  Groceries: 30000,
+  Housing: 70000,
+  Restaurants: 4000,
+  Medical: 0,
+  Transportation: 7500,
+  Clothing: 3500,
+  Gifts: 2000,
+  Entertainment: 4000
+}
+*/
+/* 
+[
     {
       id: 1,
       income: 140000,
@@ -36,7 +37,12 @@ function App() {
       end_date: null,
       user_id: 1
     }
-  ]);
+  ]
+  */
+function App() {
+  const [expenses, setExpenses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [budget, setBudget] = useState([]);
   const [availableBudgets, setAvailableBudgets] = useState([]);
   const userID = localStorage.id;
 
@@ -61,9 +67,9 @@ function App() {
       setBudget(result[0].data), setExpenses(result[1].data);
     });
   };
-  console.log("expenses before db", expenses);
+
   const updateExpenses = budgetID => {
-    console.log("budgetID in updateExpenses", budgetID);
+    console.log("hey i work");
     axios.get(`/api/budgets/${budgetID}/categories`).then(result => {
       setExpenses(result.data);
       // console.log("result from updateExpenses", result.data);
