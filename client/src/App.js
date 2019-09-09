@@ -42,7 +42,7 @@ import useApplicationData from "./hooks/useApplicationData";
 function App() {
   const [expenses, setExpenses] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [budget, setBudget] = useState([]);
+  const [budget, setBudget] = useState([{ name: null }]);
   const [availableBudgets, setAvailableBudgets] = useState([]);
   const userID = localStorage.id;
 
@@ -64,7 +64,8 @@ function App() {
       axios.get(`/api/users/${userID}/budgets/${budgetID}`),
       axios.get(`/api/budgets/${budgetID}/categories`)
     ]).then(result => {
-      setBudget(result[0].data), setExpenses(result[1].data);
+      setBudget(result[0].data);
+      setExpenses(result[1].data);
     });
   };
 
@@ -78,6 +79,11 @@ function App() {
   console.log("app expenses after db", expenses);
   return (
     <Router>
+      {budget[0].name ? (
+        <div>Currently on budget {budget[0].name}</div>
+      ) : (
+        <div>Please select a budget</div>
+      )}
       <Route
         path="/"
         exact
