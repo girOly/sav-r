@@ -1,0 +1,12 @@
+.noneSelected {
+  background-color: #ff7373;
+  text-align: center;
+  color: white;
+}
+
+.budgetSelected {
+  background-color: #38e05d;
+  text-align: center;
+  color: white;
+  opacity: 0.5;
+}

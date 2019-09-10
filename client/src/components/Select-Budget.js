@@ -23,7 +23,7 @@ export default function SelectBudget(props) {
               <h1 className="selectTitleText">Select expense tracker</h1>
             </div>
             <Link className="selectLinkToCreate" to="/create_budget/">
-              Make a new budget
+              Make a new tracker!
             </Link>
             <div className="SelectBudgetList">
               <BudgetList

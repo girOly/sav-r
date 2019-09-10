@@ -59,7 +59,11 @@ export default function CreateBudget(props) {
                     name="income"
                   />
                 </div>
-                <button onClick={budgetCreate} type="submit">
+                <button
+                  className="newBudgetSubmit"
+                  onClick={budgetCreate}
+                  type="submit"
+                >
                   Submit
                 </button>
               </div>
