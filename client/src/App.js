@@ -40,7 +40,13 @@ import useApplicationData from "./hooks/useApplicationData";
   ]
   */
 function App() {
-  const [expenses, setExpenses] = useState([]);
+  const [expenses, setExpenses] = useState({
+    Groceries: 777,
+    Housing: 0,
+    Restaurants: 1500,
+    Medical: 1000,
+    Transportation: 0
+  });
   const [loading, setLoading] = useState(true);
   const [budget, setBudget] = useState([{ name: null }]);
   const [availableBudgets, setAvailableBudgets] = useState([]);

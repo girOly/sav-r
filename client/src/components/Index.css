@@ -75,6 +75,7 @@
   width: 30%;
   margin: 5%;
   flex-direction: column;
+  justify-content: space-around;
   background: #fff0bb;
 }
 .invisiDiv {
@@ -105,6 +106,7 @@
   margin: 5%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 30%;
   font-size: 1em;
   text-align: center;
@@ -118,7 +120,7 @@
 }
 
 .indexCategory {
-  background: rgba(245, 247, 249, 1);
+  background: #fff0bb;
   margin: 5%;
   border: 2px solid black;
   border-radius: 1em;
@@ -137,19 +139,24 @@
   text-decoration: none;
   font-size: 2.1rem;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  padding-bottom: 0.4em;
 }
 .emailButton {
   border: 2px solid black;
   background-color: #688cbb;
-  border-radius: 2rem 5rem 2em 2em;
+  border-radius: 1rem 5rem 1em 1em;
   font-family: "Mouse Memoirs", sans-serif;
   color: #ffb183;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   padding-bottom: 0.2em;
 }
 .indexCategoryTitle {
-  font-size: 1.5rem;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #22487a;
+  font-size: 2.5rem;
+  text-shadow: 1.5px 1px #ffb183;
+}
+.indexCatNames {
+  font-size: 1.5em;
 }
