@@ -11,19 +11,21 @@ export default function SelectBudget(props) {
       <div className="selectColumnBox">
         <div className="selectLogoMenu">
           <div className="selectMenuBox">
-            <Link to="/">MENU</Link>
+            <Link className="selectMenuButton" to="/">
+              =
+            </Link>
           </div>
-          <h3 className="selectSavrLogo">Sav-r</h3>
+          <h3 className="selectSavrLogo">sav-r</h3>
         </div>
         <div className="selectBody">
           <div className="selectBodyColumn">
             <div>
-              <h1>SELECT BUDGET</h1>
+              <h1 className="selectTitleText">Select expense tracker</h1>
             </div>
             <Link className="selectLinkToCreate" to="/create_budget/">
               Make a new budget
             </Link>
-            <div>
+            <div className="SelectBudgetList">
               <BudgetList
                 budgets={props.availableBudgets}
                 chooseBudget={props.chooseBudget}

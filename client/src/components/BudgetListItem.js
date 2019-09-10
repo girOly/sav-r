@@ -1,16 +1,20 @@
 import React from "react";
+import "./BudgetListItem.css";
 
 export default function BudgetListItem(props) {
   const thisBudget = props;
   // console.log(thisBudget);
   return (
-    <li>
-      <form onSubmit={event => event.preventDefault()}>
+    <div>
+      <form className="selectForm" onSubmit={event => event.preventDefault()}>
         {thisBudget.budget.name}
-        <button onClick={() => props.chooseBudget(thisBudget.budget.id)}>
-          Choose this budget
+        <button
+          className="selectBudgetButton"
+          onClick={() => props.chooseBudget(thisBudget.budget.id)}
+        >
+          select
         </button>
       </form>
-    </li>
+    </div>
   );
 }
