@@ -77,9 +77,11 @@ export default function Index(props) {
       <div className="indexMain">
         <div className="indexLogoMenu">
           <div className="indexMenuBox">
-            <Link to="/">MENU</Link>
+            <Link className="indexMenuButton" to="/">
+              menu
+            </Link>
           </div>
-          <h3 className="savrLogo">Sav-r</h3>
+          <h3 className="savrLogo">sav-r</h3>
         </div>
         <div className="indexBudgetName">
           <h2> {budget.name}</h2>
