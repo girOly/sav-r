@@ -61,81 +61,99 @@ export default function CreateExpense(props) {
           </div>
           <div className="createCategoriesInput">
             <div className="createCategories">
-              <div className="createCategoryTitle">Category</div>
-              <label className="radio-inline">
-                <input
-                  value="1"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Groceries
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="2"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Housing
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="3"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Restaurants
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="4"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Medical
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="5"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Transportation
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="6"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Clothing
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="7"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Gifts
-              </label>
-              <label className="radio-inline">
-                <input
-                  value="8"
-                  type="radio"
-                  name="optradio"
-                  onChange={event => setCategory(event.target.value)}
-                />
-                Entertainment
-              </label>
-              <button onClick={expenseCreate}>SUBMIT</button>
+              <div className="createCategoryTitle">Categories</div>
+              <ul>
+                <li>
+                  <label className="radio-inline">
+                    <input
+                      value="1"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                    Groceries
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    <input
+                      value="2"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                    Housing
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    <input
+                      value="3"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                    Restaurants
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    <input
+                      value="4"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                    Medical
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    <input
+                      value="5"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                    Transportation
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    <input
+                      value="6"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                    Clothing
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    <input
+                      value="7"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                    Gifts
+                  </label>
+                </li>
+                <li>
+                  <label className="radio-inline">
+                    <input
+                      value="8"
+                      type="radio"
+                      name="optradio"
+                      onChange={event => setCategory(event.target.value)}
+                    />
+                    Entertainment
+                  </label>
+                </li>
+              </ul>
             </div>
+            <button onClick={expenseCreate}>SUBMIT</button>
           </div>
         </form>
       </div>

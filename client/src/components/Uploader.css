@@ -1,21 +1,22 @@
 .uploadInput-group {
-  padding: 1%;
-  margin: 2%;
+  background: #fff0bb;
+  margin-top: 2%;
+  margin-right: 3%;
   border: 2px solid black;
   border-radius: 1em;
   display: flex;
+  width: 100%;
+  text-align: center;
   flex-direction: column;
-  background: rgba(245, 247, 249, 1);
+  justify-content: center;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
 }
 .uploadTitle {
-  /* border: 2px solid black; */
-  display: flex;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #22487a;
+  font-size: 1.3rem;
+  text-shadow: 1.5px 1px #ffb183;
+  align-self: center;
 }
 .custom-file {
   display: flex;

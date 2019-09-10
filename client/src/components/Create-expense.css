@@ -8,24 +8,24 @@
   height: 100%;
 }
 .createCenter {
-  font-family: "Roboto", sans-serif;
+  background: #fff0bb;
+  margin-top: 2%;
+  margin-right: 3%;
   border: 2px solid black;
   border-radius: 1em;
   display: flex;
+  width: 100%;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
-  background: rgba(245, 247, 249, 1);
-  width: 100%;
-  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
 }
 .createTitle {
-  display: flex;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #22487a;
+  font-size: 1.3rem;
+  text-shadow: 1.5px 1px #ffb183;
+  align-self: center;
 }
 .createTotalInput {
   display: flex;
@@ -54,21 +54,35 @@
 }
 .createCategoriesInput {
   margin: 5%;
-  border: 2px solid black;
-  border-radius: 15px;
+  border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background: white;
 }
 .createCategories {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  width: 25%;
+  width: 100%;
+  height: 100%;
+  margin: 10%;
   text-align: center;
 }
+
+.createCategories li {
+  justify-content: center;
+  padding: 3%;
+  margin: auto;
+  text-align: center;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
+}
+
 .createCategoryTitle {
-  padding-bottom: 1rem;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #22487a;
+  font-size: 2em;
+  text-shadow: 1.5px 1px #ffb183;
+  align-self: center;
+  padding-bottom: 10%;
 }
 .savrLogo {
   display: flex;

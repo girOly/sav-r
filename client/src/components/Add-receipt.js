@@ -33,7 +33,9 @@ export default function AddReceipt(props) {
       <div className="receiptMain">
         <div className="receiptLogoMenu">
           <div className="receiptMenuBox">
-            <Link to="/">MENU</Link>
+            <Link className="indexMenuButton" to="/">
+              =
+            </Link>
           </div>
           <h3 className="receiptSavrLogo">Sav-r</h3>
         </div>
@@ -41,9 +43,11 @@ export default function AddReceipt(props) {
           <div>
             <Uploader userConfirm={userConfirm} />
           </div>
-          <button className="receiptNoReceiptButton" onClick={noReceipt}>
-            I don't have a receipt
-          </button>
+          <div className="noReceipt">
+            <button className="receiptNoReceiptButton" onClick={noReceipt}>
+              I don't have a receipt
+            </button>
+          </div>
         </div>
         <div className="receiptConfirm">
           {mode === CONFIRM && (
