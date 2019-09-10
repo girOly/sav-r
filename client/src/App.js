@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./App.scss";
+import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import Uploader from "./components/Uploader";
@@ -76,19 +76,19 @@ function App() {
   };
 
   const updateExpenses = budgetID => {
-    console.log("hey i work");
     axios.get(`/api/budgets/${budgetID}/categories`).then(result => {
       setExpenses(result.data);
       // console.log("result from updateExpenses", result.data);
     });
   };
-  console.log("app expenses after db", expenses);
   return (
     <Router>
       {budget[0].name ? (
-        <div>Currently tracking: {budget[0].name}</div>
+        <div className="budgetSelected">{budget[0].name}</div>
       ) : (
-        <div>Please select your expenses to track!</div>
+        <div className="noneSelected">
+          Please select your expenses to track!
+        </div>
       )}
       <Route
         path="/"

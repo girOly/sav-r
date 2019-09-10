@@ -85,6 +85,7 @@
   flex-direction: column;
   justify-content: center;
   background: rgba(255, 240, 187, 1);
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
   width: 90%;
   align-items: center;
   border-radius: 20px;
@@ -96,7 +97,7 @@
 }
 
 .newBudgetIncomeForm {
-  border: 2px solid fuchsia;
+  /* border: 2px solid fuchsia; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,4 +107,15 @@
 }
 .newBudgetActualForm {
   width: 85%;
+}
+
+.newBudgetSubmit {
+  border: 2px solid black;
+  background-color: #688cbb;
+  border-radius: 1rem;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #ffb183;
+  text-decoration: none;
+  font-size: 2rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
