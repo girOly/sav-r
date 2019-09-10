@@ -24,10 +24,19 @@ export default function Overview(props) {
     labels: dataForGraph.expenseCategories,
     datasets: [
       {
-        label: "My Expenses",
+        label: "Total",
         fill: false,
         lineTension: 0.1,
-        backgroundColor: "FFC5A2",
+        backgroundColor: [
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#ff0000",
+          "#00ff4c",
+          "#aa00ff",
+          "#ffa200",
+          "#00fbff"
+        ],
         borderColor: "5E728C",
         borderCapStyle: "butt",
         borderDash: [],
@@ -89,23 +98,27 @@ export default function Overview(props) {
     maintainAspectRatio: false,
     responsive: false,
     legend: {
-      position: "left",
-      labels: {
-        boxWidth: 10
-      }
+      position: "left"
     }
   };
 
   return (
     <div className="overviewMainBox">
-      <Link to="/">MENU</Link>
-      <h1>Overview</h1>
-      <div className="overviewChart">
-        <div className="overviewBar">
-          <Bar data={data} height={150} width={200} />
+      <div className="overviewLogoMenu">
+        <div className="overviewMenuBox">
+          <Link className="overviewMenuButton" to="/">
+            =
+          </Link>
         </div>
+        <h3 className="overviewSavrLogo">sav-r</h3>
+      </div>
+
+      <div className="overviewChart">
         <div className="overviewPie">
           <Pie data={dataPie} height={150} width={200} />
+        </div>
+        <div className="overviewBar">
+          <Bar data={data} height={150} width={200} />
         </div>
       </div>
       <div />

@@ -23,4 +23,4 @@
 
 #### Overview
 
-- Looks Awful -ish
+- Needs to be converted to Dollars

@@ -19,16 +19,14 @@
 }
 
 .menu-button {
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
   border: 2px solid black;
   font-size: 0.7em;
   margin: 5%;
   height: 2.1rem;
-  /* padding-top: 0.5rem;
-  padding-bottom: 0.5rem; */
   background-color: rgba(255, 240, 187, 1);
   box-shadow: 1px 1px #22487a;
   border-radius: 15px 50px;
-  /* width: 55%; */
 }
 
 /* You can adjust how the text looks here */
