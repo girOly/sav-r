@@ -1,6 +1,6 @@
 /* @import url("https://fonts.googleapis.com/css?family=Denk+One&display=swap"); */
 
-@import url("https://fonts.googleapis.com/css?family=Denk+One|Mouse+Memoirs&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Denk+One|Mouse+Memoirs|Nunito&display=swap");
 
 .indexBigBox {
   height: 100%;
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   /* background-image: url("background.png"); */
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
   background-repeat: repeat;
 }
 .savrLogo {
@@ -25,7 +25,8 @@
   justify-content: center;
   font-family: "Denk One", sans-serif;
   color: #ffb183;
-  text-shadow: 0px 5px #22487a;
+  text-shadow: 0px 5px 1px #22487a;
+  /* text-shadow: -2px 0 #22487a, 0 2px #22487a, 3px 0 #22487a, 0 -3px #22487a; */
   font-style: italic;
   font-size: 3rem;
   bottom-border: none;
@@ -74,7 +75,7 @@
   width: 30%;
   margin: 5%;
   flex-direction: column;
-  background: rgba(242, 255, 243, 1);
+  background: #fff0bb;
 }
 .invisiDiv {
   width: 20%;
@@ -100,14 +101,14 @@
 
 .indexExpensesOverview {
   border: 2px solid black;
-  border-radius: 1em;
+  border-radius: 1rem 1rem 1em 0.5rem;
   margin: 5%;
   display: flex;
   flex-direction: column;
   width: 30%;
   font-size: 1em;
   text-align: center;
-  background: rgba(247, 237, 237, 1);
+  background: #fff0bb;
 }
 
 .indexCategoryHolder {
@@ -127,8 +128,28 @@
   flex-direction: column;
   justify-content: center;
 }
-
+.indexOverviewLink {
+  border: 2px solid black;
+  background-color: #688cbb;
+  border-radius: 8rem 1rem 1em;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #ffb183;
+  text-decoration: none;
+  font-size: 2.1rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-bottom: 0.4em;
+}
 .emailButton {
-  border-radius: 10px;
-  font-weight: bold;
+  border: 2px solid black;
+  background-color: #688cbb;
+  border-radius: 2rem 5rem 2em 2em;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #ffb183;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-bottom: 0.2em;
+}
+.indexCategoryTitle {
+  font-size: 1.5rem;
 }
