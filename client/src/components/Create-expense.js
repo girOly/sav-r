@@ -153,7 +153,9 @@ export default function CreateExpense(props) {
                 </li>
               </ul>
             </div>
-            <button onClick={expenseCreate}>SUBMIT</button>
+            <button className="createSubmitButton" onClick={expenseCreate}>
+              SUBMIT
+            </button>
           </div>
         </form>
       </div>

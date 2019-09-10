@@ -160,7 +160,9 @@ export default function Confirm(props) {
                 </li>
               </ul>
             </div>
-            <button onClick={submitReceipt}>SUBMIT</button>
+            <button className="confirmSubmitButton" onClick={submitReceipt}>
+              SUBMIT
+            </button>
           </div>
         </form>
       </div>
