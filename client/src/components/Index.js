@@ -78,7 +78,7 @@ export default function Index(props) {
         <div className="indexLogoMenu">
           <div className="indexMenuBox">
             <Link className="indexMenuButton" to="/">
-              menu
+              =
             </Link>
           </div>
           <h3 className="savrLogo">sav-r</h3>

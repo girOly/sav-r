@@ -51,9 +51,10 @@
 }
 .indexMenuButton {
   font-family: "Mouse Memoirs", sans-serif;
-  color: black;
+  color: #ffb183;
+  text-shadow: 0px 5px 3px #22487a;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 7.5rem;
 }
 .indexBudgetName {
   font-size: 1.5em;
