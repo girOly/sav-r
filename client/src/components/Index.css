@@ -78,6 +78,7 @@
   flex-direction: column;
   justify-content: space-around;
   background: #fff0bb;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
 }
 .invisiDiv {
   width: 20%;
@@ -112,6 +113,7 @@
   font-size: 1em;
   text-align: center;
   background: #fff0bb;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
 }
 
 .indexCategoryHolder {
@@ -130,6 +132,7 @@
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
 }
 .indexOverviewLink {
   border: 2px solid black;

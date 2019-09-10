@@ -14,10 +14,13 @@ export default function Index(props) {
 
   const centsToDollars = cents => {
     const makeDollars = cents / 100;
-    return makeDollars.toLocaleString("en-US", {
-      style: "currency",
-      currency: "CAD"
-    });
+    let dollarString = makeDollars.toString();
+    dollarString += "$";
+    // return makeDollars.toLocaleString("en-US", {
+    //   style: "currency",
+    //   currency: "CAD"
+    // });
+    return dollarString;
   };
 
   const totalSpending = expenseArray => {
