@@ -11,36 +11,36 @@ export default function Menu(props) {
         <div className="menuColumnBox">
           <div className="menuThree">
             <section className="menu-button">
-              <Link className="menuLinkButton" to="/create_budget/">
-                CREATE A NEW BUDGET
+              <Link className="menuLinkButton" to="/index/">
+                INDEX
               </Link>
             </section>
           </div>
           <div className="menuOne">
             <section className="menu-button">
-              <Link className="menuLinkButton" to="/create_expense/">
-                CREATE EXPENSE
+              <Link className="menuLinkButton" to="/create_budget/">
+                CREATE A NEW EXPENSE TRACKER
               </Link>
             </section>
           </div>
           <div className="menuTwo">
             <section className="menu-button">
-              <Link className="menuLinkButton" to="/add_receipt/">
-                ADD RECEIPT
+              <Link className="menuLinkButton" to="/budget/">
+                SELECT AN EXPENSE TRACKER
               </Link>
-            </section>
+            </section>{" "}
           </div>
           <div className="menuThree">
             <section className="menu-button">
-              <Link className="menuLinkButton" to="/receipt_history/">
-                RECEIPT HISTORY
+              <Link className="menuLinkButton" to="/add_receipt/">
+                ADD AN EXPENSE
               </Link>
             </section>
           </div>
           <div className="menuOne">
             <section className="menu-button">
               <Link className="menuLinkButton" to="/overview/">
-                OVERVIEW
+                GRAPHICAL OVERVIEW
               </Link>
             </section>
           </div>
@@ -50,20 +50,6 @@ export default function Menu(props) {
                 LOGIN/REGISTER
               </Link>
             </section>
-          </div>
-          <div className="menuThree">
-            <section className="menu-button">
-              <Link className="menuLinkButton" to="/index/">
-                INDEX
-              </Link>
-            </section>
-          </div>
-          <div className="menuOne">
-            <section className="menu-button">
-              <Link className="menuLinkButton" to="/budget/">
-                SELECT BUDGET
-              </Link>
-            </section>{" "}
           </div>
         </div>
       </main>
