@@ -15,7 +15,7 @@ export default function AddReceipt(props) {
   const [total, setTotal] = useState(0);
   const [imageURL, setImageURL] = useState("");
   // const [budget, setBudget] = useState(props.budget || null);
-  const { mode, transition, back } = useVisualMode(CREATE);
+  const { mode, transition, back } = useVisualMode(CONFIRM);
 
   const userConfirm = (imageURLFromAmazon, totalFromUser) => {
     setTotal(totalFromUser);
