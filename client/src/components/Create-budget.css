@@ -48,6 +48,13 @@
   font-size: 1.3em;
   justify-content: center;
 }
+.newBudgetMenuButton {
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #ffb183;
+  text-shadow: 0px 5px 3px #22487a;
+  text-decoration: none;
+  font-size: 7.5rem;
+}
 .newBudgetName {
   font-size: 1.8em;
   display: flex;

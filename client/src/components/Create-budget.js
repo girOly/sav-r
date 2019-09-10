@@ -27,7 +27,9 @@ export default function CreateBudget(props) {
       <div className="newBudgetMain">
         <div className="newBudgetLogoMenu">
           <div className="newBudgetMenuBox">
-            <Link to="/">MENU</Link>
+            <Link className="newBudgetMenuButton" to="/">
+              =
+            </Link>
           </div>
           <h3 className="newBudgetSavrLogo">sav-r</h3>
         </div>
