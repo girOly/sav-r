@@ -54,7 +54,7 @@ export default function Index(props) {
   {
     budgetName: "Joe",
     budgetEntries:
-        {    
+        {
         "Groceries": 918,
         "Housing": 0,
         "Restaurants": 1500,
@@ -63,7 +63,7 @@ export default function Index(props) {
         "Clothing": 9000,
         "Gifts": 2000,
         "Entertainment": 0
-        }    
+        }
 }
 */
   const categorySpending = Object.keys(expenses).map(key => (
@@ -91,7 +91,12 @@ export default function Index(props) {
               <h4> {centsToDollars(budget.income)}</h4>
             </div>
             <div className="invisiDiv">
-              <button onClick={emailMe}> Email my expenses! </button>
+              <div className="nestedInvisiDiv">
+                <button className="emailButton" onClick={emailMe}>
+                  {" "}
+                  Email my expenses!{" "}
+                </button>
+              </div>
             </div>
             <div className="indexExpensesOverview">
               <div className="indexExpenses">
