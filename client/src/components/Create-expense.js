@@ -37,7 +37,7 @@ export default function CreateExpense(props) {
           <h1>Create an Expense</h1>
         </div>
         <div className="createTotal" />
-        <form onSubmit={event => event.preventDefault()}>
+        <form className="createForm" onSubmit={event => event.preventDefault()}>
           <div className="createTotalInput">
             <div className="createTotal">
               Total

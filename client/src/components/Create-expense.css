@@ -27,6 +27,9 @@
   text-shadow: 1.5px 1px #ffb183;
   align-self: center;
 }
+.createForm {
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
+}
 .createTotalInput {
   display: flex;
   flex-direction: row;
@@ -59,6 +62,7 @@
   flex-direction: row;
   justify-content: center;
   background: white;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
 }
 .createCategories {
   justify-content: center;
