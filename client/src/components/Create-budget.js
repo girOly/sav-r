@@ -29,10 +29,10 @@ export default function CreateBudget(props) {
           <div className="newBudgetMenuBox">
             <Link to="/">MENU</Link>
           </div>
-          <h3 className="newBudgetSavrLogo">Sav-r</h3>
+          <h3 className="newBudgetSavrLogo">sav-r</h3>
         </div>
         <div className="newBudgetName">
-          <h2> Create budget</h2>
+          <h4> Create a new Expense Tracker</h4>
         </div>
         <div className="newBudgetForm">
           <div className="newBudgetFormCenter">
@@ -41,18 +41,22 @@ export default function CreateBudget(props) {
               onSubmit={event => event.preventDefault()}
             >
               <div className="newBudgetFormName">
-                Budget name
-                <input
-                  onChange={event => setBudgetName(event.target.value)}
-                  type="text"
-                  name="budget_name"
-                />
+                Name
+                <div className="newBudgetFormNameInput">
+                  <input
+                    onChange={event => setBudgetName(event.target.value)}
+                    type="text"
+                    name="budget_name"
+                  />
+                </div>
                 How much can you spend?
-                <input
-                  onChange={event => setIncome(event.target.value)}
-                  type="number"
-                  name="income"
-                />
+                <div className="newBudgetFormNameInput">
+                  <input
+                    onChange={event => setIncome(event.target.value)}
+                    type="number"
+                    name="income"
+                  />
+                </div>
                 <button onClick={budgetCreate} type="submit">
                   Submit
                 </button>
