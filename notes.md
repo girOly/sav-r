@@ -4,11 +4,11 @@
 
 - Add Color formatting
 
-#### Menu
+<!-- #### Menu
 
 - rearrange menu buttons
 - remove create expenses and receipt history
-- change name of add receipt
+- change name of add receipt -->
 
 #### Select Budget
 

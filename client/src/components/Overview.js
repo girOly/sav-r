@@ -27,8 +27,8 @@ export default function Overview(props) {
         label: "My Expenses",
         fill: false,
         lineTension: 0.1,
-        backgroundColor: "rgba(75,192,192,0.4)",
-        borderColor: "rgba(75,192,192,1)",
+        backgroundColor: "FFC5A2",
+        borderColor: "5E728C",
         borderCapStyle: "butt",
         borderDash: [],
         borderDashOffset: 0.0,
@@ -101,8 +101,12 @@ export default function Overview(props) {
       <Link to="/">MENU</Link>
       <h1>Overview</h1>
       <div className="overviewChart">
-        <Bar data={data} />
-        <Pie data={dataPie} height={150} width={200} />
+        <div className="overviewBar">
+          <Bar data={data} height={150} width={200} />
+        </div>
+        <div className="overviewPie">
+          <Pie data={dataPie} height={150} width={200} />
+        </div>
       </div>
       <div />
     </div>
