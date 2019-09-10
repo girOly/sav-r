@@ -68,7 +68,7 @@ export default function Index(props) {
 */
   const categorySpending = Object.keys(expenses).map(key => (
     <div>
-      <h4>{key}</h4>
+      <h4 className="indexCatNames">{key}</h4>
       <li>{centsToDollars(expenses[key])}</li>
     </div>
   ));
@@ -93,17 +93,10 @@ export default function Index(props) {
               <h4> {centsToDollars(budget.income)}</h4>
               <button className="emailButton" onClick={emailMe}>
                 {" "}
-                Email my expenses!{" "}
+                Email!{" "}
               </button>
             </div>
-            <div className="invisiDiv">
-              {/* <div className="nestedInvisiDiv">
-                <button className="emailButton" onClick={emailMe}>
-                  {" "}
-                  Email my expenses!{" "}
-                </button>
-              </div> */}
-            </div>
+            <div className="invisiDiv"></div>
             <div className="indexExpensesOverview">
               <div className="indexExpenses">
                 <h3> Spent so far </h3>
