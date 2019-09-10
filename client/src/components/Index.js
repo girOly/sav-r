@@ -91,27 +91,33 @@ export default function Index(props) {
             <div className="indexIncome">
               <h3> Spending Limit </h3>
               <h4> {centsToDollars(budget.income)}</h4>
+              <button className="emailButton" onClick={emailMe}>
+                {" "}
+                Email my expenses!{" "}
+              </button>
             </div>
             <div className="invisiDiv">
-              <div className="nestedInvisiDiv">
+              {/* <div className="nestedInvisiDiv">
                 <button className="emailButton" onClick={emailMe}>
                   {" "}
                   Email my expenses!{" "}
                 </button>
-              </div>
+              </div> */}
             </div>
             <div className="indexExpensesOverview">
               <div className="indexExpenses">
                 <h3> Spent so far </h3>
                 <h4> {centsToDollars(totalSpending(expenses))} </h4>
               </div>
-              <Link to="/overview">Overview</Link>
+              <Link className="indexOverviewLink" to="/overview">
+                Overview
+              </Link>
             </div>
           </div>
         </div>
         <div className="indexCategoryHolder">
           <div className="indexCategory">
-            <h4> Spending by Category </h4>
+            <h4 className="indexCategoryTitle"> Spending by Category </h4>
             <div>{categorySpending}</div>
           </div>
         </div>
