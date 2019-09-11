@@ -22,7 +22,7 @@ export default function CreateExpense(props) {
         budget_id: budget.id
       })
       .then(response => {
-        console.log("axios-response", response);
+        console.log("axios-response from create expense", response);
       })
       .then(props.updateExpenses(budget.id))
       .catch(err => {
