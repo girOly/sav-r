@@ -116,6 +116,7 @@
   justify-content: center;
 }
 .createSubmitButton {
+  width: 100%;
   border: 2px solid black;
   background-color: #688cbb;
   border-radius: 1rem;

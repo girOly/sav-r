@@ -9,7 +9,7 @@ const LOGIN = "LOGIN";
 const REGISTER = "REGISTER";
 
 export default function LoginRegister(props) {
-  const { mode, transition, back } = useVisualMode(REGISTER);
+  const { mode, transition, back } = useVisualMode(LOGIN);
   return (
     <div>
       {mode === LOGIN && <Login toRegister={() => transition(REGISTER)} />}
