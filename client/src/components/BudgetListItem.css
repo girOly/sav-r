@@ -7,10 +7,12 @@
   font-family: "Mouse Memoirs", sans-serif;
   color: #688cbb;
   text-decoration: none;
-  font-size: 1rem;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 2rem;
+  text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   padding-bottom: 0.2em;
-  width: 40%;
+  width: 50%;
+  margin: 5px;
+  margin-top: 5%;
 }
 .selectForm {
   font-size: 1.5rem;
@@ -19,4 +21,5 @@
   /* justify-content: center; */
   align-items: center;
   font-family: "Nunito", sans-serif;
+  margin-top: 10%;
 }
