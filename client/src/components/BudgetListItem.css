@@ -15,11 +15,18 @@
   margin-top: 5%;
 }
 .selectForm {
+  color: #22487a;
   font-size: 1.5rem;
+  text-shadow: 0.5px 0.5px black;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
   font-family: "Nunito", sans-serif;
   margin-top: 10%;
+  border: 1px solid black;
+  border-radius: 10px;
+  /* height: 10%; */
+  background-color: rgba(245, 247, 249, 1);
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
 }
