@@ -16,5 +16,5 @@ export default function BudgetList(props) {
     </div>
   ));
 
-  return <ul>{budgetsMap}</ul>;
+  return <div>{budgetsMap}</div>;
 }

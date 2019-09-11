@@ -30,8 +30,34 @@
   justify-content: center;
 }
 
+.uploadSubmit {
+  width: 100%;
+  border: 2px solid black;
+  background-color: #688cbb;
+  border-radius: 1rem;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #ffb183;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-bottom: 0.2em;
+}
+
 .uploadFileButton {
   display: flex;
   flex-direction: row;
   float: left;
+}
+
+.uploadFile {
+  width: 100%;
+  border: 2px solid black;
+  background-color: #688cbb;
+  border-radius: 1rem;
+  font-family: "Mouse Memoirs", sans-serif;
+  color: #ffb183;
+  text-decoration: none;
+  font-size: 2rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-bottom: 0.2em;
 }

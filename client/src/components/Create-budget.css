@@ -62,7 +62,7 @@
   justify-content: center;
   font-family: "Denk One", sans-serif;
   color: #688cbb;
-  text-shadow: 2px 1px 1px #ffd4bb;
+  text-shadow: 3px 2px 3px #ffd4bb;
   /* text-shadow: -2px 0 #22487a, 0 2px #22487a, 3px 0 #22487a, 0 -3px #22487a; */
   /* font-style: italic; */
 }
@@ -86,9 +86,10 @@
   justify-content: center;
   background: rgba(255, 240, 187, 1);
   background-image: url("https://www.transparenttextures.com/patterns/diamond-eyes.png");
-  width: 90%;
+  width: 100%;
   align-items: center;
   border-radius: 20px;
+  height: 100%;
 }
 
 .newBudgetFormNameInput {

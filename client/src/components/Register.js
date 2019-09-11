@@ -27,12 +27,6 @@ export default function Register(props) {
 
   return (
     <div className="registerBigBox">
-      <div className="indexLogoMenu">
-        <div className="indexMenuBox">
-          <Link to="/">MENU</Link>
-        </div>
-        <h3 className="savrLogo">Sav-r</h3>
-      </div>
       <div className="registerMain">
         <div className="registerTitle">
           <h1>REGISTER</h1>

@@ -6,7 +6,13 @@ export default function Overview(props) {
   console.log("localStorage", localStorage.id);
   const expenses = props.expenses;
   console.log("overview expenses", expenses);
-
+  const dollarConvert = function(arrNum) {
+    let output = [];
+    for (let number of arrNum) {
+      output.push(number / 100);
+    }
+    return output;
+  };
   const expenseObjSeprator = expenseObj => {
     let expenseCategories = [];
     let expenseTotals = [];
@@ -15,7 +21,9 @@ export default function Overview(props) {
       expenseCategories.push(category);
       expenseTotals.push(expenseObj[category]);
     }
-    return { expenseCategories, expenseTotals };
+    let convertedExpenseTotals = dollarConvert(expenseTotals);
+    console.log(convertedExpenseTotals);
+    return { expenseCategories, convertedExpenseTotals };
   };
 
   const dataForGraph = expenseObjSeprator(expenses);
@@ -51,7 +59,7 @@ export default function Overview(props) {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: dataForGraph.expenseTotals
+        data: dataForGraph.convertedExpenseTotals
       }
     ]
   };
@@ -69,7 +77,7 @@ export default function Overview(props) {
     ],
     datasets: [
       {
-        data: dataForGraph.expenseTotals,
+        data: dataForGraph.convertedExpenseTotals,
         backgroundColor: [
           "#FF6384",
           "#36A2EB",

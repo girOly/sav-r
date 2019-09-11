@@ -27,7 +27,7 @@ import useApplicationData from "./hooks/useApplicationData";
   Entertainment: 4000
 }
 */
-/* 
+/*
 [
     {
       id: 1,

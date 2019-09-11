@@ -76,6 +76,7 @@
   padding-bottom: 1rem;
 }
 .confirmSubmitButton {
+  width: 100%;
   border: 2px solid black;
   background-color: #688cbb;
   border-radius: 1rem;
