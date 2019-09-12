@@ -99,7 +99,7 @@ export default function Index(props) {
                 Email!{" "}
               </button>
             </div>
-            <div className="invisiDiv"></div>
+            <div className="invisiDiv" />
             <div className="indexExpensesOverview">
               <div className="indexExpenses">
                 <h3> Spent so far </h3>

@@ -8,9 +8,10 @@ export default function CreateBudget(props) {
   const [budgetName, setBudgetName] = useState("");
 
   const budgetCreate = () => {
+    let incomeCents = income * 100;
     return axios
       .post("/api/budgets", {
-        income,
+        income: incomeCents,
         user_id: localStorage.id,
         name: budgetName
       })
