@@ -32,7 +32,7 @@ export default function Overview(props) {
     labels: dataForGraph.expenseCategories,
     datasets: [
       {
-        label: "Total",
+        label: "Expenses",
         fill: false,
         lineTension: 0.1,
         backgroundColor: [

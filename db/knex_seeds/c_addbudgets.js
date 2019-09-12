@@ -7,8 +7,8 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex("budgets").insert([
         {
-          income: 15000,
-          name: "Trip to the Townships",
+          income: 20000,
+          name: "Quebec City with Mom",
           end_date: null,
           user_id: 3,
           saving_id: 1
