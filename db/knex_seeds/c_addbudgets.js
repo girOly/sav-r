@@ -50,8 +50,8 @@ exports.seed = function(knex) {
           saving_id: 2
         },
         {
-          income: 35000000,
-          name: "School Year 2019",
+          income: 35000,
+          name: "Camping Trip to Vermont",
           end_date: null,
           user_id: 3,
           saving_id: 3
