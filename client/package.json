@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://127.0.0.1:3005",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "chart.js": "^2.8.0",
     "config-chain": "^1.1.12",
     "install": "^0.13.0",
